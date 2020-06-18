@@ -3,15 +3,28 @@ import { graphql } from 'gatsby';
 import Banner from '../../components/common/banner/banner';
 import Layout from '.././../components/layout/baselayout';
 import renderList from '../../components/list-view/list-view';
+import SEO from '../../components/common/site-metadata';
 
 const DigitalTransFormationPage  =  ({data}) =>  {
-  const lists = data.allMarkdownRemark.edges;
+  const lists = data.list.edges;
+  const bannerData = data.bannerData.frontmatter
     return (
       <Layout>
         <Banner
-            bannerTitle= 'Digital Transformation'
-            bannerSubTitle = 'Digital Transformation'
+            bannerTitle= {bannerData.title}
+            bannerSubTitle = {bannerData.subTitle}
           />
+          <SEO 
+          title={bannerData.title}
+          metakeywords= {bannerData.metakeywords}
+          metadescription={bannerData.metadescription}
+          ogimage={bannerData.ogimage}
+        />
+         <div className="container py-5">
+          <div className="col-md-12">
+            {bannerData.description}
+          </div>
+        </div>
         <div className="container py-5">
           <div className="col-md-12">
             {lists.map(renderList)}
@@ -25,7 +38,7 @@ export default DigitalTransFormationPage;
 
 export const pageQuery = graphql`
   query DigitalTransFormationPageTemplate {
-    allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "digital-transformations" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "digital-transformations" } } }) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -47,6 +60,22 @@ export const pageQuery = graphql`
             }
           }
         }
+      }
+    }
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-digital-transformations" }}) {
+      frontmatter {
+        title
+        metakeywords
+        metadescription
+        ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        subTitle
+        description
       }
     }
   }

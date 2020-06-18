@@ -17,6 +17,14 @@ export const menuData = [
                 label: 'Solution',
                 link: '/your-next/solutions'
             },
+            {
+                label: 'Experience',
+                link: '/your-next/experience'
+            },
+            {
+                label: 'Analytics',
+                link: '/your-next/analytics'
+            },
         ]
     },
     {

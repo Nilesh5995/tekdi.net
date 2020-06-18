@@ -5,16 +5,16 @@ import Layout from '.././../components/layout/baselayout';
 import renderList from '../../components/list-view/list-view';
 import SEO from '../../components/common/site-metadata';
 
-const PlatformsPage  =  ({data}) =>  {
+const AnalyticsPage  =  ({data}) =>  {
   const lists = data.list.edges;
   const bannerData = data.bannerData.frontmatter
-      return (
-        <Layout>
-          <Banner
+    return (
+      <Layout>
+        <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
           />
-          <SEO 
+        <SEO 
           title={bannerData.title}
           metakeywords= {bannerData.metakeywords}
           metadescription={bannerData.metadescription}
@@ -25,20 +25,20 @@ const PlatformsPage  =  ({data}) =>  {
             {bannerData.description}
           </div>
         </div>
-          <div className="container py-5">
-            <div className="col-md-12">
-              {lists.map(renderList)}
-            </div>
+        <div className="container py-5">
+          <div className="col-md-12">
+            {lists.map(renderList)}
           </div>
-        </Layout>
-      )
+        </div>
+      </Layout>
+    )
   }
 
-export default PlatformsPage;
+export default AnalyticsPage;
 
 export const pageQuery = graphql`
-  query PlatformsPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "platforms" } } }) {
+  query AnalyticsPageTemplate {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "analytics" } } }) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-platforms" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-analytics" }}) {
       frontmatter {
         title
         metakeywords
