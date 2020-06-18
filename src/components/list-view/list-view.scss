@@ -1,0 +1,35 @@
+@import "../common/scss/mixins.scss";
+.blog-list {
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #ccc;
+
+    &:last-child {
+        border-bottom: none;
+    }
+    h3.blog-title a {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #000;
+    }
+    img {
+        width:100%;
+    }
+    .blog-info li {
+        display: inline-block;
+    }
+    .blog-category a {
+        @include anchor-style;
+    }
+    a.read-more {
+        @include anchor-blue-style;
+    }
+}
+.pagination li a {
+    color:#333 !important;
+
+    &:hover {
+        text-decoration: none;
+        color: #216db6 !important;
+    }
+}

@@ -1,5 +1,25 @@
 export const menuData = [
     {
+        label:'Your Nxt',
+        link:'#',
+        key: 'yournext',
+        className: 'parent',
+        submenus : [
+            {
+                label: 'Digital Transformations',
+                link: '/your-next/digital-transformation'
+            },
+            {
+                label: 'Platforms',
+                link: '/your-next/platforms'
+            },
+            {
+                label: 'Solution',
+                link: '/your-next/solutions'
+            },
+        ]
+    },
+    {
         label:'Digital Transformation',
         link:'#',
         key: 'digital',
