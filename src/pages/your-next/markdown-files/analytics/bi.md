@@ -1,5 +1,5 @@
 ---
-templateKey: - analytics
+templateKey: analytics
 title: BI
 subTitle: BI Sub title
 image: /img/your-next/demo-image.png
