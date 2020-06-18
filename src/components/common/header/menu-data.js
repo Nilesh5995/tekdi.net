@@ -1,6 +1,6 @@
 export const menuData = [
     {
-        label:'Your Nxt',
+        label:'Your Next',
         link:'#',
         key: 'yournext',
         className: 'parent',
