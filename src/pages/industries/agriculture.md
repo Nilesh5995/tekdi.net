@@ -1,24 +1,12 @@
 ---
-templateKey: industries-page
+templateKey: industries
 title: Agriculture
-metakeywords: ["", ""]
-metadescription: Agriculture and Agro based businesses are increasing their efficiencies by adopting digital platforms. IOT based automation or software and systems to improve warehousing & reduce waste, technology can go a long way in transforming this grassroot industry
-ogimage: /img/industries/agriculture-bg.jpg
-
-bannerSubTitle: Industries
-
-caseStudyTag: agriculture
-
-subheading: Digital can bring about revolutionary benefits to this trillion dollar industry worldwide. From IoT and digital platforms to the humble Whatsapp, the agriculture sector can benefit significantly from digital transformation.
-icon: /img/industries/agriculture-icon.png
-hovericon: /img/industries/agriculture-icon-white.png
+subTitle: Agriculture
 image: /img/industries/agriculture-bg.jpg
-bgimage: /img/industries/agriculture-bg.jpg
 
-featuresubheading: Digital can bring about revolutionary benefits to this trillion dollar industry worldwide. From IoT and digital platforms to the humble Whatsapp, the agriculture sector can benefit significantly from digital transformation.
+description: Digital can bring about revolutionary benefits to this trillion dollar industry worldwide. From IoT and digital platforms to the humble Whatsapp, the agriculture sector can benefit significantly from digital transformation.
+# This Images is for the home page
+icon: /img/industries/education-icon.png
+hovericon: /img/industries/education-icon-white.png
 ---
-
-Agriculture and Agro based businesses are increasing their efficiencies by adopting digital platforms. IOT based automation or software and systems to improve warehousing & reduce waste, technology can go a long way in transforming this grassroot industry
-
-Agriculture and Agro based businesses are increasing their efficiencies by adopting digital platforms. IOT is a game changer to transform processes right from sowing and growing to warehousing and logistics. Technology can go a long way in transforming this grassroot industry.
 

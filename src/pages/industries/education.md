@@ -1,21 +1,10 @@
 ---
-templateKey: industries-page
+templateKey: industries
 title: Education
-metakeywords: ["", ""]
-metadescription: Learning and education impacts individuals, organisations, the nation and the world as a whole. Technology is increasing ease of access and effectiveness of learning globally leading to increase in effectiveness and fuelling the knowledge economy.
-ogimage: /img/digital-evolution/digital-evolution1.jpg
-
-bannerSubTitle: Industries
-
-caseStudyTag: education
-
+subTitle: Education
 image: /img/industries/education.jpg
-bgimage: /img/digital-evolution/digital-evolution1.jpg
+description: Learning and education impacts individuals, organisations, the nation and the world as a whole. Technology is increasing ease of access and effectiveness of learning globally leading to increase in effectiveness and fuelling the knowledge economy.
+# This Images is for the home page
 icon: /img/industries/education-icon.png
 hovericon: /img/industries/education-icon-white.png
-subheading: Learning and education impacts individuals, organisations, the nation and the world as a whole. Technology is increasing ease of access and effectiveness of learning globally leading to increase in effectiveness and fuelling the knowledge economy.
-
-featuresubheading: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text
 ---
-
-Learning and education impacts individuals, organisations, the nation and the world as a whole. Technology is increasing ease of access and effectiveness of learning globally leading to increase in effectiveness and fuelling the knowledge economy.

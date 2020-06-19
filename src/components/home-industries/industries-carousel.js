@@ -7,11 +7,10 @@ import 'swiper/css/swiper.css';
 import './industries-carousel.scss';
 
 class IndustriesCarousel extends React.Component {
-    
     render(){
         const { data } = this.props
-        const { edges: posts } = data.allMarkdownRemark
-
+        const carousel = this.props.data.carouselList.edges;
+        const carouselHeader  = data.carouselHeader
         const params = {
           navigation: {
             nextEl: '.swiper-button-next',
@@ -38,60 +37,60 @@ class IndustriesCarousel extends React.Component {
         };
 
         return (
-        <div className="container"> 
-            <div className="industries-carousel row">
-                <Swiper {...params}>
-                    {posts &&
-                        posts.map(({ node: post }) => (
-                        <div className="item blue-bg" key={post.id}>
-                            <div className="item-inner text-white">
-                              <div className="icon">
-                                <PreviewCompatibleImage
-                                  imageInfo={{
-                                    image: post.frontmatter.icon,
-                                    alt: `icon for ${post.frontmatter.title}`,
-                                  }}
-                                />
+          <div className="container">
+            <div className="com-cover">
+              <div className="text-center col-md-6 offset-md-3 mb-5" key={carouselHeader.id}>
+                  <h2 className="com-heading text-black">{carouselHeader.frontmatter.title}</h2>
+                  <p>{carouselHeader.frontmatter.homePageDescription}</p>
+              </div>
+              <div className="container">
+                  <div className="industries-carousel row">
+                      <Swiper {...params}>
+                          {carousel &&
+                              carousel.map(({ node: post }) => (
+                              <div className="item blue-bg" key={post.id}>
+                                  <div className="item-inner text-white">
+                                    <div className="icon">
+                                      <PreviewCompatibleImage
+                                        imageInfo={{
+                                          image: post.frontmatter.icon,
+                                          alt: `icon for ${post.frontmatter.title}`,
+                                        }}
+                                      />
+                                    </div>
+                                    <div className="hover-icon">
+                                      <PreviewCompatibleImage
+                                        imageInfo={{
+                                          image: post.frontmatter.hovericon,
+                                          alt: `icon for ${post.frontmatter.title}`,
+                                        }}
+                                      />
+                                    </div>
+                                    <h3 className="section-title mt-4 mb-2">{post.frontmatter.title}</h3>
+                                    <p className="font-weight-normal">
+                                    {post.frontmatter.description.substring(0,130)+"..."}
+                                      <br/>
+                                      <br/>
+                                      <Link to={post.fields.slug} className="font-weight-bold">View More </Link>
+                                    </p>
+                                  </div>
                               </div>
-                              <div className="hover-icon">
-                                <PreviewCompatibleImage
-                                  imageInfo={{
-                                    image: post.frontmatter.hovericon,
-                                    alt: `icon for ${post.frontmatter.title}`,
-                                  }}
-                                />
-                              </div>
-                              <h3 className="section-title mt-4 mb-2">{post.frontmatter.title}</h3>
-                              <p className="font-weight-normal">
-                              {post.frontmatter.subheading.substring(0,130)+"..."}
-                                <br/>
-                                <br/>
-                                <Link to={post.fields.slug} className="font-weight-bold">View More </Link>
-                              </p>
-                            </div>
-                        </div>
-                    ))}
-                </Swiper> 
-            </div>
-        </div> 
+                          ))}
+                      </Swiper>
+                  </div>
+              </div>
+          </div>
+        </div>
         )
     }
-}
-
-IndustriesCarousel.propTypes = {
-  data: PropTypes.shape({
-    allMarkdownRemark: PropTypes.shape({
-      edges: PropTypes.array,
-    }),
-  }),
 }
 
 export default () => (
     <StaticQuery
       query={graphql`
         query IndustriesCarouselQuery {
-          allMarkdownRemark(
-            filter: { frontmatter: { templateKey: { eq: "industries-page" } } }
+          carouselList:allMarkdownRemark(
+            filter: { frontmatter: { templateKey: { eq: "industries" } } }
           ) {
             edges {
               node {
@@ -102,7 +101,8 @@ export default () => (
                 }
                 frontmatter {
                   title
-                  subheading
+                  subTitle
+                  description
                   icon {
                     childImageSharp {
                       fluid(maxWidth: 60, quality: 100) {
@@ -121,9 +121,14 @@ export default () => (
               }
             }
           }
+          carouselHeader:markdownRemark(frontmatter: { templateKey: { eq: "index-industries" }}) {
+            frontmatter {
+              title
+              homePageDescription
+            }
+          }
         }
       `}
       render={(data, count) => <IndustriesCarousel data={data} count={count} />}
     />
   )
-  
