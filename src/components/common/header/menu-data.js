@@ -14,7 +14,7 @@ export const menuData = [
                 link: '/your-next/platforms'
             },
             {
-                label: 'Solution',
+                label: 'Solutions',
                 link: '/your-next/solutions'
             },
             {
