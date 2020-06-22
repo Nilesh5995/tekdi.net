@@ -106,7 +106,7 @@ export const pageQuery = graphql`
         metadescription
         ogimage {
           childImageSharp {
-            fluid(quality: 150) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
