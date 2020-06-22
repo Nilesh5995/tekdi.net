@@ -1,5 +1,5 @@
 ---
-templateKey: digital-transformations
+templateKey: digital-transformation
 title: e-Commerce & Marketplaces
 subTitle:  e-Commerce & Marketplaces
 image: /img/yor-next/e-commerce.jpeg

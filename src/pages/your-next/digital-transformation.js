@@ -38,7 +38,7 @@ export default DigitalTransFormationPage;
 
 export const pageQuery = graphql`
   query DigitalTransFormationPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "digital-transformations" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "digital-transformation" } } }) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -62,7 +62,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-digital-transformations" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-digital-transformation" }}) {
       frontmatter {
         title
         metakeywords

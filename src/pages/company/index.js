@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Helmet from 'react-helmet';
 import { graphql} from 'gatsby';
 import SEO from '../../components/common/site-metadata';
 import Layout from '../../components/layout/baselayout';

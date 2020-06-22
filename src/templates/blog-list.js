@@ -5,7 +5,7 @@ import Layout from '../components/layout/baselayout';
 import SEO from '../components/common/site-metadata';
 import BlogPagination from '../components/blog/pagination';
 import renderList from '../components/blog/blog-list';
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import BlogCatList from '../components/blog/blog-cat-list';
 import BlogTagList from '../components/blog/blog-tag-list';
 import Banner from "../components/common/banner/banner"

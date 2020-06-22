@@ -1,7 +1,4 @@
-
-
 import React from "react"
-import { Link } from "gatsby"
 import PreviewCompatibleImage from '../common/preview-compatible-image'
 import './list-view.scss';
 const renderList = ({ node }) => {
@@ -22,13 +19,11 @@ const renderList = ({ node }) => {
           </div>
           <div className="col-md-9 col-sm-8 col-xs-12 blog-info">
             <h3 className="blog-title">
-              <Link to={node.fields.slug} >
                 {node.frontmatter.title}
-              </Link>
             </h3>
             <ul className="unstyled mb-4">
-              <li className="blog-category">
-               <Link to={node.fields.slug}>{node.frontmatter.subTitle}</Link>
+              <li className="sub-title">
+               {node.frontmatter.subTitle}
               </li>
             </ul>
             <p>

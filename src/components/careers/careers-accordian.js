@@ -1,4 +1,4 @@
-import React, { Link, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import PropTypes from 'prop-types'
 import { graphql, StaticQuery } from 'gatsby'
 import './careers.scss';

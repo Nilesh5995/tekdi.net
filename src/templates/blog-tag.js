@@ -1,7 +1,7 @@
 import Layout from '../components/layout/baselayout';
 import BlogPagination from '../components/blog/pagination';
 import renderList from '../components/blog/blog-list';
-import { Link, graphql } from 'gatsby'
+import { graphql } from 'gatsby'
 import BlogCatList from '../components/blog/blog-cat-list';
 import BlogTagList from '../components/blog/blog-tag-list';
 import Banner from "../components/common/banner/banner"
@@ -9,10 +9,9 @@ import React, { Fragment } from 'react'
 import lodash from "lodash"
 
  class BlogTagPage extends React.Component {
-   
   render() {
     const posts = this.props.data.allMarkdownRemark.edges
-    const { currentPage, numPages, tag, allTag } = this.props.pageContext
+    const { currentPage, numPages, tag} = this.props.pageContext
     return (
       <Layout>
         <div className="blog-page">
@@ -24,13 +23,12 @@ import lodash from "lodash"
                   {
                     posts.map(renderList)
                   }
-              <BlogPagination 
+              <BlogPagination
                 currentPage={currentPage}
                 numPages={numPages}
                 contextPage={"tags/" + lodash.kebabCase(tag)}
                />
-            
-          </div> 
+          </div>
             </Fragment>
             <div className="col-md-3">
               <BlogCatList />

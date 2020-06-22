@@ -1,5 +1,4 @@
 import React from 'react';
-import Content from '../common/content';
 import PreviewCompatibleImage from '../common/preview-compatible-image';
 import './company-info.scss';
 import ProjectInfo from './project-info';

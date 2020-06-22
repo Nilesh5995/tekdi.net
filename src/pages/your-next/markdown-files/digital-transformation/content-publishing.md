@@ -1,5 +1,5 @@
 ---
-templateKey: digital-transformations
+templateKey: digital-transformation
 title: Content Publishing
 subTitle: Content Publishing Sub title
 image: /img/your-next/demo-image1.png
