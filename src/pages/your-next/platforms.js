@@ -13,8 +13,9 @@ const PlatformsPage  =  ({data}) =>  {
           <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
-          <SEO 
+          <SEO
           title={bannerData.title}
           metakeywords= {bannerData.metakeywords}
           metadescription={bannerData.metadescription}
@@ -76,6 +77,13 @@ export const pageQuery = graphql`
         }
         subTitle
         description
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

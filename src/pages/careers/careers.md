@@ -1,12 +1,11 @@
 ---
-templateKey: careers-banner
+templateKey: index-careers
 title: Careers
 metakeywords: ["careers", ""]
 metadescription: 
 ogimage: /img/tekdi-logo.png
-
-bannerSubTitle: Work With Us
-
+subTitle: Work With Us
+image: /img/banner/careers.jpg
 heading: Open Positions
 
 ---

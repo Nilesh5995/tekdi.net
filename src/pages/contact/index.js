@@ -22,11 +22,12 @@ const ContactPage = ({ data }) => {
         <Banner 
           bannerTitle= {frontmatter.title} 
           bannerSubTitle = { frontmatter.bannerSubTitle}
+          image = { frontmatter.image}
         />
         <div className="container py-5 contact-us">
           <div className="mb-5 row">
             <div className="col-md-10 col-xs-12 offset-md-1">
-              <Map></Map>                                               
+              <Map></Map>
             </div>
           </div>
           <div className="row">
@@ -65,7 +66,7 @@ const ContactPage = ({ data }) => {
                 </div>  
               </div>
             </div>
-          </div>                         
+          </div>
         </div>
       </div>
     </Layout>
@@ -92,6 +93,13 @@ export const pageQuery = graphql`
         metakeywords
         metadescription
         ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

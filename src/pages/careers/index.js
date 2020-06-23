@@ -24,8 +24,9 @@ const CareersIndexPage =  ({data}) => {
         </Helmet>
         <div className="careers-page">
           <Banner 
-            bannerTitle= {frontmatter.title} 
-            bannerSubTitle = {frontmatter.bannerSubTitle}
+            bannerTitle= {frontmatter.title}
+            bannerSubTitle = {frontmatter.subTitle}
+            image = {frontmatter.image}
           />
           <div className="container py-5">
             <div className="col-lg-8 col-md-10 offset-lg-2 offset-md-1 col-xs-12">
@@ -44,7 +45,7 @@ export default CareersIndexPage;
 
 export const pageQuery = graphql`
   query CareersBanner {
-    markdownRemark(frontmatter: { templateKey: { eq: "careers-banner" }}) {
+    markdownRemark(frontmatter: { templateKey: { eq: "index-careers" }}) {
       frontmatter {
         title
         metakeywords
@@ -56,8 +57,15 @@ export const pageQuery = graphql`
             }
           }
         }
-        bannerSubTitle
+        subTitle
         heading
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

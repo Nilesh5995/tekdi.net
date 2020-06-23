@@ -13,9 +13,11 @@ import ContactUs from '../components/common/contact/contact';
 import React, { Fragment } from 'react'
 
  class BlogIndexPage extends React.Component {
-   
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges
+    const { data } = this.props
+    const posts = this.props.data.blogList.edges;
+    const bannerData  = data.bannerData.frontmatter
+    console.log(bannerData)
     const { currentPage, numPages } = this.props.pageContext
 
     return (
@@ -25,8 +27,9 @@ import React, { Fragment } from 'react'
         />
         <div className="blog-page">
           <Banner 
-            bannerTitle= "Blogs" 
-            bannerSubTitle = "Latest blogs"
+            bannerTitle= {bannerData.title}
+            bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           /> 
           <div className="container py-5">
             <div className="row">
@@ -51,7 +54,7 @@ import React, { Fragment } from 'react'
 export default BlogIndexPage;
 export const blogListQuery = graphql`
 query BlogListQuery($skip: Int!, $limit: Int!) {
-  allMarkdownRemark(
+  blogList:allMarkdownRemark(
     sort: { order: DESC, fields: [frontmatter___date] }
     filter: { frontmatter: { templateKey: { eq: "blog-post" } } }
     limit: $limit
@@ -77,6 +80,28 @@ query BlogListQuery($skip: Int!, $limit: Int!) {
                 ...GatsbyImageSharpFluid
               }
             }
+          }
+        }
+      }
+    }
+  }
+  bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-blog" }}) {
+    frontmatter {
+      title
+      metakeywords
+      metadescription
+      subTitle
+      ogimage {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }

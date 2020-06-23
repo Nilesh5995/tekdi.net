@@ -13,6 +13,7 @@ const SolutionPage  =  ({data}) =>  {
         <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
         <SEO 
           title={bannerData.title}
@@ -62,12 +63,19 @@ export const pageQuery = graphql`
         }
       }
     }
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-platforms" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-solutions" }}) {
       frontmatter {
         title
         metakeywords
         metadescription
         ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

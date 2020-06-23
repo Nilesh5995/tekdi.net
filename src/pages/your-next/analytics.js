@@ -13,6 +13,7 @@ const AnalyticsPage  =  ({data}) =>  {
         <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
         <SEO 
           title={bannerData.title}
@@ -76,6 +77,13 @@ export const pageQuery = graphql`
         }
         subTitle
         description
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 .banner {
-    background-image:url('./images/banner.jpg');
+   // background-image:url('./images/banner.jpg');
     padding: 130px 0 70px 0;
     background-size: cover;
     background-repeat: no-repeat;
@@ -14,21 +14,6 @@
         height: 100%;
         width: 100%;
     }
-}
-.products-platforms .banner {
-    background-image:url('./images/product-banner.jpg');
-}
-.digital-evolution .banner {
-    background-image:url('./images/digital-banner.jpg');
-}
-.careers-page .banner {
-    background-image:url('./images/careers-banner.jpg');
-}
-.blog-page .banner {
-    background-image:url('./images/blog-banner.jpg');
-}
-.contact-page .banner {
-    background-image:url('./images/contact-banner.jpg');
 }
 .banner-text {
     transform: translateY(1%);
