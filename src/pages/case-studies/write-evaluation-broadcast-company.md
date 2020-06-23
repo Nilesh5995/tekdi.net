@@ -10,7 +10,7 @@ bannerSubTitle: Case Studies
 summary: 
 tags: 
    - publishing-media-news
-
+image: ""
 ---
 
 One of India's largest media companies required a platform to host a competition to recruit talent for their Writer training program, Internships and eventual recruitment. 

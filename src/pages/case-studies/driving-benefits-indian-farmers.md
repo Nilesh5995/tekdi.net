@@ -11,6 +11,7 @@ summary:
 tags: 
    - business-process-transformation
    - agriculture
+image: ""
 ---
 
 Kisan is a large food grain warehouse in central India with a storage capacity of 20,000 metric tonnes. Kisan was looking for a solution to manage the warehouse and granaries to improve operational efficiency, offer better rates and services to farmers and boost profits by leveraging a warehouse management system.

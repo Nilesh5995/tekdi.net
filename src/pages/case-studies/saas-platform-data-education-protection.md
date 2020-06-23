@@ -10,7 +10,7 @@ bannerSubTitle: Case Studies
 summary: 
 tags: 
    - product-engineering
-
+image: ""
 ---
 
 ## Background

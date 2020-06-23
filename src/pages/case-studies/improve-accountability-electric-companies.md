@@ -10,7 +10,7 @@ bannerSubTitle: Case Studies
 summary: 
 tags: 
    - not-for-profit
-
+image: ""
 ---
 
 Prayas is a non-profit working for interests of disadvantaged sections of society. The Energy group is one of the groups under Prayas working for "Comprehensive, analysis-based approach to further public interest in the energy sector with the goal of democratising energy governance through research and intervention in policy and regulatory areas; and offering training and support to civil society groups."
