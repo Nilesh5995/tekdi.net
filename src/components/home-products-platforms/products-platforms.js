@@ -41,7 +41,6 @@ class ProductsPlatforms extends React.Component {
            <div className="com-cover">
               <div className="text-center col-md-6 offset-md-3 mb-5" key={carouselHeader.id}>
                 <h2 className="com-heading text-black">{carouselHeader.frontmatter.title}</h2>
-                <p>{carouselHeader.frontmatter.homePageDescription}</p>
               </div>
               <div className="products-carousel">
                 <Swiper {...params}>
@@ -106,7 +105,6 @@ class ProductsPlatforms extends React.Component {
           carouselHeader:markdownRemark(frontmatter: { templateKey: { eq: "index-platforms" }}) {
             frontmatter {
               title
-              homePageDescription
             }
           }
         }

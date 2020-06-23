@@ -37,9 +37,8 @@ class SuccessStoriesCarousel extends React.Component {
         return (
           <div className="container">
             <div className="com-cover">
-              <div className="text-center col-md-6 offset-md-3 mb-5" key={carouselHeader.id}>
+              <div className="text-center col-md-6 offset-md-3 mb-4" key={carouselHeader.id}>
                   <h2 className="com-heading text-black">{carouselHeader.frontmatter.title}</h2>
-                  <p>{carouselHeader.frontmatter.homePageDescription}</p>
               </div>
               <div className="container">
                   <div className="industries-carousel row">
@@ -106,7 +105,6 @@ export default () => (
           carouselHeader:markdownRemark(frontmatter: { templateKey: { eq: "index-case-study" }}) {
             frontmatter {
               title
-              homePageDescription
             }
           }
         }

@@ -12,7 +12,6 @@ import ProductsPlatforms from '../components/home-products-platforms/products-pl
 import JoinUs from '../components/home-join-us/join-us';
 import TeamCulture from '../components/home-team-culture/team-culture';
 import Vision from '../components/home-vision/vision';
-import TestimonialCarousel from '../components/home-testimonial-carousel/testimonial-carousel';
 import Clients from '../components/home-clients/clients';
 import ContactUs from '../components/common/contact/contact';
 
@@ -29,6 +28,7 @@ const IndexPage = ({ data }) => {
       <Slideshow />
       <AboutUs />
       <DigitalTransformation />
+      <SuccessStoriesCarousel/>
       <div className="bg">
         <IndustriesCarousel />
         <ProductsPlatforms />
@@ -42,9 +42,8 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <SuccessStoriesCarousel/>
+      
       <Blogs/>
-      <TestimonialCarousel />
       <Clients />
       <ContactUs />
     </Layout>
