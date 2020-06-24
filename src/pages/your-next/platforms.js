@@ -4,6 +4,7 @@ import Banner from '../../components/common/banner/banner';
 import Layout from '.././../components/layout/baselayout';
 import renderList from '../../components/list-view/list-view';
 import SEO from '../../components/common/site-metadata';
+import ContactUs from '../../components/common/contact/contact';
 
 const PlatformsPage  =  ({data}) =>  {
   const lists = data.list.edges;
@@ -31,6 +32,7 @@ const PlatformsPage  =  ({data}) =>  {
               {lists.map(renderList)}
             </div>
           </div>
+          <ContactUs></ContactUs>
         </Layout>
       )
   }

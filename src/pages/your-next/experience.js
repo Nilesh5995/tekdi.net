@@ -4,6 +4,7 @@ import Banner from '../../components/common/banner/banner';
 import Layout from '.././../components/layout/baselayout';
 import renderList from '../../components/list-view/list-view';
 import SEO from '../../components/common/site-metadata';
+import ContactUs from '../../components/common/contact/contact';
 
 const ExperiencePage  =  ({data}) =>  {
   const lists = data.list.edges;
@@ -30,6 +31,7 @@ const ExperiencePage  =  ({data}) =>  {
             {lists.map(renderList)}
           </div>
         </div>
+        <ContactUs/>
       </Layout>
     )
   }

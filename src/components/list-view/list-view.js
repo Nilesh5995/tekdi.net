@@ -1,6 +1,7 @@
 import React from "react"
 import PreviewCompatibleImage from '../common/preview-compatible-image'
 import './list-view.scss';
+import ReactReadMoreReadLess from "react-read-more-read-less";
 const renderList = ({ node }) => {
   return (
      <div className="blog-list mb-5 pb-5" key={node.id}>
@@ -22,12 +23,22 @@ const renderList = ({ node }) => {
                 {node.frontmatter.title}
             </h3>
             <ul className="unstyled mb-4">
+              {node.frontmatter.subTitle && node.frontmatter.subTitle !=null ? 
               <li className="sub-title">
                {node.frontmatter.subTitle}
               </li>
+              : null}
             </ul>
             <p>
+            <ReactReadMoreReadLess
+                charLimit={500}
+                readMoreText={"Read more ▼"}
+                readLessText={"Read less ▲"}
+                readMoreClassName="sub-title"
+                readLessClassName="sub-title"
+            >
               {node.frontmatter.description}
+            </ReactReadMoreReadLess>
             </p>
           </div>
         </div>

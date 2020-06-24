@@ -1,6 +1,6 @@
 import React from 'react'; 
 import {Link} from 'gatsby';
-import {comapanyMenuData, technologyMenuData, servicesMenuData} from './footer-menu-data';
+import {comapanyMenuData, yourNextMenuData, servicesMenuData} from './footer-menu-data';
 import 'font-awesome/css/font-awesome.min.css';
 import Copyright from './copyright';
 import './footer.css';
@@ -59,11 +59,11 @@ const Footer = () => {
                             </nav>
                         </div>
                         <div className="footer-menu col-md-2 col-sm-4 col-xs-12">
-                            <h4 className="section-title text-uppercase">Technology</h4>
+                            <h4 className="section-title text-uppercase">Your Next</h4>
                             <nav>
-                                {technologyMenuData.length && (      
+                                {yourNextMenuData.length && (      
                                     <ul className="footer-menu-items unstyled">
-                                        { technologyMenuData.map (item => {
+                                        { yourNextMenuData.map (item => {
                                             //  const urlParts = item.url.split('#');
                                             //  if(urlParts.length > 1 ){
                                             //    return (<li key = {item.label} className="mb-3"><a href="#" role="link" data-link={item.url} onClick={jump}> {item.label} </a></li>)

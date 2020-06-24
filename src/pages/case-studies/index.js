@@ -4,6 +4,7 @@ import Banner from '../../components/common/banner/banner';
 import Layout from '.././../components/layout/baselayout';
 import SEO from '../../components/common/site-metadata';
 import PreviewCompatibleImage from '../../components/common/preview-compatible-image'
+import ContactUs from '../../components/common/contact/contact';
 
 const CaseStudyPage  =  ({data}) =>  {
   const lists = data.list.edges;
@@ -67,6 +68,7 @@ const CaseStudyPage  =  ({data}) =>  {
           }
           </div>
         </div>
+        <ContactUs/>
       </Layout>
     )
   }

@@ -1,13 +1,5 @@
 const comapanyMenuData = [
     {
-        label:'Team',
-        url:'#'
-    },
-    {
-        label:'Vision',
-        url:'#'
-    },
-    {
         label:'Careers',
         url:'/careers'
     },
@@ -21,18 +13,26 @@ const comapanyMenuData = [
     }
 ];
 
-const technologyMenuData = [
+const yourNextMenuData = [
     {
-        label:'Joomla',
-        url:'#'
+        label:'Digital Transformations',
+        url:'/your-next/digital-transformation'
     },
     {
-        label:'Angular',
-        url:'#'
+        label:'Platforms',
+        url:'/your-next/platforms'
     },
     {
-        label:'PHP & Frameworks',
-        url:'#'
+        label:'Solutions',
+        url:'/your-next/solutions'
+    },
+    {
+        label: 'Experience',
+        url: '/your-next/experience'
+    },
+    {
+        label: 'Analytics',
+        url: '/your-next/analytics'
     }
 ];
 
@@ -59,4 +59,4 @@ const servicesMenuData = [
     }
 ];
 
-export {comapanyMenuData, technologyMenuData, servicesMenuData}
+export {comapanyMenuData, yourNextMenuData, servicesMenuData}
