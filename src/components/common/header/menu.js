@@ -1,6 +1,7 @@
 import React, {useReducer} from 'react';
 import classNames from 'classnames';
 import {CSSTransition} from 'react-transition-group';
+import {Link} from 'gatsby';
 
 function menuReducer(state, action) {
   switch(action.type) {
@@ -57,9 +58,10 @@ const MainMenu = ({items}) => {
                 }
                 return (
                   <li key={submenu.label} className={classNames({'active': isMenuActiveInternal})}>
-                    <a href={submenu.link}>
+                    {/* <a href={submenu.link}>
                       {submenu.label}
-                    </a>
+                    </a> */}
+                    <Link to={submenu.link}> {submenu.label} </Link>
                   </li>
                 );
               });
@@ -76,9 +78,10 @@ const MainMenu = ({items}) => {
             );
             return (
               <li key={item.label} className={classNameForItem}>
-                <a href={item.link} title={item.title} {...props}>
+                {/* <a href={item.link} title={item.title} {...props}>
                   <span>{item.label}</span>
-                </a>
+                </a> */}
+                <Link to={item.link} {...props}> {item.label} </Link>
                 {submenuD && <CSSTransition in={menuState[item.key]} timeout={300} classNames="submenu" >
                   <div className="submenu">
                       <ul>
