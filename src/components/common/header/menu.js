@@ -31,7 +31,7 @@ const MainMenu = ({items}) => {
   const [menuState, dispatch] = useReducer(menuReducer, initialState);
 
   var url =  typeof window !== 'undefined' ? window.location.pathname : '';
-
+  url = url.replace(/\/$/, "");
   return (
     <nav className="mainmenu" role="navigation" aria-label="main-navigation">
       <div id="navMenu" className="navbar-menu ">
@@ -65,7 +65,6 @@ const MainMenu = ({items}) => {
               });
             }
 
-            
             const classNameForItem = classNames(
               'menu-item',
               {

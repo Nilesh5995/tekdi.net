@@ -49,7 +49,7 @@ export const menuData = [
         label:'Success Stories',
         link:'/case-studies',
         key: 'case-studies',
-        className: 'case-studiest',
+        className: 'case-studies',
     },
     {
         label:'Careers',

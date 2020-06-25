@@ -70,7 +70,7 @@ class IndustriesCarousel extends React.Component {
                                     {post.frontmatter.description.substring(0,130)+"..."}
                                       <br/>
                                       <br/>
-                                      <Link to={post.fields.slug} className="font-weight-bold">View More </Link>
+                                      <Link to={'/industries/'} className="font-weight-bold">View More </Link>
                                     </p>
                                   </div>
                               </div>
