@@ -1,12 +1,15 @@
 @import "../common/scss/mixins.scss";
 .blog-list {
     letter-spacing: 0.5px;
-    border-bottom: 1px solid #ccc;
 
     &:last-child {
         border-bottom: none;
     }
     h3.blog-title {
+        border-left: 5px solid $anchor-blue-color;
+        padding-left: 10px;    
+    }
+    h3.blog-title a {
         font-size: 24px;
         line-height: 32px;
         font-weight: 700;
