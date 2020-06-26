@@ -32,10 +32,10 @@ const renderList = ({ node }) => {
             <p>
             <ReactReadMoreReadLess
                 charLimit={500}
-                readMoreText={"Read more ▼"}
-                readLessText={"Read less ▲"}
-                readMoreClassName="sub-title"
-                readLessClassName="sub-title"
+                readMoreText={"Keep Reading"}
+                readLessText={"Read less "}
+                readMoreClassName="read-more"
+                readLessClassName="read-more"
             >
               {node.frontmatter.description}
             </ReactReadMoreReadLess>
