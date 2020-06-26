@@ -7,10 +7,8 @@ import SEO from '../../components/common/site-metadata';
 import ContactUs from '../../components/common/contact/contact';
 
 const DigitalTransFormationPage  =  ({data}) =>  {
-  console.log(data.bannerData,'data.bannerData')
   const lists = data.list.edges;
   const bannerData = data.bannerData.frontmatter
-  console.log(bannerData, 'bannerData')
     return (
       <Layout>
         <Banner
@@ -43,7 +41,7 @@ export default DigitalTransFormationPage;
 
 export const pageQuery = graphql`
   query DigitalTransFormationPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "digital-transformation" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "digital-transformation" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
           excerpt(pruneLength: 200)

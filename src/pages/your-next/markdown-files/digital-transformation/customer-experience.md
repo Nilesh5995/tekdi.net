@@ -1,5 +1,6 @@
 ---
 templateKey: digital-transformation
+index: 2
 title: Customer Experience
 subTitle: Customer Experience Sub title
 

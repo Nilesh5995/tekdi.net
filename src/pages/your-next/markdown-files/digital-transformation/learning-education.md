@@ -1,5 +1,6 @@
 ---
 templateKey: digital-transformation
+index: 1
 title: Learning and Education
 subTitle: Learning and Education
 

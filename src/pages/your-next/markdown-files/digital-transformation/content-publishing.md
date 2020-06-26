@@ -1,5 +1,6 @@
 ---
 templateKey: digital-transformation
+index: 3
 title: Content Publishing
 subTitle:
 

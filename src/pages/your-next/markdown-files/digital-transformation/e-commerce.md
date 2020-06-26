@@ -1,5 +1,6 @@
 ---
 templateKey: digital-transformation
+index: 4
 title: e-Commerce & Marketplaces
 subTitle:  e-Commerce & Marketplaces
 
