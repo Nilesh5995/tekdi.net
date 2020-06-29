@@ -40,7 +40,7 @@ const MainMenu = ({items}) => {
           {items.map(item => {
             let props = {};
 
-            if (item.link === '#') {
+            if (item.link === '#' ||item.className === 'parent' ) {
               props.onClick = e => {
                 e.preventDefault();
                 dispatch({type: 'show', key: item.key});
