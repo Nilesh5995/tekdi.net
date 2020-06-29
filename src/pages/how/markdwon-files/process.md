@@ -1,5 +1,6 @@
 ---
 templateKey: how
+index: 1
 title: Process
 subTitle: Process Sub title
 image: /img/your-next/mobile-development.png

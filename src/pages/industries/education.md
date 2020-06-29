@@ -1,5 +1,6 @@
 ---
 templateKey: industries
+index: 1
 title: Education
 subTitle: 
 

@@ -1,5 +1,6 @@
 ---
 templateKey: platforms
+index: 1
 title: Enterprise
 subTitle: 
 

@@ -1,5 +1,6 @@
 ---
 templateKey: how
+index: 4
 title: Consulting
 subTitle: Consulting Sub title
 image: /img/your-next/mobile-development.png

@@ -95,7 +95,7 @@ export default () => (
     query={graphql`
       query DigitalTransFormationCarouselQuery {
         carouselList:allMarkdownRemark(
-          sort: { order: DESC, fields: [frontmatter___date] }
+          sort: { fields: [frontmatter___index] }
           filter: { frontmatter: { templateKey: { eq: "digital-transformation" } } }
         ) {
           edges {
@@ -109,6 +109,7 @@ export default () => (
                 date(formatString: "DD MMMM YYYY")
                 title
                 description
+                index
                 image {
                   childImageSharp {
                     fluid(maxWidth: 250, quality: 100) {

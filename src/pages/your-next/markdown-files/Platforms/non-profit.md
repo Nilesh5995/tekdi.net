@@ -1,5 +1,6 @@
 ---
 templateKey: platforms
+index: 3
 title: Non-Profit
 
 image: /img/your-next/non-profits.png

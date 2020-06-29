@@ -1,5 +1,6 @@
 ---
 templateKey: industries
+index: 2
 title: Government and Public Sector
 subTitle: 
 

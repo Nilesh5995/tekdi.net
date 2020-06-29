@@ -1,5 +1,6 @@
 ---
 templateKey: what
+index: 4
 title: MVP
 subTitle: MVP Sub title
 image: /img/your-next/web-development.png

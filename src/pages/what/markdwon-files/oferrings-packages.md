@@ -1,5 +1,6 @@
 ---
 templateKey: what
+index: 1
 title: Oferrings & Packages
 subTitle: Oferrings & Packages Sub title
 image: /img/your-next/demo-image.png

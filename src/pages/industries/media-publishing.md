@@ -1,5 +1,6 @@
 ---
 templateKey: industries
+index: 3
 title:  Media and Publishing
 subTitle:  
 

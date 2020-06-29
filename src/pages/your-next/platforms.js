@@ -41,7 +41,7 @@ export default PlatformsPage;
 
 export const pageQuery = graphql`
   query PlatformsPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "platforms" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "platforms" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -54,6 +54,7 @@ export const pageQuery = graphql`
             templateKey
             subTitle
             description
+            index
             image  {
               childImageSharp {
                 fluid(maxWidth: 200, quality: 100) {

@@ -1,5 +1,6 @@
 ---
 templateKey: how
+index: 3
 title: Spirit of Opensource
 subTitle: Spirit of Opensource Sub title
 image: /img/your-next/web-development.png

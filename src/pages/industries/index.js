@@ -40,7 +40,7 @@ export default IndustriesPage;
 
 export const pageQuery = graphql`
   query IndustriesPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "industries" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "industries" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
             templateKey
             subTitle
             description
+            index
             image  {
               childImageSharp {
                 fluid(maxWidth: 200, quality: 100) {

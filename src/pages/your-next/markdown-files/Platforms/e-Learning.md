@@ -1,5 +1,6 @@
 ---
 templateKey: platforms
+index: 2
 title: e-Learning
 subTitle:
 

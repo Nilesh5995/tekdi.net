@@ -1,5 +1,6 @@
 ---
 templateKey: analytics
+index: 1
 title: Data Analytics
 subTitle: 
 

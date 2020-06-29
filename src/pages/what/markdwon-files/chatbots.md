@@ -1,5 +1,6 @@
 ---
 templateKey: what
+index: 3
 title: Chatbots
 subTitle: Chatbots Sub title
 image: /img/your-next/mobile-development.png

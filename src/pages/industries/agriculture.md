@@ -1,5 +1,6 @@
 ---
 templateKey: industries
+index: 4
 title: Agriculture
 subTitle: 
 image: /img/industries/industry-agriculture.png

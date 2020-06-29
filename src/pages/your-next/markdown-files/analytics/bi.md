@@ -1,5 +1,6 @@
 ---
 templateKey: analytics
+index: 2
 title: Business Intelligence
 subTitle: 
 

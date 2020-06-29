@@ -40,7 +40,7 @@ export default WhatPage;
 
 export const pageQuery = graphql`
   query WhatPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "what" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "what" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -53,6 +53,7 @@ export const pageQuery = graphql`
             templateKey
             subTitle
             description
+            index
             image  {
               childImageSharp {
                 fluid(maxWidth: 200, quality: 100) {

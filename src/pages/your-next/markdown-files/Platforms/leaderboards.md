@@ -1,5 +1,6 @@
 ---
 templateKey: platforms
+index: 4
 title: Leaderboards
 subTitle: 
 
