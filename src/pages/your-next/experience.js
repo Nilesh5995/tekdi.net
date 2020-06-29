@@ -12,8 +12,9 @@ const ExperiencePage  =  ({data}) =>  {
     return (
       <Layout>
         <Banner
-            bannerTitle= {bannerData.title}
+            bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
         <SEO 
           title={bannerData.title}
@@ -69,6 +70,8 @@ export const pageQuery = graphql`
         title
         metakeywords
         metadescription
+        subTitle
+        description
         ogimage {
           childImageSharp {
             fluid(quality: 100) {
@@ -76,8 +79,13 @@ export const pageQuery = graphql`
             }
           }
         }
-        subTitle
-        description
+        image  {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }
