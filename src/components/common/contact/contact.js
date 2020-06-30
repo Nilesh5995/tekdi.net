@@ -123,7 +123,7 @@ export class ContactUs extends React.Component {
           <div className="row pt-5 pb-5">
             <div className="col-md-10 offset-md-1">
               <h2 className="com-heading text-center text-white mb-3">
-                Let's transform your business today
+                Transform your business today
               </h2>
               <form  onSubmit={this.handleSubmit}> 
               <ReCaptcha

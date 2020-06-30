@@ -1,16 +1,16 @@
 ---
 templateKey: case-study
 title: Cloud-based Interview Management System
-metakeywords: ["", ""]
+metakeywords: ["video interview", "hiring software", "cloud", "SaaS"]
 metadescription: 
-ogimage: /img/tekdi-logo.png
+ogimage: /img/case-studies/large_interview.png
 
 bannerSubTitle: Case Studies
 
 summary: 
 tags: 
    - business-process-transformation
-image: ""
+image: /img/case-studies/large_interview.png
 
 index: 7
 ---

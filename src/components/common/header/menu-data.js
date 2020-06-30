@@ -70,28 +70,4 @@ export const menuData = [
         key: 'case-studies',
         className: 'case-studies',
     },
-    {
-        label:'Careers',
-        link:'/careers',
-        key: 'careers',
-        className: 'careers',
-    },
-    {
-        label:'Blog',
-        link:'/blog',
-        key: 'blog',
-        className: 'blog',
-    },
-    {
-        label:'Company',
-        link:'/company',
-        key:'company',
-        className: 'company',
-    },
-    {
-        label:'Contact',
-        link:'/contact',
-        key: 'contact',
-        className: 'contact',
-    }
 ];

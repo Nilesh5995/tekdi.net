@@ -1,10 +1,12 @@
 ---
 templateKey: index-case-study
-metakeywords: ["Success story", ""]
+metakeywords: ["Case Studies", "Success Stories", "Marque Projects"]
 metadescription:
-ogimage: /img/tekdi-logo.png
+ogimage: 
+
 title: Success Stories
 subTitle: Success Stories
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est ultricies metus hendrerit luctus. Proin at commodo erat. Vestibulum non pharetra arcu, vel vulputate augue. Nam dignissim nisi id nisi eleifend, feugiat rhoncus mauris cursus. Fusce in aliquam tortor. Morbi placerat mi eget orci pellentesque, non consequat nulla posuere. Vestibulum tincidunt consectetur arcu, ac ultricies sem. Donec volutpat lacinia elit, auctor ullamcorper mi pellentesque ac. Nulla ultricies nunc est, sed consequat nulla aliquet ac.
-image: ""
+description: Here is some of our most interesting work. We work with organisations ranging from startups to large corporations, this has given us the experience of building solutions that scale.
+
+image: /img/case-studies/bg-success-stories.jpg
 ---
