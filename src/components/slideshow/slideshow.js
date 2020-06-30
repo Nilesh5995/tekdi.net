@@ -11,8 +11,9 @@ class Slideshow extends React.Component {
     render(){
         const { data } = this.props
         const { edges: posts } = data.allMarkdownRemark
-
-        const params = {
+        let params;
+      if (posts.length > 1) {
+         params = {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
@@ -20,8 +21,8 @@ class Slideshow extends React.Component {
             },
             grabCursor: true,
             loop:true
-        }          
-  
+        }
+      }
         return (
             <div className="slideshow">
                 <div className="container"> 
@@ -85,6 +86,6 @@ export default () => (
           }
         }
       `}
-      render={(data, count) => <Slideshow data={data} count={count} />}
+      render={(data) => <Slideshow data={data}/>}
     />
   )
