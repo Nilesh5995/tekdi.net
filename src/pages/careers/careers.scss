@@ -1,0 +1,46 @@
+@import '../../components/common/scss/mixins.scss';
+
+.careers-box {
+    &:hover {
+        -webkit-box-shadow: 0px 0px 30px 1px rgba(0,0,0,0.1);
+        -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
+        box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.1);
+    }
+}
+
+hr {
+    border:none;
+    border-top:1px dotted #00d0d2;
+    color:#fff;
+    background-color:#fff;
+    height:1px;
+  }
+
+  .opening-list {
+    letter-spacing: 0.5px;
+
+    &:last-child {
+        border-bottom: none;
+    }
+    h3.post-title a {
+        font-size: 24px;
+        line-height: 32px;
+        font-weight: 700;
+        color: #000;
+        }
+        .careers-box li {
+            display: inline-block;
+        }
+}
+    .btn-apply {
+        @include anchor-style;
+        outline: 0;
+        border: none;
+        background: transparent;
+    }
+
+    .single-position li {
+        display: inline-block;
+    }
+
+

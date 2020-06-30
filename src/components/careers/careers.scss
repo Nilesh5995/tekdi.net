@@ -58,12 +58,12 @@
             color: #000;
         }
     }
-    .btn-apply {
-        @include anchor-style;
-        outline: 0;
-        border: none;
-        background: transparent;
-    }
+    // .btn-apply {
+    //     @include anchor-style;
+    //     outline: 0;
+    //     border: none;
+    //     background: transparent;
+    // }
 }
 @media (min-width: 576px) {
     .Collapsible__trigger {
@@ -110,5 +110,11 @@
         height: 30px;
         line-height: 26px;
         font-size: 25px;
+    }
+    .btn-apply {
+        @include anchor-style;
+        outline: 0;
+        border: none;
+        background: transparent;
     }
 }

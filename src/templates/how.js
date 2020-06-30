@@ -4,7 +4,6 @@ import Banner from '../components/common/banner/banner';
 import Layout from '../components/layout/baselayout';
 import SEO from '../components/common/site-metadata';
 import ContactUs from '../components/common/contact/contact';
-import BackgroundImage from 'gatsby-background-image'
 import Content, { HTMLContent } from '../components/common/content';
 
 export const HtmlContents = ({

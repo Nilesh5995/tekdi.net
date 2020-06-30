@@ -17,7 +17,6 @@ import React, { Fragment } from 'react'
     const { data } = this.props
     const posts = this.props.data.blogList.edges;
     const bannerData  = data.bannerData.frontmatter
-    console.log(bannerData)
     const { currentPage, numPages } = this.props.pageContext
 
     return (

@@ -56,7 +56,7 @@ exports.createPages = ({ actions, graphql }) => {
           }
         }
       }
-      pages:allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: { in: ["blog-post", "case-study", "how"]}}}) {
+      pages:allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: { in: ["blog-post", "case-study", "how", "positions"]}}}) {
           edges {
             node {
               id
