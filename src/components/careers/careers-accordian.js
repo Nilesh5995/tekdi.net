@@ -29,7 +29,7 @@ class Openingslist extends React.Component {
           <ul className="unstyled mb-4 list">
             <li className="mr-4">Type <span className="text-black">{post.frontmatter.type}</span></li>
             <li className="mr-4">Location <span className="text-black">{post.frontmatter.location}</span></li>
-            <li className="mr-4">Posts <span className="text-black">{post.frontmatter.vacancy}</span></li>
+            {/* <li className="mr-4">Posts <span className="text-black">{post.frontmatter.vacancy}</span></li> */}
           </ul>
           <div className="main-content">
             <PositionDetails
@@ -72,7 +72,6 @@ export default () => (
                 heading
                 type
                 location
-                vacancy
               }
             }
           }
