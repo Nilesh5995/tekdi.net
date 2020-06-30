@@ -52,7 +52,7 @@ const CareersIndexPage =  ({data}) => {
                       </div>
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
                       <Link className="open-position" to={post.fields.slug}>
-                          Open
+                      Know More
                         </Link>
                       </div>
                     </div>
