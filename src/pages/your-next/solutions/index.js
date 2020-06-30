@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Banner from '../../components/common/banner/banner';
-import Layout from '.././../components/layout/baselayout';
-import renderList from '../../components/list-view/list-view';
-import SEO from '../../components/common/site-metadata';
-import ContactUs from '../../components/common/contact/contact';
+import Banner from '../../../components/common/banner/banner';
+import Layout from '../.././../components/layout/baselayout';
+import renderList from '../../../components/list-view/list-view';
+import SEO from '../../../components/common/site-metadata';
+import ContactUs from '../../../components/common/contact/contact';
 
 const SolutionPage  =  ({data}) =>  {
   const lists = data.list.edges;
@@ -44,6 +44,7 @@ export const pageQuery = graphql`
     list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "solutions" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
+          html
           excerpt(pruneLength: 200)
           id
           fields {

@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from 'gatsby';
 import PreviewCompatibleImage from '../common/preview-compatible-image'
 import './list-view.scss';
 import ReactReadMoreReadLess from "react-read-more-read-less";
@@ -30,15 +31,16 @@ const renderList = ({ node }) => {
               : null}
             </ul>
             <p>
-            <ReactReadMoreReadLess
+            {/* <ReactReadMoreReadLess
                 charLimit={500}
                 readMoreText={"Keep Reading"}
                 readLessText={"Read less "}
                 readMoreClassName="read-more"
                 readLessClassName="read-more"
             >
-              {node.frontmatter.description}
-            </ReactReadMoreReadLess>
+            </ReactReadMoreReadLess> */}
+               {node.frontmatter.description}
+              {node.html && node.html !== ""? <Link to={node.fields.slug}>{node.fields.slug}</Link> : null}
             </p>
           </div>
         </div>

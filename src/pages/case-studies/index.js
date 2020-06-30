@@ -14,6 +14,7 @@ const CaseStudyPage  =  ({data}) =>  {
         <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
         <SEO 
           title={bannerData.title}
@@ -80,6 +81,7 @@ export const pageQuery = graphql`
     list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "case-study" } } }) {
       edges {
         node {
+          html
           excerpt(pruneLength: 250)
           id
           fields {
@@ -107,6 +109,13 @@ export const pageQuery = graphql`
         metakeywords
         metadescription
         ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid
