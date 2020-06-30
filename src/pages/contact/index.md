@@ -5,8 +5,8 @@ metakeywords: ["", ""]
 metadescription: 
 ogimage: /img/tekdi-logo.png
 image: /img/banner/contact.jpg
-
-bannerSubTitle: Reach us
+subTitle: Reach us
+tagLine: '"Transform your business today. First consultation is on us!"'
 ---
 
 

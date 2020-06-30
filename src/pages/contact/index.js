@@ -20,7 +20,7 @@ const ContactPage = ({ data }) => {
       <div className="contact-page">
         <Banner 
           bannerTitle= {frontmatter.title} 
-          bannerSubTitle = { frontmatter.bannerSubTitle}
+          bannerSubTitle = { frontmatter.subTitle}
           image = { frontmatter.image}
         />
         <div className="container py-5 contact-us">
@@ -30,7 +30,7 @@ const ContactPage = ({ data }) => {
                 <div className="col-md-6 col-xs-12 mt-7 pt-7">
                 <br/><br/><br/>
                   <h3 className="font-weight-bold  text-black com-heading mt-7">
-                  "Transform your business today. First consultation is on us!"
+                  {frontmatter.tagLine}
                   </h3>
                 </div>  
                 <div className="col-md-6 col-xs-12 ">
@@ -67,6 +67,7 @@ export const pageQuery = graphql`
         bannerSubTitle
         metakeywords
         metadescription
+        tagLine
         ogimage {
           childImageSharp {
             fluid(quality: 100) {
