@@ -64,7 +64,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "contact-page" } }) {
       frontmatter {
         title
-        bannerSubTitle
+        subTitle
         metakeywords
         metadescription
         tagLine
