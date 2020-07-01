@@ -16,7 +16,7 @@ export const HtmlContents = ({
   )
 }
 
-const ProcessPage  =  ({data}) =>  {
+const IndustriesTemplate  =  ({data}) =>  {
   const pageData = data.pageData;
   const bannerData = data.bannerData.frontmatter
     return (
@@ -26,10 +26,10 @@ const ProcessPage  =  ({data}) =>  {
             bannerSubTitle = {bannerData.title}
             image = {bannerData.image}
           />
-        {/* <SEO
+        {/* <SEO 
           title = {bannerData.title}
           metakeywords = {bannerData.metakeywords}
-          metadescription = {bannerData.metadescription}
+          metadescription ={bannerData.metadescription}
           ogimage = {bannerData.ogimage}
         /> */}
         <div className="container py-5">
@@ -47,10 +47,10 @@ const ProcessPage  =  ({data}) =>  {
     )
   }
 
-export default ProcessPage;
+export default IndustriesTemplate;
 
 export const pageQuery = graphql`
-  query ProcessPageTemplate($id: String!) {
+  query IndustriesTemplate($id: String!) {
     pageData:markdownRemark(id: { eq: $id }) {
       html
           frontmatter {
@@ -69,7 +69,7 @@ export const pageQuery = graphql`
           }
         }
 
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-how" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-industries" }}) {
       frontmatter {
         title
         metakeywords
@@ -81,9 +81,9 @@ export const pageQuery = graphql`
             }
           }
         }
-        image {
+        image  {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid(maxWidth: 100, quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -23,7 +23,7 @@ const renderList = ({ node }) => {
                 {node.frontmatter.title}
             </h3>
             <ul className="unstyled mb-4">
-              {node.frontmatter.subTitle && node.frontmatter.subTitle !=null ? 
+              {node.frontmatter.subTitle && node.frontmatter.subTitle !=null ?
               <li className="sub-title">
                {node.frontmatter.subTitle}
               </li>
@@ -31,9 +31,7 @@ const renderList = ({ node }) => {
             </ul>
             <p>
                {node.frontmatter.description}
-              <br />
-              <br />
-              {node.html && node.html !== ""? <Link class="read-more" to={node.fields.slug}>{"keep Reading"}</Link> : null}
+              {node.html && node.html !== "" ? <span><br/><br/><Link class="read-more" to={node.fields.slug}>{"Keep Reading"}</Link></span> : null}
             </p>
           </div>
         </div>

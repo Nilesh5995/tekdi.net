@@ -8,18 +8,20 @@ import ContactUs from '../../components/common/contact/contact';
 
 const IndustriesPage  =  ({data}) =>  {
   const lists = data.list.edges;
+  console.log(lists)
   const bannerData = data.bannerData.frontmatter
     return (
       <Layout>
         <Banner
-            bannerTitle= {bannerData.title}
+            bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
         <SEO
-          title={bannerData.title}
-          metakeywords= {bannerData.metakeywords}
-          metadescription={bannerData.metadescription}
-          ogimage={bannerData.ogimage}
+          title = {bannerData.title}
+          metakeywords = {bannerData.metakeywords}
+          metadescription = {bannerData.metadescription}
+          ogimage = {bannerData.ogimage}
         />
         <div className="container py-5">
           <div className="col-md-12">
@@ -44,6 +46,7 @@ export const pageQuery = graphql`
       edges {
         node {
           excerpt(pruneLength: 200)
+          html
           id
           fields {
             slug
@@ -79,6 +82,13 @@ export const pageQuery = graphql`
         }
         subTitle
         description
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
   }

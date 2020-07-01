@@ -1,4 +1,3 @@
-
 import Layout from '../components/layout/baselayout';
 import BlogPagination from '../components/blog/pagination';
 import renderList from '../components/blog/blog-list';
@@ -11,13 +10,18 @@ import lodash from "lodash"
 
 class BlogCategoryPage extends React.Component {
   render() {
-    const posts = this.props.data.allMarkdownRemark.edges
+    const posts = this.props.data.blogList.edges
+    const bannerData  = this.props.data.bannerData.frontmatter
     const { currentPage, numPages, category} = this.props.pageContext
-    console.log(this.props.pageContext);
+
     return (
       <Layout>
         <div className="blog-page">
-        <Banner bannerTitle= "blogs" bannerSubTitle = "blogs"/> 
+        <Banner
+            bannerTitle = {bannerData.title}
+            bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
+          />
         <div className="container py-5">
           <div className="row">
             <Fragment>
@@ -47,7 +51,7 @@ export default BlogCategoryPage;
 
 export const blogCategoryListQuery = graphql`
 query BlogListCategoryQuery($category: String,$skip: Int!, $limit: Int!) {
-  allMarkdownRemark(
+  blogList:allMarkdownRemark(
     sort: { order: DESC, fields: [frontmatter___date] }
     filter: {frontmatter: {templateKey: {eq: "blog-post"}, category: {in: [$category]}}}
     limit: $limit
@@ -73,6 +77,28 @@ query BlogListCategoryQuery($category: String,$skip: Int!, $limit: Int!) {
                 ...GatsbyImageSharpFluid
               }
             }
+          }
+        }
+      }
+    }
+  }
+  bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-blog" }}) {
+    frontmatter {
+      title
+      metakeywords
+      metadescription
+      subTitle
+      ogimage {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      image {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }

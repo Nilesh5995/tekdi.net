@@ -9,17 +9,19 @@ import ContactUs from '../../components/common/contact/contact';
 const WhatPage  =  ({data}) =>  {
   const lists = data.list.edges;
   const bannerData = data.bannerData.frontmatter
+  console.log(bannerData, 'bannerData')
     return (
       <Layout>
         <Banner
-            bannerTitle= {bannerData.title}
+            bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
           />
         <SEO 
-          title={bannerData.title}
-          metakeywords= {bannerData.metakeywords}
-          metadescription={bannerData.metadescription}
-          ogimage={bannerData.ogimage}
+          title = {bannerData.title}
+          metakeywords = {bannerData.metakeywords}
+          metadescription = {bannerData.metadescription}
+          ogimage = {bannerData.ogimage}
         />
         <div className="container py-5">
           <div className="col-md-12">
@@ -72,6 +74,13 @@ export const pageQuery = graphql`
         metakeywords
         metadescription
         ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

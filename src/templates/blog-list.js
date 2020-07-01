@@ -22,11 +22,11 @@ import React, { Fragment } from 'react'
     return (
       <Layout>
         <SEO 
-          title="Blogs"
+          title = "Blogs"
         />
         <div className="blog-page">
           <Banner 
-            bannerTitle= {bannerData.title}
+            bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
             image = {bannerData.image}
           /> 

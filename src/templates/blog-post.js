@@ -27,7 +27,6 @@ export const BlogPostTemplate = ({
 
   return (
     <section className="section">
-
       <div className="container">
         <div className="blog-detail">
           <div className="">
@@ -75,19 +74,24 @@ BlogPostTemplate.propTypes = {
 }
 
 const BlogPost = ({ data }) => {
-  const { markdownRemark: post } = data
+  const { postData : post } = data
+  const bannerData  = data.bannerData.frontmatter
 
   return (
     
     <Layout>
       <SEO 
-         title={post.frontmatter.title}
-         metakeywords= {post.frontmatter.metakeywords}
-         metadescription={post.frontmatter.metadescription}
-         ogimage={post.frontmatter.ogimage}
+         title = {post.frontmatter.title}
+         metakeywords = {post.frontmatter.metakeywords}
+         metadescription = {post.frontmatter.metadescription}
+         ogimage = {post.frontmatter.ogimage}
       />
       <div className="blog-page">
-      <Banner />
+      <Banner 
+            bannerTitle = {bannerData.title}
+            bannerSubTitle = {bannerData.subTitle}
+            image = {bannerData.image}
+          /> 
        <div className="container py-5">
         <div className="row">
           <div className="col-md-9">
@@ -125,7 +129,7 @@ export default BlogPost
 
 export const pageQuery = graphql`
   query BlogPostByID($id: String!) {
-    markdownRemark(id: { eq: $id }) {
+    postData:markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 200)
       html
@@ -151,6 +155,28 @@ export const pageQuery = graphql`
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-blog" }}) {
+      frontmatter {
+        title
+        metakeywords
+        metadescription
+        subTitle
+        ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image {
+          childImageSharp {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }

@@ -33,9 +33,9 @@ const PositionPage  =  ({data}) =>  {
              {position.title}
           </h3>
           <ul className="unstyled mb-4 list">
-            <li className="mr-4">Type <span className="text-black">{position.type}</span></li>
-            <li className="mr-4">Location <span className="text-black">{position.location}</span></li>
-            <li className="mr-4">Posts <span className="text-black">{position.vacancy}</span></li>
+            <li className="mr-4">Type - <span className="text-black">{position.type}</span></li>
+            <li className="mr-4">Location - <span className="text-black">{position.location}</span></li>
+            {/* <li className="mr-4">Posts <span className="text-black">{position.vacancy}</span></li> */}
           </ul>
           <div className="main-content">
             <PositionDetails
@@ -66,7 +66,6 @@ export const pageQuery = graphql`
                 heading
                 type
                 location
-                vacancy
           }
         }
         bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-careers" }}) {

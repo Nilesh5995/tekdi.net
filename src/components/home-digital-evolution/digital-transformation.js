@@ -76,7 +76,7 @@ class DigitalTransformation extends React.Component {
                       {post.frontmatter.description.substring(0,130)+"..."}
                       </p>
                       <p>
-                        <Link className="read-more font-weight-normal" to={post.fields.slug}>View More</Link>
+                        <Link className="read-more font-weight-normal" to={"your-next/digital-transformation"}>View More</Link>
                       </p>
                     </div>
                   </div>

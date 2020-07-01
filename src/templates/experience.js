@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Banner from '../components/common/banner/banner';
 import Layout from '../components/layout/baselayout';
-import SEO from '../components/common/site-metadata';
+//import SEO from '../components/common/site-metadata';
 import ContactUs from '../components/common/contact/contact';
 import Content, { HTMLContent } from '../components/common/content';
 
@@ -22,15 +22,16 @@ const ExperienceTemplate  =  ({data}) =>  {
     return (
       <Layout>
         <Banner
-            bannerTitle= {pageData.frontmatter.title}
-            bannerSubTitle = {pageData.frontmatter.subTitle}
+            bannerTitle = {pageData.frontmatter.title}
+            bannerSubTitle = {bannerData.title}
+            image = {bannerData.image}
           />
-        <SEO 
-          title={bannerData.title}
-          metakeywords= {bannerData.metakeywords}
-          metadescription={bannerData.metadescription}
-          ogimage={bannerData.ogimage}
-        />
+        {/* <SEO 
+          title = {bannerData.title}
+          metakeywords = {bannerData.metakeywords}
+          metadescription = {bannerData.metadescription}
+          ogimage = {bannerData.ogimage}
+        /> */}
         <div className="container py-5">
           <div className="col-md-12">
           <div className="main-content">
@@ -68,12 +69,19 @@ export const pageQuery = graphql`
           }
         }
 
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-platforms" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-experience" }}) {
       frontmatter {
         title
         metakeywords
         metadescription
         ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        image {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid
