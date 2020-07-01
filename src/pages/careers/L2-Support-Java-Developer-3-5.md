@@ -40,7 +40,7 @@ You will be responsible for Level 2 production support to handle the tickets rai
 * Strong service orientation
 * ITIL Certification a plus
 * Excellent customer communication skills
-* Strong Experience in**Core Java, Spring, Maven, AKKA framework (Nice to Have)
+* Strong Experience in Core Java, Spring, Maven, AKKA framework (Nice to Have)
 * Experience in developing and using REST APIs on Spring-MVC, Play Framework is critical.
 * Two year of working experience in any one DB of Neo4j, Cassandra, ElasticSearch is preferable
 * Exposure to Samza & Kafka is added advantage

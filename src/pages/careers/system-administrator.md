@@ -33,7 +33,7 @@ You will be accountable for maintaining the organisational IT infrastructure. Yo
 * Working knowledge of hardware, and networking protocols: Subnet, DHCP, DNS, Firewalls, VPN, L1 Switch.
 * Experienced with Web Servers : Apache, Nginx, LAMP Stack, SSL Configuration.
 * Set up and configure Ubuntu/Other Linux on desktop and laptops
-* xperienced in Shell/Bash Scripting.
+* Experienced in Shell/Bash Scripting.
 * Familiar with GIT, Ansible and Jenkins
 * Common issues troubleshooting for Linux and Windows
 
