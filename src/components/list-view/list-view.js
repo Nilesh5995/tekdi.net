@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from 'gatsby';
 import PreviewCompatibleImage from '../common/preview-compatible-image'
 import './list-view.scss';
-import ReactReadMoreReadLess from "react-read-more-read-less";
 const renderList = ({ node }) => {
   return (
      <div className="blog-list mb-5 pb-5" key={node.id}>
@@ -31,16 +30,10 @@ const renderList = ({ node }) => {
               : null}
             </ul>
             <p>
-            {/* <ReactReadMoreReadLess
-                charLimit={500}
-                readMoreText={"Keep Reading"}
-                readLessText={"Read less "}
-                readMoreClassName="read-more"
-                readLessClassName="read-more"
-            >
-            </ReactReadMoreReadLess> */}
                {node.frontmatter.description}
-              {node.html && node.html !== ""? <Link to={node.fields.slug}>{node.fields.slug}</Link> : null}
+              <br />
+              <br />
+              {node.html && node.html !== ""? <Link class="read-more" to={node.fields.slug}>{"keep Reading"}</Link> : null}
             </p>
           </div>
         </div>
