@@ -7,7 +7,7 @@ location: Bangalore
 vacancy: '1'
 ---
 
-Experience - 3 - 5 years
+Experience - **3 - 5 years**
 
 Are you a Passionate about Technology Aesthetics, ambitious Mean Stack Developer who is an expert in Javascript with a minimum of 3 years of experience and looking for a challenging role where you can learn a lot more?
 
@@ -53,4 +53,4 @@ We at Tekdi Technologies are looking for an enthusiastic, skilled and self-motiv
 * Creative & forward-thinking (Sustainable solutioning) 
 * Stays on top of new technologies and industry trends and shares knowledge across the teams. 
 
-Qualification - BCA / MCA / BE (IT/Computer science)/BTech ME/MTech/ BCS/MCS
+Qualification - **BCA / MCA / BE (IT/Computer science)/BTech ME/MTech/ BCS/MCS**

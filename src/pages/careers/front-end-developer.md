@@ -7,9 +7,9 @@ location: To be hired in Pune but should be ready to travel to Bangalore for lon
 vacancy: '1'
 ---
 
-Employment- Contract-Basis
+Employment - **Contract-Basis**
 
-Experience - 3 - 5 years
+Experience - **3 - 5 years**
 
 Are you a Passionate about Technology Aesthetics, ambitious Front-End Developer who is expert in Javascript with minimum 3 years of experience and looking for a challenging role where you can learn a lot more?
 
@@ -47,4 +47,4 @@ You will be responsible for implementing visual elements that give users the bes
 * Creative & forward-thinking (Sustainable solutioning) 
 * Stays on top of new technologies and industry trends and shares knowledge across the teams. 
 
-Qualification - BCA / MCA / BE (IT/Computer science)/BTech ME/MTech/ BCS/MCS
+Qualification - **BCA / MCA / BE (IT/Computer science)/BTech ME/MTech/ BCS/MCS**
