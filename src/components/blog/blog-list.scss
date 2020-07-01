@@ -23,6 +23,9 @@
     a.read-more {
         @include anchor-blue-style;
     }
+    .featured-thumbnail {
+        margin-bottom: 15px;
+    }
 }
 .pagination li a {
     color:#333 !important;
