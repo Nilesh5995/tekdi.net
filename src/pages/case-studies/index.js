@@ -78,7 +78,7 @@ export default CaseStudyPage;
 
 export const pageQuery = graphql`
   query CaseStudyPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "case-study" } } }) {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "case-study" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
           html
