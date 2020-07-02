@@ -18,18 +18,17 @@ export class ContactUs extends React.Component {
             data          : "",
             errors        : {},
             submitMessage :"",
-            // recaptchaToken:"",
-  }
+        }
 
-  response = async () => { 
+  response = async () => {
     await axios.post(
       process.env.GATSBY_AWS_API_GETEWAY,
       JSON.stringify (this.state.data),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },   
+      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then((response) => {
-      this.setState({ submitMessage: response }); 
-      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:""});   
-      // loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);  
+      this.setState({ submitMessage: response });
+      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:""});
+      // loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
       }, (error) => {
       // console.log(error);
       });
@@ -57,7 +56,6 @@ export class ContactUs extends React.Component {
         "pageName" : this.pageName
         //"recaptchaToken": this.state.recaptchaToken
       }
-      console.log( this.state.data, 'data')
      this.response();
     }
   }
@@ -68,25 +66,25 @@ export class ContactUs extends React.Component {
     let formIsValid = true;
 
     //Name
-    if (this.state.name === ""){
+    if (this.state.name === "") {
        formIsValid = false;
        errors["name"] = "Please enter an Name";
     }
 
-    if (this.state.name !== ""){
-       if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
+    if (this.state.name !== "") {
+       if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)) {
           formIsValid = false;
           errors["name"] = "Please enter only letters";
        }
     }
 
     //Email
-    if (this.state.email === ""){
+    if (this.state.email === "") {
        formIsValid = false;
        errors["email"] = "Please enter an Email";
     }
 
-    if (this.state.email !== ""){
+    if (this.state.email !== "") {
        let lastAtPos = fields["email"].lastIndexOf('@');
        let lastDotPos = fields["email"].lastIndexOf('.');
 
@@ -95,22 +93,15 @@ export class ContactUs extends React.Component {
           errors["email"] = "Email is not valid";
         }
     }
+
     if (this.state.phone === ""){
-    formIsValid = false;
-    errors["phone"] = "Please enter an Phone";
+      formIsValid = false;
+      errors["phone"] = "Please enter an Phone";
     }
-
-    if (this.state.phone!== ""){
-      if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
-        formIsValid = false;
-        errors["phone"] = "Phone number is not valid";
-    }
-
     if (this.state.message === ""){
       formIsValid = false;
       errors["message"] = "Enter an Message";
     }
-  }
 
    this.setState({errors: errors});
    return formIsValid;

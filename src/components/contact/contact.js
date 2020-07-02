@@ -4,22 +4,20 @@ import './contact.scss'
 // import { ReCaptcha } from 'react-recaptcha-v3'
 const axios = require(`axios`);
 export class contactUs extends React.Component {
-  // constructor(props) {
-  //   super(props)
-  //   var url =  typeof window !== 'undefined' ? window.location.href : '';
-  //   console.log(url, 'url')
-  // }
+  constructor(props) {
+    super(props)
+    this.pageName = this.props.pageName ? this.props.pageName : '';
+    this.pageUrl =  typeof window !== 'undefined' ? window.location.href : '';
+  }
 
-  form = "";
   state = {
-    name     : "",
-    email    : "",
-    phone    : "",
-    message  : "",
-    data     : "",
-    errors   : {},
-    submitMessage:"",
-    recaptchaToken:"",
+    name          : "",
+    email         : "",
+    phone         : "",
+    message       : "",
+    data          : "",
+    errors        : {},
+    submitMessage :"",
   }
 
   response = async () => { 
@@ -47,8 +45,14 @@ export class contactUs extends React.Component {
     event.preventDefault();
     if(this.handleValidation())
     {
-      this.state.data = { "name" : this.state.name , "email" : this.state.email , "phone" : this.state.phone , "message" : this.state.message, "recaptchaToken": this.state.recaptchaToken  }
-      this.response();
+      this.state.data = { "name" : this.state.name ,
+                          "email" : this.state.email ,
+                          "phone" : this.state.phone,
+                          "message" : this.state.message,
+                          "pageUrl" : this.pageUrl,
+                          "pageName" : this.pageName,
+                        }
+       this.response();
     }
   }
 
@@ -57,24 +61,24 @@ export class contactUs extends React.Component {
     let errors = {};
     let formIsValid = true;
     //Name
-    if (this.state.name === ""){
+    if (this.state.name === "") {
        formIsValid = false;
        errors["name"] = "Enter an Name";
     }
 
-    if (this.state.name !== ""){
+    if (this.state.name !== "") {
        if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
           formIsValid = false;
           errors["name"] = "Please enter only letters";
        }
     }
     //Email
-    if (this.state.email === ""){
+    if (this.state.email === "") {
        formIsValid = false;
        errors["email"] = "Enter an Email";
     }
 
-    if (this.state.email !== ""){
+    if (this.state.email !== "") {
        let lastAtPos = fields["email"].lastIndexOf('@');
        let lastDotPos = fields["email"].lastIndexOf('.');
 
@@ -84,22 +88,23 @@ export class contactUs extends React.Component {
         }
     }
 
-    if (this.state.message === ""){
+    if (this.state.message === "") {
       formIsValid = false;
       errors["message"] = "Enter an Message";
+
     }
 
-    if (this.state.phone === ""){
-    formIsValid = false;
-    errors["phone"] = "Enter an Phone";
+    if (this.state.phone === "") {
+      formIsValid = false;
+      errors["phone"] = "Enter an Phone";
     }
 
-    if (this.state.phone!== ""){
-      if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
-        formIsValid = false;
-        errors["phone"] = "Phone number is not valid";
-    }
-  }
+  //   if (this.state.phone!== ""){
+  //     if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
+  //       formIsValid = false;
+  //       errors["phone"] = "Phone number is not valid";
+  //   }
+  // }
 
    this.setState({errors: errors});
    return formIsValid;
@@ -117,8 +122,6 @@ export class contactUs extends React.Component {
 
   // Send a POST request
   render() {
-    var url =  typeof window !== 'undefined' ? window.location.href : '';
-    console.log(url, 'url')
     return (
         <form  onSubmit={this.handleSubmit}>
             {/* <ReCaptcha
