@@ -1,19 +1,24 @@
 import React from 'react';
 import './contact.scss';
-import { loadReCaptcha } from 'react-recaptcha-v3'
-import { ReCaptcha } from 'react-recaptcha-v3'
+// import { loadReCaptcha } from 'react-recaptcha-v3'
+// import { ReCaptcha } from 'react-recaptcha-v3'
 const axios = require(`axios`);
 
 export class ContactUs extends React.Component {
+  constructor(props) {
+    super(props)
+    this.pageName = this.props.pageName ? this.props.pageName : '';
+    this.pageUrl =  typeof window !== 'undefined' ? window.location.href : '';
+  }
   state = {
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-    data: "",
-    errors: {},
-    submitMessage:"",
-    recaptchaToken:"",
+            name          : "",
+            email         : "",
+            phone         : "",
+            message       : "",
+            data          : "",
+            errors        : {},
+            submitMessage :"",
+            // recaptchaToken:"",
   }
 
   response = async () => { 
@@ -23,35 +28,38 @@ export class ContactUs extends React.Component {
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },   
     }).then((response) => {
       this.setState({ submitMessage: response }); 
-      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"",recaptchaResponse:"" });   
-      loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);  
+      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:""});   
+      // loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);  
       }, (error) => {
       // console.log(error);
       });
   }
 
-  componentDidMount() {
-    loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
-  }
+  // componentDidMount() {
+  //    loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
+  // }
 
-  verifyCallback = (recaptchaToken) => {
-    this.setState({ recaptchaToken: recaptchaToken });
-  }
+  // verifyCallback = (recaptchaToken) => {
+  //   this.setState({ recaptchaToken: recaptchaToken });
+  // }
 
 
   handleSubmit = event => {
     event.preventDefault();
     if(this.handleValidation())
     {
-      this.state.data = { "name" : this.state.name , 
-                          "email" : this.state.email, 
-                          "phone" : this.state.phone, 
-                          "message" : this.state.message, 
-                          "recaptchaToken": this.state.recaptchaToken, 
-                        }
-      this.response();          
+      this.state.data = {
+        "name"    : this.state.name ,
+        "email"   : this.state.email,
+        "phone"   : this.state.phone,
+        "message" : this.state.message,
+        "pageUrl" : this.pageUrl,
+        "pageName" : this.pageName
+        //"recaptchaToken": this.state.recaptchaToken
+      }
+      console.log( this.state.data, 'data')
+     this.response();
     }
-    
   }
 
   handleValidation(){
@@ -69,7 +77,7 @@ export class ContactUs extends React.Component {
        if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
           formIsValid = false;
           errors["name"] = "Please enter only letters";
-       }        
+       }
     }
 
     //Email
@@ -86,7 +94,7 @@ export class ContactUs extends React.Component {
           formIsValid = false;
           errors["email"] = "Email is not valid";
         }
-    } 
+    }
     if (this.state.phone === ""){
     formIsValid = false;
     errors["phone"] = "Please enter an Phone";
@@ -96,12 +104,12 @@ export class ContactUs extends React.Component {
       if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
         formIsValid = false;
         errors["phone"] = "Phone number is not valid";
-    }   
-    
+    }
+
     if (this.state.message === ""){
       formIsValid = false;
       errors["message"] = "Enter an Message";
-    } 
+    }
   }
 
    this.setState({errors: errors});
@@ -125,16 +133,15 @@ export class ContactUs extends React.Component {
               <h2 className="com-heading text-center text-white mb-3">
                 Transform your business today
               </h2>
-              <form  onSubmit={this.handleSubmit}> 
-              <ReCaptcha
+              <form  onSubmit={this.handleSubmit}>
+              {/* <ReCaptcha
                 sitekey = {process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
                 verifyCallback={this.verifyCallback}
-             /> 
+             /> */}
                 <div className="row">
-                  {this.state.submitMessage !== "" ?   
+                  {this.state.submitMessage !== "" ?
                       <div className= {this.state.submitMessage.data.success === true ? "alert alert-success  col form-group" : "alert alert-danger col form-group"} role = "alert">    
                         {this.state.submitMessage.data.message}
-                        
                       </div>
                     :null }
                 </div>
@@ -150,11 +157,11 @@ export class ContactUs extends React.Component {
                   <div className="col-md-4 col-xs-12 form-group">
                       <input type="email" name="email" id="email" value={this.state.email} onChange={this.handleInputChange} className="form-control" placeholder="Email"  />
                       <span className="error">{this.state.errors["email"]}</span>
-                  </div> 
+                  </div>
                   <div className="col-md-12 form-group">
                     <textarea className="form-control" name="message" id="message" value={this.state.message} onChange={this.handleInputChange} rows="2" placeholder="Message" ></textarea>
                     <span className="error">{this.state.errors["message"]}</span>
-                  </div> 
+                  </div>
                 </div>
                 <div className="text-center mt-2">
                   <button type="submit" className="btn-submit p-0">Submit Now</button>

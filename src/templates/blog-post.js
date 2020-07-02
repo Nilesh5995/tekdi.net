@@ -109,7 +109,7 @@ const BlogPost = ({ data }) => {
             </div>
         </div>
        </div>
-       <ContactUs />
+       <ContactUs pageName = {post.frontmatter.title} />
        </div>
     </Layout>
   )

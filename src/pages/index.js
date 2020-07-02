@@ -42,10 +42,9 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      
       {/* <Blogs/> */}
       <Clients />
-      <ContactUs />
+      <ContactUs pageName = {frontmatter.title} />
     </Layout>
   )
 }

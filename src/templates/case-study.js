@@ -13,23 +13,22 @@ class CaseStudyTemplate extends React.Component {
     const { markdownRemark: post } = this.props.data
       return (
         <Layout>
-          <SEO 
+          <SEO
             title={post.frontmatter.title}
             metakeywords= {post.frontmatter.metakeywords}
             metadescription={post.frontmatter.metadescription}
             ogimage={post.frontmatter.ogimage}
           />
-          <Banner 
-              bannerTitle= {post.frontmatter.title} 
+          <Banner
+              bannerTitle= {post.frontmatter.title}
               bannerSubTitle = {post.frontmatter.bannerSubTitle}
           />
-          
           <CaseStudyInfo
             heading = {post.frontmatter.title}
             content={post.html}
             contentComponent={HTMLContent}
           />
-           <ContactUs />
+          <ContactUs pageName = {post.frontmatter.title} />
         </Layout>
       )
   }

@@ -32,7 +32,7 @@ const PlatformsPage  =  ({data}) =>  {
               {lists.map(renderList)}
             </div>
           </div>
-          <ContactUs></ContactUs>
+          <ContactUs pageName = {bannerData.title} />
         </Layout>
       )
   }

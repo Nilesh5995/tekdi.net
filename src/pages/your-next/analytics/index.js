@@ -32,7 +32,7 @@ const AnalyticsPage  =  ({data}) =>  {
             {lists.map(renderList)}
           </div>
         </div>
-        <ContactUs/>
+        <ContactUs pageName = {bannerData.title} />
       </Layout>
     )
   }

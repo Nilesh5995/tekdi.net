@@ -69,7 +69,7 @@ const CaseStudyPage  =  ({data}) =>  {
           }
           </div>
         </div>
-        <ContactUs/>
+        <ContactUs pageName = {bannerData.title} />
       </Layout>
     )
   }

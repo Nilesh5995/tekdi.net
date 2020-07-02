@@ -41,7 +41,7 @@ const WhatTemplate  =  ({data}) =>  {
             </div>
           </div>
        </div>
-        <ContactUs/>
+       <ContactUs pageName = {pageData.frontmatter.title} />
       </Layout>
     )
   }
@@ -68,7 +68,7 @@ export const pageQuery = graphql`
           }
         }
 
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-how" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-what" }}) {
       frontmatter {
         title
         metakeywords

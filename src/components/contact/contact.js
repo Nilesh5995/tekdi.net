@@ -1,9 +1,15 @@
 import React from "react"
 import './contact.scss'
-import { loadReCaptcha } from 'react-recaptcha-v3'
-import { ReCaptcha } from 'react-recaptcha-v3'
+// import { loadReCaptcha } from 'react-recaptcha-v3'
+// import { ReCaptcha } from 'react-recaptcha-v3'
 const axios = require(`axios`);
 export class contactUs extends React.Component {
+  // constructor(props) {
+  //   super(props)
+  //   var url =  typeof window !== 'undefined' ? window.location.href : '';
+  //   console.log(url, 'url')
+  // }
+
   form = "";
   state = {
     name     : "",
@@ -14,29 +20,28 @@ export class contactUs extends React.Component {
     errors   : {},
     submitMessage:"",
     recaptchaToken:"",
-
   }
 
   response = async () => { 
     await axios.post(
       process.env.GATSBY_AWS_API_GETEWAY,
       JSON.stringify (this.state.data),
-      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },   
+      { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then((response) => {
-      this.setState({ submitMessage: response });  
+      this.setState({ submitMessage: response });
       this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", recaptchaToken : ""});
-      loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY); 
+      // loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
       }, (error) => {
       // console.log(error);
       });
   }
-  componentDidMount() {
-    loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
-  }
+  // componentDidMount() {
+  //   loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
+  // }
 
-  verifyCallback = (recaptchaToken) => {
-    this.setState({ recaptchaToken: recaptchaToken });
-  }
+  // verifyCallback = (recaptchaToken) => {
+  //   this.setState({ recaptchaToken: recaptchaToken });
+  // }
 
   handleSubmit =  async (event) => {
     event.preventDefault();
@@ -51,7 +56,6 @@ export class contactUs extends React.Component {
     let fields = this.state;
     let errors = {};
     let formIsValid = true;
-
     //Name
     if (this.state.name === ""){
        formIsValid = false;
@@ -62,9 +66,8 @@ export class contactUs extends React.Component {
        if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
           formIsValid = false;
           errors["name"] = "Please enter only letters";
-       }        
+       }
     }
-
     //Email
     if (this.state.email === ""){
        formIsValid = false;
@@ -79,12 +82,12 @@ export class contactUs extends React.Component {
           formIsValid = false;
           errors["email"] = "Email is not valid";
         }
-    } 
+    }
 
     if (this.state.message === ""){
       formIsValid = false;
       errors["message"] = "Enter an Message";
-    } 
+    }
 
     if (this.state.phone === ""){
     formIsValid = false;
@@ -95,7 +98,7 @@ export class contactUs extends React.Component {
       if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
         formIsValid = false;
         errors["phone"] = "Phone number is not valid";
-    }        
+    }
   }
 
    this.setState({errors: errors});
@@ -114,24 +117,24 @@ export class contactUs extends React.Component {
 
   // Send a POST request
   render() {
+    var url =  typeof window !== 'undefined' ? window.location.href : '';
+    console.log(url, 'url')
     return (
         <form  onSubmit={this.handleSubmit}>
-            <ReCaptcha
+            {/* <ReCaptcha
             sitekey = {process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
             action='contact'
             verifyCallback={this.verifyCallback}
             render="explicit"
             size="invisible"
-        />
+        /> */}
          <div className="row">
-          {this.state.submitMessage !== "" ?   
+          {this.state.submitMessage !== "" ?
               <div className= {this.state.submitMessage.data.success === true ? "alert alert-success  col form-group" : "alert alert-danger col form-group"} role = "alert">    
                 {this.state.submitMessage.data.message}
-                
               </div>
             :null }
           </div>
-        
           <div className="row">
             <div className="col form-group">
               <input type="text" name="name" id="name" value={this.state.name} onChange={this.handleInputChange}  className="form-control" placeholder="Name"  />
@@ -146,13 +149,13 @@ export class contactUs extends React.Component {
               <div className="col-lg-6 col-md-12 col-sm-6 col-xs-12 form-group">
                  <input type="email" name="email" id="email" value={this.state.email} onChange={this.handleInputChange} className="form-control" placeholder="Email"  />
                  <span className="error">{this.state.errors["email"]}</span>
-              </div> 
+              </div>
           </div>
           <div className="row">
             <div className="col form-group">
              <textarea className="form-control" name="message" id="message" value={this.state.message} onChange={this.handleInputChange} rows="3" placeholder="Message" ></textarea>
              <span className="error">{this.state.errors["message"]}</span>
-            </div> 
+            </div>
           </div>
           <button type="submit" className="btn-submit">Submit Now</button>
         </form>

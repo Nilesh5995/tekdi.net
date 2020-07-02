@@ -63,7 +63,7 @@ const CareersIndexPage =  ({data}) => {
               ))}
             </div>
           </div>
-          <ContactUs />
+          <ContactUs pageName = {frontmatter.title} />
       </div>
   </Layout>
 )}

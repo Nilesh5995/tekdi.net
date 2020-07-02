@@ -44,7 +44,7 @@ import React, { Fragment } from 'react'
               </div>
             </div>
           </div>
-          <ContactUs />
+          <ContactUs pageName = {bannerData.title} />
         </div>
       </Layout>
     )

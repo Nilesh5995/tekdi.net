@@ -41,7 +41,7 @@ const ProcessPage  =  ({data}) =>  {
             </div>
           </div>
        </div>
-        <ContactUs/>
+       <ContactUs pageName = {pageData.frontmatter.title} />
       </Layout>
     )
   }
