@@ -12,7 +12,6 @@ class Slideshow extends React.Component {
     render(){
       
         const { data } = this.props
-        console.log(data, 'data')
         const { edges: posts } = data.slideShowData
         const backgroundImage = data.bgImage.frontmatter.image.childImageSharp.fluid
         let params;
