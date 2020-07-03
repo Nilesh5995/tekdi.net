@@ -6,10 +6,9 @@ import renderList from '../../components/list-view/list-view';
 import SEO from '../../components/common/site-metadata';
 import ContactUs from '../../components/common/contact/contact';
 
-const WhatPage  =  ({data}) =>  {
+const CapabilitiesPage  =  ({data}) =>  {
   const lists = data.list.edges;
   const bannerData = data.bannerData.frontmatter
-  console.log(bannerData, 'bannerData')
     return (
       <Layout>
         <Banner
@@ -38,11 +37,11 @@ const WhatPage  =  ({data}) =>  {
     )
   }
 
-export default WhatPage;
+export default CapabilitiesPage;
 
 export const pageQuery = graphql`
-  query WhatPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "what" } } }, sort: {fields: frontmatter___index}) {
+  query CapabilitiesPageTemplate {
+    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "capabilities" } } }, sort: {fields: frontmatter___index}) {
       edges {
         node {
           excerpt(pruneLength: 200)
@@ -68,7 +67,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-what" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-capabilities" }}) {
       frontmatter {
         title
         metakeywords

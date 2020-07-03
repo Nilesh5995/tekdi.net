@@ -71,7 +71,7 @@ export default () => (
       query={graphql`
         query SuccessStoriesQuery {
           carouselList:allMarkdownRemark(
-            filter: { frontmatter: { templateKey: { eq: "case-study" } } }
+            filter: { frontmatter: { templateKey: { eq: "case-study" } } }, sort: {fields: frontmatter___index}
           ) {
             edges {
               node {

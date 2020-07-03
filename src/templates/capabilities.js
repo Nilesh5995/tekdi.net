@@ -16,7 +16,7 @@ export const HtmlContents = ({
   )
 }
 
-const WhatTemplate  =  ({data}) =>  {
+const CapabilitiesTemplate  =  ({data}) =>  {
   const pageData = data.pageData;
   const bannerData = data.bannerData.frontmatter
     return (
@@ -47,10 +47,10 @@ const WhatTemplate  =  ({data}) =>  {
     )
   }
 
-export default WhatTemplate;
+export default CapabilitiesTemplate;
 
 export const pageQuery = graphql`
-  query WhatTemplate($id: String!) {
+  query CapabilitiesTemplate($id: String!) {
     pageData:markdownRemark(id: { eq: $id }) {
       html
           frontmatter {
