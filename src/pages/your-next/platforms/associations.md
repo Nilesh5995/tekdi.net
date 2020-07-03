@@ -6,7 +6,7 @@ image: /img/your-next/associations.png
 description: Associations and federations are commonly facing challenges with creating value to their members and improving member stickiness along with limited revenue sources. In this era, Digital enablement by associations and federations is playing a key role in the transformation of business processes. Our digital platform solution has certainly helped the associations in better organisation, management and administration of day to day and specific workflows and functions that are part of their ecosystem.
 ---
 ## **Associations and Federations**
-
+<br/>
 <div class="row">
 <div class="col-md-5">
 
@@ -19,10 +19,14 @@ Associations are increasingly tasked to drive the value chain of information, kn
 Digital enablement will be a game changer as transformation is crucial in changing times.For all you know, the change could not have come at a better time.
 </div>
 </div>
- Associations sometimes depend on several small organizations/companies as a lot of their members run small and medium businesses. Small businesses are the pillar of a strong economy and the reality is that they can never afford “market research”. Instead, they leverage from association fees and get access to this value chain. Technology can drive this level of transformation and make information accessible and ready for use. The amount of information related to your industry is on the rise. While this can be good, it can also be overwhelming. Managing the information and the research becomes critical to unplug insights into research and get a proper handle on the knowledge base. As the Programs grow and Associations scale in terms of both members and the content related to policy matters and governance, management of content assets becomes more critical. Unlike other industries, this industry relies heavily on governance and accountability. Good governance drives ethics, leadership and promotes trust and a feeling of belonging. Members look up to other members in matters of policy, regulations, procedures, and best practices.  A process of inclusion always goes a long way and is fundamental to the growth and success of Associations.
+
+
+Associations sometimes depend on several small organizations/companies as a lot of their members run small and medium businesses. Small businesses are the pillar of a strong economy and the reality is that they can never afford “market research”. Instead, they leverage from association fees and get access to this value chain. Technology can drive this level of transformation and make information accessible and ready for use. The amount of information related to your industry is on the rise. While this can be good, it can also be overwhelming. Managing the information and the research becomes critical to unplug insights into research and get a proper handle on the knowledge base. As the Programs grow and Associations scale in terms of both members and the content related to policy matters and governance, management of content assets becomes more critical. Unlike other industries, this industry relies heavily on governance and accountability. Good governance drives ethics, leadership and promotes trust and a feeling of belonging. Members look up to other members in matters of policy, regulations, procedures, and best practices.  A process of inclusion always goes a long way and is fundamental to the growth and success of Associations.
 
 
 ## **Tekdi’s solutions**
+
+
 
 <div class="row">
 <div class="col-md-4">
@@ -34,14 +38,17 @@ Tekdi Association platform support **online and offline event management** - A r
 </div>
 <div class="col-md-4">
 
-  ![Process](/img/your-next/association-digital-info-mgmt.jpg/img/your-next/association-register.jpg)
-  Digital process for end to end Association **membership management** - Process automation and unified data management
+![Process](/img/your-next/association-digital-info-mgmt.jpg/img/your-next/association-register.jpg)
+
+Digital process for end to end Association **membership management** - Process automation and unified data management
+
 </div>
 <div class="col-md-4">
 
   ![Process](/img/your-next/association-digital-info-mgmt.jpg)
 
   Platform with strong support for  **Digital information management** - Advance information sharing and management solution.
+
 </div>
 </div>
 
