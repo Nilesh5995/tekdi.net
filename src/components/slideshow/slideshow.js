@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, StaticQuery } from 'gatsby';
 import PropTypes from 'prop-types';
 import PreviewCompatibleImage from '../common/preview-compatible-image';
+import BackgroundImage from 'gatsby-background-image'
 import Swiper from 'react-id-swiper';
 import 'swiper/css/swiper.css';
 import "./slideshow.scss";
@@ -9,8 +10,10 @@ import "./slideshow.scss";
 class Slideshow extends React.Component {
 
     render(){
+      
         const { data } = this.props
-        const { edges: posts } = data.allMarkdownRemark
+        const { edges: posts } = data.slideShowData
+        const backgroundImage = data.bgImage.frontmatter.image.childImageSharp.fluid
         let params;
       if (posts.length > 1) {
          params = {
@@ -24,6 +27,7 @@ class Slideshow extends React.Component {
         }
       }
         return (
+          <BackgroundImage fluid={backgroundImage}>
             <div className="slideshow">
                 <div className="container"> 
                     <Swiper {...params}> 
@@ -48,6 +52,7 @@ class Slideshow extends React.Component {
                     </Swiper>
                 </div>
             </div>
+          </BackgroundImage>
         )
     }
 };
@@ -64,7 +69,7 @@ export default () => (
     <StaticQuery
       query={graphql`
         query SlideshowQuery {
-          allMarkdownRemark(
+          slideShowData:allMarkdownRemark(
             filter: { frontmatter: { templateKey: { eq: "slideshow" } } }
           ) {
             edges {
@@ -79,6 +84,20 @@ export default () => (
                         ...GatsbyImageSharpFluid
                       }
                     }
+                  }
+                }
+              }
+            }
+          }
+          bgImage:markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+            frontmatter {
+              title
+              metakeywords
+              metadescription
+              image {
+                childImageSharp {
+                  fluid(quality: 100) {
+                    ...GatsbyImageSharpFluid
                   }
                 }
               }

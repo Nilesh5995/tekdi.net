@@ -14,10 +14,6 @@ export const menuData = [
                 link: '/your-next/platforms'
             },
             {
-                label: 'Solutions',
-                link: '/your-next/solutions'
-            },
-            {
                 label: 'Experience',
                 link: '/your-next/experience'
             },
@@ -59,10 +55,10 @@ export const menuData = [
         ]
     },
     {
-        label:'What',
-        link:'/what',
-        key: 'what',
-        className: 'what',
+        label:'Capabilities',
+        link:'/capabilities',
+        key: 'capabilities',
+        className: 'capabilities',
     },
     {
         label:'Success Stories',

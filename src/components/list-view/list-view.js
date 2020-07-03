@@ -33,7 +33,7 @@ const renderList = ({ node }) => {
                {node.frontmatter.description}
               <br />
               <br />
-              {node.html && node.html !== ""? <Link class="read-more" to={node.fields.slug}>{"keep Reading"}</Link> : null}
+              {node.html && node.html !== ""? <Link class="read-more" to={node.fields.slug}>{"Keep Reading"}</Link> : null}
             </p>
           </div>
         </div>

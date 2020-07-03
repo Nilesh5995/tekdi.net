@@ -1,19 +1,29 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Banner from '../../components/common/banner/banner';
-import Layout from '.././../components/layout/baselayout';
-import renderList from '../../components/list-view/list-view';
-import SEO from '../../components/common/site-metadata';
-import ContactUs from '../../components/common/contact/contact';
+import Banner from '../components/common/banner/banner';
+import Layout from '../components/layout/baselayout';
+import SEO from '../components/common/site-metadata';
+import ContactUs from '../components/common/contact/contact';
+import Content, { HTMLContent } from '../components/common/content';
 
-const WhatPage  =  ({data}) =>  {
-  const lists = data.list.edges;
+export const HtmlContents = ({
+  content,
+  contentComponent
+}) => {
+  const PostContent = contentComponent || Content
+  return (
+    <PostContent content={content} />
+  )
+}
+
+const CapabilitiesTemplate  =  ({data}) =>  {
+  const pageData = data.pageData;
   const bannerData = data.bannerData.frontmatter
     return (
       <Layout>
         <Banner
-            bannerTitle= {bannerData.title}
-            bannerSubTitle = {bannerData.subTitle}
+            bannerTitle= {pageData.frontmatter.title}
+            bannerSubTitle = {pageData.frontmatter.subTitle}
           />
         <SEO 
           title={bannerData.title}
@@ -23,32 +33,25 @@ const WhatPage  =  ({data}) =>  {
         />
         <div className="container py-5">
           <div className="col-md-12">
-            {bannerData.description}
+          <div className="main-content">
+            <HtmlContents
+              content = {pageData.html}
+              contentComponent = {HTMLContent}
+            />
+            </div>
           </div>
-        </div>
-        <div className="container py-5">
-          <div className="col-md-12">
-            {lists.map(renderList)}
-          </div>
-        </div>
-        <ContactUs pageName = {bannerData.title} />
+       </div>
+       <ContactUs pageName = {pageData.frontmatter.title} />
       </Layout>
     )
   }
 
-export default WhatPage;
+export default CapabilitiesTemplate;
 
 export const pageQuery = graphql`
-  query WhatPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "what" } } }, sort: {fields: frontmatter___index}) {
-      edges {
-        node {
-          excerpt(pruneLength: 200)
-          id
-          html
-          fields {
-            slug
-          }
+  query CapabilitiesTemplate($id: String!) {
+    pageData:markdownRemark(id: { eq: $id }) {
+      html
           frontmatter {
             title
             templateKey
@@ -57,15 +60,14 @@ export const pageQuery = graphql`
             index
             image  {
               childImageSharp {
-                fluid(maxWidth: 200, quality: 100) {
+                fluid(maxWidth: 100, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
             }
           }
         }
-      }
-    }
+
     bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-what" }}) {
       frontmatter {
         title
