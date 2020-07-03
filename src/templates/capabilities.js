@@ -69,7 +69,7 @@ export const pageQuery = graphql`
           }
         }
 
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-what" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-capabilities" }}) {
       frontmatter {
         title
         metakeywords

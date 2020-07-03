@@ -8,7 +8,7 @@ import ContactUs from '../../components/common/contact/contact';
 
 const CapabilitiesPage  =  ({data}) =>  {
   const lists = data.list.edges;
-  const bannerData = data.bannerData.frontmatter
+  const bannerData = data.bannerData.frontmatter;
     return (
       <Layout>
         <Banner
