@@ -4,6 +4,7 @@ import {comapanyMenuData, yourNextMenuData, servicesMenuData} from './footer-men
 import 'font-awesome/css/font-awesome.min.css';
 import Copyright from './copyright';
 import './footer.css';
+import { AnchorLink } from "gatsby-plugin-anchor-links";
 //import jump from '../jump';
 
 const Footer = () => {
@@ -91,7 +92,7 @@ const Footer = () => {
                                             //  else {
                                             //    return (<li key = {item.label} className="mb-3"><Link to={item.url}> {item.label} </Link></li>)
                                             //  }
-                                            return (<li key = {item.label} className="mb-3"><Link to={item.url}> {item.label} </Link></li>)
+                                            return (<li key = {item.label} className="mb-3"><AnchorLink to={item.url}>{item.label} </AnchorLink></li>)
                                         }
                                         ) }
                                     </ul>

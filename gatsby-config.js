@@ -74,7 +74,7 @@ module.exports = {
         trackingId: "UA-277023-6",
         anonymize: true,
       }
-    }
+    },
   //   {
   //     resolve: `gatsby-plugin-recaptcha`,
   //     options: {
@@ -83,5 +83,11 @@ module.exports = {
   //        args: `?onload=onloadCallback&render=explicit`,
   //     },
   //  },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    }
   ],
 }

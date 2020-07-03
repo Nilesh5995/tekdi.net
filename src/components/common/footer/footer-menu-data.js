@@ -43,23 +43,23 @@ const yourNextMenuData = [
 const servicesMenuData = [
     {
         label:'Product Development',
-        url:'#'
+        url:'capabilities#product-development'
     },
-    {
-        label:'SaSS',
-        url:'#'
-    },
+    // {
+    //     label:'SaSS',
+    //     url:'#'
+    // },
     {
         label:'Web Development',
-        url:'#'
+        url:'/capabilities#web-development'
     },
     {
         label:'Mobility',
-        url:'#'
+        url:'/capabilities#mobility'
     },
     {
         label:'UI/UX',
-        url:'#'
+        url:'/your-next/experience#uiux'
     }
 ];
 
