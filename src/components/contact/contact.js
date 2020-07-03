@@ -1,13 +1,13 @@
 import React from "react"
 import './contact.scss'
-// import { loadReCaptcha } from 'react-recaptcha-v3'
-// import { ReCaptcha } from 'react-recaptcha-v3'
 const axios = require(`axios`);
 export class contactUs extends React.Component {
   constructor(props) {
     super(props)
     this.pageName = this.props.pageName ? this.props.pageName : '';
     this.pageUrl =  typeof window !== 'undefined' ? window.location.href : '';
+    this.closeAlert = true;
+    this.closeAlertMessage = this.closeAlertMessage.bind(this);
   }
 
   state = {
@@ -18,28 +18,20 @@ export class contactUs extends React.Component {
     data          : "",
     errors        : {},
     submitMessage :"",
+    closeAlert    : true
   }
 
-  response = async () => { 
+  response = async () => {
     await axios.post(
       process.env.GATSBY_AWS_API_GETEWAY,
       JSON.stringify (this.state.data),
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then((response) => {
       this.setState({ submitMessage: response });
-      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", recaptchaToken : ""});
-      // loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
+      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"",  closeAlert : false });
       }, (error) => {
-      // console.log(error);
       });
   }
-  // componentDidMount() {
-  //   loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
-  // }
-
-  // verifyCallback = (recaptchaToken) => {
-  //   this.setState({ recaptchaToken: recaptchaToken });
-  // }
 
   handleSubmit =  async (event) => {
     event.preventDefault();
@@ -120,23 +112,22 @@ export class contactUs extends React.Component {
     })
   }
 
+  closeAlertMessage() {
+    this.setState({ closeAlert: true });
+  }
   // Send a POST request
   render() {
     return (
         <form  onSubmit={this.handleSubmit}>
-            {/* <ReCaptcha
-            sitekey = {process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
-            action='contact'
-            verifyCallback={this.verifyCallback}
-            render="explicit"
-            size="invisible"
-        /> */}
-         <div className="row">
-          {this.state.submitMessage !== "" ?
-              <div className= {this.state.submitMessage.data.success === true ? "alert alert-success  col form-group" : "alert alert-danger col form-group"} role = "alert">    
-                {this.state.submitMessage.data.message}
-              </div>
-            :null }
+          <div className="row">
+            {this.state.submitMessage !== "" && this.state.closeAlert === false ?
+                <div className= {this.state.submitMessage.data.success === true ? "alert alert-success  col form-group" : "alert alert-danger col form-group"} role = "alert">
+                  {this.state.submitMessage.data.message}
+                  <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.closeAlertMessage}>
+                      <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+              :null }
           </div>
           <div className="row">
             <div className="col form-group">

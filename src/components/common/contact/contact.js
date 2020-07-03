@@ -1,7 +1,5 @@
 import React from 'react';
 import './contact.scss';
-// import { loadReCaptcha } from 'react-recaptcha-v3'
-// import { ReCaptcha } from 'react-recaptcha-v3'
 const axios = require(`axios`);
 
 export class ContactUs extends React.Component {
@@ -9,7 +7,10 @@ export class ContactUs extends React.Component {
     super(props)
     this.pageName = this.props.pageName ? this.props.pageName : '';
     this.pageUrl =  typeof window !== 'undefined' ? window.location.href : '';
+    this.closeAlert = true;
+    this.closeAlertMessage = this.closeAlertMessage.bind(this);
   }
+
   state = {
             name          : "",
             email         : "",
@@ -18,6 +19,7 @@ export class ContactUs extends React.Component {
             data          : "",
             errors        : {},
             submitMessage :"",
+            closeAlert    : true
         }
 
   response = async () => {
@@ -27,21 +29,11 @@ export class ContactUs extends React.Component {
       { headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     }).then((response) => {
       this.setState({ submitMessage: response });
-      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:""});
-      // loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
+      this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", closeAlert : false });
       }, (error) => {
       // console.log(error);
       });
   }
-
-  // componentDidMount() {
-  //    loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
-  // }
-
-  // verifyCallback = (recaptchaToken) => {
-  //   this.setState({ recaptchaToken: recaptchaToken });
-  // }
-
 
   handleSubmit = event => {
     event.preventDefault();
@@ -53,8 +45,7 @@ export class ContactUs extends React.Component {
         "phone"   : this.state.phone,
         "message" : this.state.message,
         "pageUrl" : this.pageUrl,
-        "pageName" : this.pageName
-        //"recaptchaToken": this.state.recaptchaToken
+        "pageName" : this.pageName,
       }
      this.response();
     }
@@ -77,7 +68,6 @@ export class ContactUs extends React.Component {
           errors["name"] = "Please enter only letters";
        }
     }
-
     //Email
     if (this.state.email === "") {
        formIsValid = false;
@@ -87,7 +77,6 @@ export class ContactUs extends React.Component {
     if (this.state.email !== "") {
        let lastAtPos = fields["email"].lastIndexOf('@');
        let lastDotPos = fields["email"].lastIndexOf('.');
-
        if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
           formIsValid = false;
           errors["email"] = "Email is not valid";
@@ -115,6 +104,10 @@ export class ContactUs extends React.Component {
     })
   }
 
+  closeAlertMessage() {
+    this.setState({ closeAlert: true });
+  }
+
   render() {
     return (
       <div className="contact-form">
@@ -125,14 +118,13 @@ export class ContactUs extends React.Component {
                 Transform your business today
               </h2>
               <form  onSubmit={this.handleSubmit}>
-              {/* <ReCaptcha
-                sitekey = {process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
-                verifyCallback={this.verifyCallback}
-             /> */}
                 <div className="row">
-                  {this.state.submitMessage !== "" ?
+                  {this.state.submitMessage !== ""  && this.state.closeAlert === false?
                       <div className= {this.state.submitMessage.data.success === true ? "alert alert-success  col form-group" : "alert alert-danger col form-group"} role = "alert">    
                         {this.state.submitMessage.data.message}
+                        <button type="button" className="close" data-dismiss="alert" aria-label="Close" onClick={this.closeAlertMessage}>
+                          <span aria-hidden="true">&times;</span>
+                       </button>
                       </div>
                     :null }
                 </div>
@@ -165,4 +157,5 @@ export class ContactUs extends React.Component {
     );
   }
 }
+
 export default ContactUs;

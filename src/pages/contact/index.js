@@ -6,20 +6,19 @@ import Layout from '../../components/layout/baselayout';
 import ContactUs from '../../components/contact/contact';
 import Banner from '../../components/common/banner/banner';
 
-
 const ContactPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
   return (
     <Layout>
-      <SEO 
+      <SEO
           title={frontmatter.title}
           metakeywords= {frontmatter.metakeywords}
           metadescription={frontmatter.metadescription}
           ogimage={frontmatter.ogimage}
         />
       <div className="contact-page">
-        <Banner 
-          bannerTitle= {frontmatter.title} 
+        <Banner
+          bannerTitle= {frontmatter.title}
           bannerSubTitle = { frontmatter.subTitle}
           image = { frontmatter.image}
         />
@@ -32,13 +31,13 @@ const ContactPage = ({ data }) => {
                   <h3 className="font-weight-bold  text-black com-heading mt-7">
                   {frontmatter.tagLine}
                   </h3>
-                </div>  
+                </div>
                 <div className="col-md-6 col-xs-12 ">
                   <h3 className="font-weight-bold  text-black com-heading">
                     Write us a line
                   </h3>
-                  <ContactUs></ContactUs>
-                </div>  
+                  <ContactUs pageName = {frontmatter.title} />
+                </div>
               </div>
             </div>
           </div>
