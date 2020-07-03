@@ -25,19 +25,19 @@ Digital enablement will be a game changer as transformation is crucial in changi
 ## **Tekdi’s solutions**
 
 <div class="row">
-<div class="col-md-4 border border-dark">
+<div class="col-md-4">
 
 ![Process](/img/your-next/association-event-mgmt.jpg)
 
 Tekdi Association platform support **online and offline event management** - A revenue and subscription boost
 
 </div>
-<div class="col-md-4 border border-dark">
+<div class="col-md-4">
 
   ![Process](/img/your-next/association-digital-info-mgmt.jpg/img/your-next/association-register.jpg)
   Digital process for end to end Association **membership management** - Process automation and unified data management
 </div>
-<div class="col-md-4 border border-dark">
+<div class="col-md-4">
 
   ![Process](/img/your-next/association-digital-info-mgmt.jpg)
 
