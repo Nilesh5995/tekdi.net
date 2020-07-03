@@ -45,9 +45,9 @@ Digital process for end to end Association **membership management** - Process a
 </div>
 <div class="col-md-4">
 
-  ![Process](/img/your-next/association-digital-info-mgmt.jpg)
+![Process](/img/your-next/association-digital-info-mgmt.jpg)
 
-  Platform with strong support for  **Digital information management** - Advance information sharing and management solution.
+Platform with strong support for  **Digital information management** - Advance information sharing and management solution.
 
 </div>
 </div>
