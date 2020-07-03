@@ -39,9 +39,9 @@ const CareersIndexPage =  ({data}) => {
                         <li className="sub-title">
                           {post.frontmatter.subTitle}
                         </li>
-                        <li className="mr-4">Type <span className="text-black">{post.frontmatter.type}</span></li>
-                        <li className="mr-4">Location <span className="text-black">{post.frontmatter.location}</span></li>
-                        <li className="mr-4">Posts <span className="text-black">{post.frontmatter.vacancy}</span></li>
+                        <li className="mr-4">Type - <span className="text-black">{post.frontmatter.type}</span></li>
+                        <li className="mr-4">Location - <span className="text-black">{post.frontmatter.location}</span></li>
+                        {/* <li className="mr-4">Posts <span className="text-black">{post.frontmatter.vacancy}</span></li> */}
                       </ul>
                       <div className="main-content mb-3">
                       {post.excerpt}
