@@ -33,21 +33,21 @@ Associations sometimes depend on several small organizations/companies as a lot 
 
 ![Process](/img/your-next/association-event-mgmt.jpg)
 
-Tekdi Association platform support **online and offline event management** - A revenue and subscription boost
+Tekdi Association platform supports **online and offline event management** - A revenue and subscription boost
 
 </div>
 <div class="col-md-4">
 
 ![Process](/img/your-next/association-digital-info-mgmt.jpg/img/your-next/association-register.jpg)
 
-Digital process for end to end Association **membership management** - Process automation and unified data management
+A completely Digital process for end to end Association **membership management** - Process automation and unified data management
 
 </div>
 <div class="col-md-4">
 
 ![Process](/img/your-next/association-digital-info-mgmt.jpg)
 
-Platform with strong support for  **Digital information management** - Advance information sharing and management solution.
+Platform with strong support for  **Digital information management** - Advanced information sharing and management solution.
 
 </div>
 </div>
