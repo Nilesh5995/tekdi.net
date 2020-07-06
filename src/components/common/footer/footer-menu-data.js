@@ -1,7 +1,7 @@
 const comapanyMenuData = [
     {
         label:'About Us',
-        link:'/company',
+        url:'/about-us/',
     },
     {
         label:'Careers',
@@ -19,17 +19,17 @@ const comapanyMenuData = [
 
 const yourNextMenuData = [
     {
-        label:'Digital Transformations',
+        label:'Digital Transformation',
         url:'/your-next/digital-transformation'
     },
     {
         label:'Platforms',
         url:'/your-next/platforms'
     },
-    {
-        label:'Solutions',
-        url:'/your-next/solutions'
-    },
+    // {
+    //     label:'Solutions',
+    //     url:'/your-next/solutions'
+    // },
     {
         label: 'Experience',
         url: '/your-next/experience'

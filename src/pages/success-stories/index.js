@@ -22,11 +22,13 @@ const CaseStudyPage  =  ({data}) =>  {
           metadescription={bannerData.metadescription}
           ogimage={bannerData.ogimage}
         />
+       {data.bannerData.html && data.bannerData.html !== "" ?
         <div className="container py-5">
           <div className="col-md-12">
-            {bannerData.description}
+            <div dangerouslySetInnerHTML={{ __html: data.bannerData.html }} />
           </div>
         </div>
+         : null}
         <div className="container py-5">
           <div className="col-md-12">
           {lists && lists.map(list => (
@@ -104,6 +106,7 @@ export const pageQuery = graphql`
       }
     }
     bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-case-study" }}) {
+      html
       frontmatter {
         title
         metakeywords

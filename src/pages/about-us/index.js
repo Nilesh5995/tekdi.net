@@ -1,34 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import SEO from '../../components/common/site-metadata'
-import Content, { HTMLContent } from '../../components/common/content';
-import Banner from '../../components/common/banner/banner';
+import { graphql} from 'gatsby';
+import SEO from '../../components/common/site-metadata';
 import Layout from '../../components/layout/baselayout';
+import Banner from '../../components/common/banner/banner';
+import CompanyInfo from '../../components/company/company-info';
+import CorePurpose from '../../components/company/core-purpose';
+import CoreValuesCarousel from '../../components/company/core-values-carousel';
+import CompanyJourney from '../../components/company/company-journey';
+import LifeAtTekdiInfo from '../../components/company/life-at-tekdi';
 
-export const AboutUsTemplate = ({
-  content,
-  contentComponent,
-  title,
-  subheading
-}) => {
-  const PostContent = contentComponent || Content
-
-  return (
-    <section className="section">
-      <div className="">
-        <h1 className="title text-black">
-          {title}
-        </h1>
-        <p>{subheading}</p>
-        <PostContent content={content} />
-      </div>
-    </section>
-  )
-}
-
-
-const AboutUsPage = ({ data }) => {
+const AboutUsTemplate = ({ data }) => {
   const { markdownRemark: post } = data
 
   return (
@@ -40,37 +22,47 @@ const AboutUsPage = ({ data }) => {
         ogimage={post.frontmatter.ogimage}
       />
       <Banner 
-        bannerTitle= {post.frontmatter.title} 
+          bannerTitle= {post.frontmatter.title} 
       />
-      <div className="container py-5">
-        <div className="row">
-          <div className="col-md-12">
-          <AboutUsTemplate
-              title={post.frontmatter.title}
-              subheading={post.frontmatter.subheading}
-              content={post.html}
-              contentComponent={HTMLContent}
+      <CompanyInfo 
+        companyInfo={post.frontmatter.companyInfo}
+        companyImg={post.frontmatter.companyImg}
+        projectInfo={post.frontmatter.projectInfo}
+      />
+      <CorePurpose 
+        corePurposeHeading={post.frontmatter.corePurposeHeading}
+        corePurposeDesc={post.frontmatter.corePurposeDesc}
+        corePurposeImg={post.frontmatter.corePurposeImg}
+      />
+      <div id="vision">
+        <CoreValuesCarousel />
+      </div>
+      
+      <CompanyJourney 
+        journeyInfo={post.frontmatter.journeyinfo}
+      />
+      <div id="team">
+          <LifeAtTekdiInfo 
+            lifeAtTekdiImg={post.frontmatter.lifeattekdiimg}
           />
-          </div>
-        </div>
       </div>
     </Layout>
   )
 }
 
 AboutUsTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  contentComponent: PropTypes.func,
-  title: PropTypes.string,
-  subheading: PropTypes.string,
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
 }
 
-export default AboutUsPage;
+export default AboutUsTemplate;
 
 export const pageQuery = graphql`
-  query AboutUsPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "aboutus-page" } }) {
-      id
+  query CompanyTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "about-us" } }) {
       html
       frontmatter {
         title
@@ -83,9 +75,48 @@ export const pageQuery = graphql`
             }
           }
         }
-        subheading
+        companyInfo
+        companyImg {
+          childImageSharp {
+            fluid(maxWidth: 350, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        projectInfo {
+          title
+          description   
+        }
+        corePurposeHeading
+        corePurposeDesc
+        corePurposeImg {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        journeyinfo {
+          title
+          description
+          icon {
+            childImageSharp {
+              fluid(maxWidth: 90, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        lifeattekdiimg {
+          img {
+            childImageSharp {
+              fluid(maxHeight: 260, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }
 `
-

@@ -22,11 +22,13 @@ const CapabilitiesPage  =  ({data}) =>  {
           metadescription = {bannerData.metadescription}
           ogimage = {bannerData.ogimage}
         />
+       {data.bannerData.html && data.bannerData.html !== "" ?
         <div className="container py-5">
           <div className="col-md-12">
-            {bannerData.description}
+            <div dangerouslySetInnerHTML={{ __html: data.bannerData.html }} />
           </div>
         </div>
+         : null}
         <div className="container py-5">
           <div className="col-md-12">
             {lists.map(renderList)}
@@ -68,6 +70,7 @@ export const pageQuery = graphql`
       }
     }
     bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-capabilities" }}) {
+      html
       frontmatter {
         title
         metakeywords

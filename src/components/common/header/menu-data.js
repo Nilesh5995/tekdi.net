@@ -62,8 +62,8 @@ export const menuData = [
     },
     {
         label:'Success Stories',
-        link:'/case-studies',
+        link:'/success-stories',
         key: 'case-studies',
-        className: 'case-studies',
+        className: 'success-stories',
     },
 ];
