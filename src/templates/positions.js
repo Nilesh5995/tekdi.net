@@ -43,7 +43,7 @@ const PositionPage  =  ({data}) =>  {
               contentComponent = {HTMLContent}
             />
           </div>
-          <CareersModal position = {position.heading} />
+          <CareersModal position = {position.title} />
           </div>
           </div>
        </div>

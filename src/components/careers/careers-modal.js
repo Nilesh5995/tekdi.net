@@ -1,8 +1,8 @@
 
 import React from 'react'
 import Modal from 'react-modal';
-import { loadReCaptcha } from 'react-recaptcha-v3';
-import { ReCaptcha } from 'react-recaptcha-v3';
+//import { loadReCaptcha } from 'react-recaptcha-v3';
+//import { ReCaptcha } from 'react-recaptcha-v3';
 const axios = require(`axios`);
 
 const customStyles = {
@@ -30,41 +30,38 @@ class CareersModal extends React.Component {
       position : this.props.position,
       resume:"",
       errors: {},
-      recaptchaToken:"",
       submitMessage:"",
       awsFileKey: "",
-      buttonDisabled:false,   
+      buttonDisabled:false,
     };
-  
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.fileInput = React.createRef();
   }
-  componentDidMount() {
-    loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
-  }
-  
-  verifyCallback = (recaptchaToken) => {
-    this.setState({ recaptchaToken: recaptchaToken });
-  }
+  // componentDidMount() {
+  //   loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
+  // }
+
+  // verifyCallback = (recaptchaToken) => {
+  //   this.setState({ recaptchaToken: recaptchaToken });
+  // }
   handleOpenModal () {
     //console.log(position)
     this.setState({ showModal: true, submitMessage:""  });
 
   }
-  
+
   handleCloseModal () {
     this.setState({ showModal: false, submitMessage:"" });
   }
 
-  response = async ()  => { 
-    this.state.data = { 
+  response = async ()  => {
+    this.state.data = {
       "position": this.state.position,
-      "name" : this.state.name , 
-      "email" : this.state.email , 
-      "phone" : this.state.phone , 
+      "name" : this.state.name ,
+      "email" : this.state.email ,
+      "phone" : this.state.phone ,
       "resume" : this.fileInput.current.files[0],
-      "recaptchaToken": this.state.recaptchaToken,
       "awsFileKey": this.state.awsFileKey,
 
    }
@@ -73,28 +70,24 @@ class CareersModal extends React.Component {
       JSON.stringify (this.state.data),
       {
         headers: {
-          "Content-Type": "application/x-www-form-urlencoded",        
-        },  
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
     }).then((response) => {
           this.setState({ submitMessage: response });
-          this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"",recaptchaResponse:"", awsFileKey:"", position:"", buttonDisabled: false});   
+          this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", awsFileKey:"", position:"", buttonDisabled: false});
          setTimeout(function(){
           this.setState({showModal:false});
           }.bind(this),3000);  // wait 5 seconds, then reset to false
-
-        
     }, (error) => {
      // console.log(error);
     });
   }
-  
-
 
   handleSubmit =  event => {
     this.setState({ buttonDisabled: true });
     event.preventDefault();
     if(this.handleValidation())
-     {  
+     {
               let  selectedFile = this.fileInput.current.files[0];
               let _self = this;
                if (selectedFile) {
@@ -109,8 +102,7 @@ class CareersModal extends React.Component {
                 };
                 fileReader.readAsDataURL(selectedFile);
            }
-         //this.response();
-    }  
+    }
   }
 
   async saveFile(fileUrl) {
@@ -204,7 +196,7 @@ class CareersModal extends React.Component {
        if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
           formIsValid = false;
           errors["name"] = "Please enter only letters";
-       }        
+       }
     }
 
     //Email
@@ -221,7 +213,7 @@ class CareersModal extends React.Component {
           formIsValid = false;
           errors["email"] = "Email is not valid";
         }
-    } 
+    }
     if (this.state.phone === ""){
     formIsValid = false;
     errors["phone"] = "Please enter an Phone";
@@ -231,7 +223,7 @@ class CareersModal extends React.Component {
       if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
         formIsValid = false;
         errors["phone"] = "Phone number is not valid";
-    }        
+    }
   }
 
   if(this.fileInput.current.files[0] === undefined)
@@ -248,7 +240,6 @@ class CareersModal extends React.Component {
      }
   }
 
-  
    this.setState({errors: errors});
    if(formIsValid === false)
    {
@@ -265,36 +256,35 @@ class CareersModal extends React.Component {
       [name]: value,
     })
   }
-  
+
    render () {
     return (
       <div>
-         <ReCaptcha
+         {/* <ReCaptcha
             sitekey = {process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
             action='careers'
             verifyCallback={this.verifyCallback}
-        />
+        /> */}
         <button className="btn-apply mb-4 p-0 font-weight-bold" onClick={this.handleOpenModal}>
           Apply Now
         </button>
-        <Modal 
+        <Modal
            isOpen={this.state.showModal}
            contentLabel="onRequestClose Example"
-           onRequestClose={this.handleCloseModal}  
+           onRequestClose={this.handleCloseModal}
            style={customStyles}
-        > 
+        >
           <button className="btn-close" onClick={this.handleCloseModal}>
             <i class="fa fa-times" aria-hidden="true"></i>
           </button>
           <div>
-            <form  onSubmit={this.handleSubmit} encType="multipart/form-data">  
+            <form  onSubmit={this.handleSubmit} encType="multipart/form-data">
               <h3 className="section-title text-black text-center mb-5">
                 Please fill the form for
                 <p>{this.state.position}</p>
               </h3>
-              {this.state.submitMessage !== "" ? 
-              
-              <div className= {this.state.submitMessage.data.success === true ? "alert alert-success" : "alert alert-danger"} role = "alert">    
+              {this.state.submitMessage !== "" ?
+              <div className= {this.state.submitMessage.data.success === true ? "alert alert-success" : "alert alert-danger"} role = "alert">
                 {this.state.submitMessage.data.message}
               </div>
               :null }
@@ -306,17 +296,15 @@ class CareersModal extends React.Component {
                 <div className="col-md-12 col-xs-12 form-group">
                     <input type="email" name="email" id="email" value={this.state.email} onChange={this.handleInputChange} className="form-control" placeholder="Email"  />
                     <span className="error">{this.state.errors["email"]}</span>
-                </div> 
+                </div>
                 <div className="col-md-12 col-xs-12 form-group">
                     <input type="text" name="phone" id="phone" value={this.state.phone} onChange={this.handleInputChange} className="form-control" placeholder="Phone"  />
                     <span className="error">{this.state.errors["phone"]}</span>
                 </div>
                 <div className="col-md-12 col-xs-12 form-group">
                   <input type="file" ref={this.fileInput} />
-                  
                 </div>
                 <div className="col-md-12 col-xs-12 form-group"><span className="error">{this.state.errors["file"]}</span></div>
-  
                 {/* </div> */}
               <div className="text-center my-3">
                 <button type="submit" disabled={this.state.buttonDisabled} className="btn-submit p-0">Submit Now</button>
