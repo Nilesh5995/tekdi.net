@@ -46,6 +46,16 @@ const MainMenu = ({items}) => {
                 dispatch({type: 'show', key: item.key});
                 return false;
               };
+              props.onMouseLeave = e => {
+                e.preventDefault();
+                dispatch({type: 'hide', key: item.key});
+                return true;
+              };
+              props.onMouseEnter = e => {
+                e.preventDefault();
+                dispatch({type: 'show', key: item.key});
+                return false;
+              };
             }
 
             let submenuD;
@@ -56,12 +66,23 @@ const MainMenu = ({items}) => {
                 if (isMenuActiveInternal) {
                   isMenuActive = isMenuActiveInternal;
                 }
+                let submenuProps = {}
+                submenuProps.onMouseLeave = e => {
+                  e.preventDefault();
+                  dispatch({type: 'hide', key: item.key});
+                  return true;
+                };
+                submenuProps.onMouseEnter = e => {
+                  e.preventDefault();
+                  dispatch({type: 'show', key: item.key});
+                  return false;
+                };
                 return (
                   <li key={submenu.label} className={classNames({'active': isMenuActiveInternal})}>
                     {/* <a href={submenu.link}>
                       {submenu.label}
                     </a> */}
-                    <Link to={submenu.link}> {submenu.label} </Link>
+                    <Link to={submenu.link} {...submenuProps}> {submenu.label} </Link>
                   </li>
                 );
               });
