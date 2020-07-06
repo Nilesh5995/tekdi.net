@@ -6,7 +6,7 @@ export const menuData = [
         className: 'parent',
         submenus : [
             {
-                label: 'Digital Transformations',
+                label: 'Digital Transformation',
                 link: '/your-next/digital-transformation'
             },
             {
@@ -29,31 +29,31 @@ export const menuData = [
         key: 'industries',
         className: 'industries',
     },
-    {
-        label:'How',
-        link:'#',
-        key: 'how',
-        //className: 'how',
-        className: 'parent',
-        submenus : [
-            {
-                label: 'Process',
-                link: '/how/process'
-            },
-            {
-                label: 'Competencies',
-                link: '/how/competencies'
-            },
-            {
-                label: 'Spirit of Opensource',
-                link: '/how/spirit-of-opensource'
-            },
-            {
-                label: 'Consulting',
-                link: '/how/consulting'
-            },
-        ]
-    },
+    // {
+    //     label:'How',
+    //     link:'#',
+    //     key: 'how',
+    //     //className: 'how',
+    //     className: 'parent',
+    //     submenus : [
+    //         {
+    //             label: 'Process',
+    //             link: '/how/process'
+    //         },
+    //         {
+    //             label: 'Competencies',
+    //             link: '/how/competencies'
+    //         },
+    //         {
+    //             label: 'Spirit of Opensource',
+    //             link: '/how/spirit-of-opensource'
+    //         },
+    //         {
+    //             label: 'Consulting',
+    //             link: '/how/consulting'
+    //         },
+    //     ]
+    // },
     {
         label:'Capabilities',
         link:'/capabilities',

@@ -2,7 +2,7 @@
 templateKey: capabilities
 index: 3
 title: AI & ML
-subTitle: AI & ML Sub title
-image: /img/your-next/mobile-development.png
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est ultricies metus hendrerit luctus. Proin at commodo erat. Vestibulum non pharetra arcu, vel vulputate augue. Nam dignissim nisi id nisi eleifend, feugiat rhoncus mauris cursus. Fusce in aliquam tortor. Morbi placerat mi eget orci pellentesque, non consequat nulla posuere. Vestibulum tincidunt consectetur arcu, ac ultricies sem. Donec volutpat lacinia elit, auctor ullamcorper mi pellentesque ac. Nulla ultricies nunc est, sed consequat nulla aliquet ac.
+subTitle: Artificial Intelligence & Machine Learning
+image: /img/your-next/ai-ml1.png
+description: Artificial Intelligence has opened up new vistas by allowing intelligent decision making, forecasting and bringing significant efficiency gains. Organisations across the globe are realising the value that can be extracted from their existing data by employing AI & ML. In addition to self hosted AI ML infrastructure, pay-as-you-go offerings from major cloud providers has made available advanced level machine learning to anyone for a fraction of the cost. Image and text recognition, code-less model generation are some of the services that can be leveraged. We help our clients leverage this technology to deliver measurable business value.
 ---

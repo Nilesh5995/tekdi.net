@@ -5,7 +5,7 @@ title: Experience
 subTitle: 
 image: /img/your-next/bg-experience.jpg
 
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vel est ultricies metus hendrerit luctus. Proin at commodo erat. Vestibulum non pharetra arcu, vel vulputate augue. Nam dignissim nisi id nisi eleifend, feugiat rhoncus mauris cursus. Fusce in aliquam tortor. Morbi placerat mi eget orci pellentesque, non consequat nulla posuere. Vestibulum tincidunt consectetur arcu, ac ultricies sem. Donec volutpat lacinia elit, auctor ullamcorper mi pellentesque ac. Nulla ultricies nunc est, sed consequat nulla aliquet ac.
+description: We live in an era where customer experience is key to succeed. We are surrounded by Digital experiences all around us.  And to succeed we need to deliver great customer experience that can drive Product adoption and Product success. For us at Tekdi Technologies, the customer is at the center of this experience. Everything really hinges on our customers and if we can help deliver a great experience to our customers then our customers will be more engaged with the Products they use. The good thing is that customers today know what they need. They need convenient personalized experiences. The more we personalize these experiences, we build convenience. And consistently delivering personalized experiences across all channels requires technology. 
 
 metakeywords: ["Experience", "User Experience", "Usability"]
 metadescription:

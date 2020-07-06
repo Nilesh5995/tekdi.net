@@ -1,5 +1,5 @@
 ---
-templateKey: capabilities
+templateKey: capabilities-unpublished
 index: 6
 title: Oferrings & Packages
 subTitle: Oferrings & Packages Sub title
