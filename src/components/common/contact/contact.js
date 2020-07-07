@@ -109,6 +109,10 @@ export class ContactUs extends React.Component {
   render() {
     return (
       <div className="contact-form">
+        <head>
+         <script dangerouslySetInnerHTML= {{ __html: `
+           function createFcn(nm){(window.freshsales)[nm]=function(){(window.freshsales).push([nm].concat(Array.prototype.slice.call(arguments,0)))}; } (function(url,appToken,formCapture){window.freshsales=window.freshsales||[];if(window.freshsales.length==0){list='init identify trackPageView trackEvent set'.split(' ');for(var i=0;i<list.length;i++){var nm=list[i];createFcn(nm);}var t=document.createElement('script');t.async=1;t.src='https://d952cmcgwqsjf.cloudfront.net/assets/analytics.js';var ft=document.getElementsByTagName('script')[0];ft.parentNode.insertBefore(t,ft);freshsales.init('https://tekdi.freshsales.io','4e74c5efc58195bd08db259ae6cf741a6457aee0a0e6a8d5fc1b2add1de3061a',true);}})();`}} />
+       </head>
         <div className="container">
           <div className="row pt-5 pb-5">
             <div className="col-md-10 offset-md-1">
