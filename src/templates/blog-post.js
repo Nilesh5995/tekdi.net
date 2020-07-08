@@ -90,7 +90,7 @@ const BlogPost = ({ data }) => {
       <Banner 
             bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
-            image = {bannerData.image}
+            image = {post.frontmatter.bgimage  ? post.frontmatter.bgimage : bannerData.bgimage}
           /> 
        <div className="container py-5">
         <div className="row">
@@ -148,6 +148,13 @@ export const pageQuery = graphql`
             }
           }
         }
+        bgimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         author
         category
         description
@@ -174,7 +181,7 @@ export const pageQuery = graphql`
             }
           }
         }
-        image {
+        bgimage {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

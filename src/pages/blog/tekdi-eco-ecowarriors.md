@@ -9,6 +9,7 @@ date: 2019-10-30T15:04:10.000Z
 featuredpost: true
 author: Ashwin
 featuredimage: /img/blog/ecowarriors.jpg
+bgimage: 
 
 category: 
   - Environment

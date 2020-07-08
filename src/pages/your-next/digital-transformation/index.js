@@ -14,7 +14,7 @@ const DigitalTransFormationPage  =  ({data}) =>  {
         <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
-            image= {bannerData.image}
+            image= {bannerData.bgimage}
           />
           <SEO
           title={bannerData.title}
@@ -82,7 +82,7 @@ export const pageQuery = graphql`
           }
         }
         subTitle
-        image {
+        bgimage {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

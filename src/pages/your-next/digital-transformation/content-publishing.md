@@ -3,6 +3,7 @@ templateKey: digital-transformation
 index: 3
 title: Content Publishing
 subTitle:
+bgimage:
 
 image: /img/your-next/content-publishing.png
 

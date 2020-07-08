@@ -20,7 +20,7 @@ class BlogCategoryPage extends React.Component {
         <Banner
             bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
-            image = {bannerData.image}
+            image = {bannerData.bgimage}
           />
         <div className="container py-5">
           <div className="row">
@@ -95,7 +95,7 @@ query BlogListCategoryQuery($category: String,$skip: Int!, $limit: Int!) {
           }
         }
       }
-      image {
+      bgimage {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid

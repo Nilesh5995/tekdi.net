@@ -3,6 +3,7 @@ templateKey: digital-transformation
 index: 2
 title: Customer Experience
 subTitle: 
+bgimage: 
 
 image: /img/your-next/customer-experience.png
 
