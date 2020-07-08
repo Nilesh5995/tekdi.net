@@ -88,6 +88,7 @@ module.exports = {
       options: {
         offset: -100
       }
-    }
+    },
+    `gatsby-plugin-client-side-redirect` // keep it in last in list
   ],
 }

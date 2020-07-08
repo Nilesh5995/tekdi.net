@@ -38,7 +38,9 @@ const categories = []
 const tags = []
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-
+  const {createRedirect} = actions
+   createRedirect({ fromPath: '/profile-common', toPath: 'https://app.box.com/s/f5cvqjng6mm1ubl0abvhkn62nkcp5n5z', isPermanent: true,
+  });
   return graphql(`
   query {
       blog:allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: { in: ["blog-post"]}}}) {
