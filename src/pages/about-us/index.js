@@ -22,7 +22,8 @@ const AboutUsTemplate = ({ data }) => {
         ogimage={post.frontmatter.ogimage}
       />
       <Banner 
-          bannerTitle= {post.frontmatter.title} 
+          bannerTitle = {post.frontmatter.title} 
+          image = {post.frontmatter.bgimage}
       />
       <CompanyInfo 
         companyInfo={post.frontmatter.companyInfo}
@@ -69,6 +70,13 @@ export const pageQuery = graphql`
         metakeywords
         metadescription
         ogimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        bgimage {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

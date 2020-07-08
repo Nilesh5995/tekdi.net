@@ -22,7 +22,7 @@ class CaseStudyTemplate extends React.Component {
           <Banner
               bannerTitle = {post.frontmatter.title}
               bannerSubTitle = {bannerData.frontmatter.title }
-              image = {bannerData.frontmatter.image}
+              image =  {post.frontmatter.bgimage  ? post.frontmatter.bgimage : bannerData.frontmatter.bgimage}
           />
           <CaseStudyInfo
             heading = {post.frontmatter.title}
@@ -58,12 +58,19 @@ export const pageQuery = graphql`
             }
           }
         }
+        bgimage {
+          childImageSharp {
+            fluid(quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
       }
     }
     bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-case-study" }}) {
       frontmatter {
         title
-        image {
+        bgimage {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

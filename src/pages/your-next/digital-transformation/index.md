@@ -3,7 +3,7 @@ templateKey: index-digital-transformation
 
 title: Digital Transformation
 subTitle: Digital Transformation
-image: /img/your-nxt/bg-digital-transformation.jpg
+bgimage: /img/your-nxt/bg-digital-transformation.jpg
 
 metakeywords: ["digital transformation", "leverage technology"]
 metadescription:

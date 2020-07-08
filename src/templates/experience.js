@@ -24,7 +24,7 @@ const ExperienceTemplate  =  ({data}) =>  {
         <Banner
             bannerTitle = {pageData.frontmatter.title}
             bannerSubTitle = {bannerData.title}
-            image = {bannerData.image}
+            image = {pageData.frontmatter.bgimage  ? pageData.frontmatter.bgimage : bannerData.bgimage }
           />
         {/* <SEO 
           title = {bannerData.title}
@@ -62,6 +62,13 @@ export const pageQuery = graphql`
             image  {
               childImageSharp {
                 fluid(maxWidth: 100, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            bgimage {
+              childImageSharp {
+                fluid(quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }

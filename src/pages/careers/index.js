@@ -22,7 +22,7 @@ const CareersIndexPage =  ({data}) => {
           <Banner
             bannerTitle= {frontmatter.title}
             bannerSubTitle = {frontmatter.subTitle}
-            image = {frontmatter.image}
+            bgimage = {frontmatter.image}
           />
           <div className="container py-5">
             <div className="col-lg-8 col-md-12 offset-lg-2 offset-md-1 col-xs-12">
@@ -107,7 +107,7 @@ export const pageQuery = graphql`
         }
         subTitle
         heading
-        image {
+        bgimage {
           childImageSharp {
             fluid(quality: 100) {
               ...GatsbyImageSharpFluid

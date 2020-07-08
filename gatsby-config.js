@@ -7,7 +7,14 @@ module.exports = {
       description: 'Tekdi was founded in 2006 with an aim to use technology to make a positive impact to society. Since then, we have empowered 100+ organisations with the technology solutions across verticals',
   },
   plugins: [
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-sharp',
+      options: {
+        useMozJpeg: false,
+        stripMetadata: true,
+        defaultQuality: 75,
+      }
+    },
     'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-transformer-remark',
@@ -88,6 +95,14 @@ module.exports = {
       options: {
         offset: -100
       }
+    },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+          bucketName: "tekdi.net",
+          protocol: "https",
+          hostname: "www.tekdi.net",
+      },
     },
     `gatsby-plugin-client-side-redirect` // keep it in last in list
   ],

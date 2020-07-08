@@ -4,6 +4,7 @@ title: SaaS platform for data protection education and audit
 metakeywords: ["", ""]
 metadescription: 
 ogimage: /img/tekdi-logo.png
+bgimage:
 
 bannerSubTitle: Case Studies
 
