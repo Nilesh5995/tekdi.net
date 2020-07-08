@@ -23,9 +23,9 @@ class CareersModal extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      name: "",
-      email: "",
-      phone: "",
+      candidateName: "",
+      candidateEmail: "",
+      candidatePhone: "",
       data: "",
       position : this.props.position,
       resume:"",
@@ -58,9 +58,9 @@ class CareersModal extends React.Component {
   response = async ()  => {
     this.state.data = {
       "position": this.state.position,
-      "name" : this.state.name ,
-      "email" : this.state.email ,
-      "phone" : this.state.phone ,
+      "name" : this.state.candidateName ,
+      "email" : this.state.candidateEmail ,
+      "phone" : this.state.candidatePhone ,
       "resume" : this.fileInput.current.files[0],
       "awsFileKey": this.state.awsFileKey,
 
@@ -74,7 +74,7 @@ class CareersModal extends React.Component {
         },
     }).then((response) => {
           this.setState({ submitMessage: response });
-          this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", awsFileKey:"", position:"", buttonDisabled: false});
+          this.setState({candidateName:"", candidateEmail: "",candidatePhone:"",message:"",data:"",errors:"", awsFileKey:"", position:"", buttonDisabled: false});
          setTimeout(function(){
           this.setState({showModal:false});
           }.bind(this),3000);  // wait 5 seconds, then reset to false
@@ -187,42 +187,42 @@ class CareersModal extends React.Component {
     let formIsValid = true;
 
     //Name
-    if (this.state.name === ""){
+    if (this.state.candidateName === ""){
        formIsValid = false;
-       errors["name"] = "Please enter an Name";
+       errors["candidateName"] = "Please enter an Name";
     }
 
-    if (this.state.name !== ""){
-       if (!this.state.name.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
+    if (this.state.candidateName !== ""){
+       if (!this.state.candidateName.match(/^[a-zA-Z-,]+(\s{0,1}[a-zA-Z-, ])*$/)){
           formIsValid = false;
-          errors["name"] = "Please enter only letters";
+          errors["candidateName"] = "Please enter only letters";
        }
     }
 
     //Email
-    if (this.state.email === ""){
+    if (this.state.candidateEmail === ""){
        formIsValid = false;
-       errors["email"] = "Please enter an Email";
+       errors["candidateEmail"] = "Please enter an Email";
     }
 
-    if (this.state.email !== ""){
-       let lastAtPos = fields["email"].lastIndexOf('@');
-       let lastDotPos = fields["email"].lastIndexOf('.');
+    if (this.state.candidateEmail !== ""){
+       let lastAtPos = fields["candidateEmail"].lastIndexOf('@');
+       let lastDotPos = fields["candidateEmail"].lastIndexOf('.');
 
-       if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["email"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["email"].length - lastDotPos) > 2)) {
+       if (!(lastAtPos < lastDotPos && lastAtPos > 0 && fields["candidateEmail"].indexOf('@@') === -1 && lastDotPos > 2 && (fields["candidateEmail"].length - lastDotPos) > 2)) {
           formIsValid = false;
-          errors["email"] = "Email is not valid";
+          errors["candidateEmail"] = "Email is not valid";
         }
     }
-    if (this.state.phone === ""){
+    if (this.state.candidatePhone === ""){
     formIsValid = false;
-    errors["phone"] = "Please enter an Phone";
+    errors["candidatePhone"] = "Please enter an Phone";
     }
 
-    if (this.state.phone!== ""){
-      if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
+    if (this.state.candidatePhone!== ""){
+      if(!this.state.candidatePhone.match(/^[0]?[789]\d{9}$/)){
         formIsValid = false;
-        errors["phone"] = "Phone number is not valid";
+        errors["candidatePhone"] = "Phone number is not valid";
     }
   }
 
@@ -290,16 +290,16 @@ class CareersModal extends React.Component {
               :null }
               {/* <div className="row"> */}
                 <div className="col-md-12 col-xs-12 form-group">
-                  <input type="text" name="name" id="name" value={this.state.name} onChange={this.handleInputChange}  className="form-control" placeholder="Name"  />
-                  <span className="error">{this.state.errors["name"]}</span>
+                  <input type="text" name="candidateName" id="candidateName" value={this.state.candidateName} onChange={this.handleInputChange}  className="form-control" placeholder="Your Name"  />
+                  <span className="error">{this.state.errors["candidateName"]}</span>
                 </div>
                 <div className="col-md-12 col-xs-12 form-group">
-                    <input type="email" name="email" id="email" value={this.state.email} onChange={this.handleInputChange} className="form-control" placeholder="Email"  />
-                    <span className="error">{this.state.errors["email"]}</span>
+                    <input type="email" name="candidateEmail" id="candidateEmail" value={this.state.candidateEmail} onChange={this.handleInputChange} className="form-control" placeholder="Your Email"  />
+                    <span className="error">{this.state.errors["candidateEmail"]}</span>
                 </div>
                 <div className="col-md-12 col-xs-12 form-group">
-                    <input type="text" name="phone" id="phone" value={this.state.phone} onChange={this.handleInputChange} className="form-control" placeholder="Phone"  />
-                    <span className="error">{this.state.errors["phone"]}</span>
+                    <input type="text" name="candidatePhone" id="candidatePhone" value={this.state.candidatePhone} onChange={this.handleInputChange} className="form-control" placeholder="Your Phone"  />
+                    <span className="error">{this.state.errors["candidatePhone"]}</span>
                 </div>
                 <div className="col-md-12 col-xs-12 form-group">
                   <input type="file" ref={this.fileInput} />
