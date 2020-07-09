@@ -106,10 +106,20 @@ class CareersModal extends React.Component {
   }
 
   async saveFile(fileUrl) {
+    let applicationName = this.state.position + " " + this.state.name;
+
+  applicationName = applicationName.replace(/^\s+|\s+$/g, ""); // trim
+  applicationName = applicationName.toLowerCase();
+  applicationName = applicationName.replace(/[^a-z0-9 -]/g, "") // remove invalid chars
+    .replace(/\s+/g, "-") // collapse whitespace and replace by -
+    .replace(/-+/g, "-") // collapse dashes
+    .replace(/^-+/, "") // trim - from start of text
+    .replace(/-+$/, ""); // trim - from end of text
+    console.log(applicationName+".pdf", 'applicationName+".pdf"')
     let url = "https://eunghtsbs6.execute-api.ap-south-1.amazonaws.com/default/get-upload-url";
 
     const payloadDate = {
-      FileName: "application.pdf",
+      FileName: applicationName+".pdf",
       methodType: "POST"
     }
 
