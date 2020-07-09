@@ -72,7 +72,7 @@ query BlogListTagQuery($tag: String,$skip: Int!, $limit: Int!) {
           featuredpost
           featuredimage {
             childImageSharp {
-              fluid(maxWidth: 200, quality: 100) {
+              fluid(maxWidth: 200) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -89,14 +89,14 @@ query BlogListTagQuery($tag: String,$skip: Int!, $limit: Int!) {
       subTitle
       ogimage {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
       }
       image {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }

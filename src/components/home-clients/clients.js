@@ -79,7 +79,7 @@ export default () => (
               frontmatter {
                 img {
                     childImageSharp {
-                        fluid(quality: 100) {
+                        fluid {
                         ...GatsbyImageSharpFluid
                         }
                     }

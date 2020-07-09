@@ -53,14 +53,14 @@ export const pageQuery = graphql`
         metadescription
         ogimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }
         }
         bgimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }
@@ -72,7 +72,7 @@ export const pageQuery = graphql`
         title
         bgimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }

@@ -9,7 +9,7 @@ const Banner = props => {
         query {
           defaultImage: file(relativePath: { eq: "banner/default-banner.jpg" }) {
             childImageSharp {
-              fluid(quality: 100) {
+              fluid {
                 ...GatsbyImageSharpFluid
               }
             }

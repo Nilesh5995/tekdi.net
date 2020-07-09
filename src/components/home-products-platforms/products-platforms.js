@@ -93,7 +93,7 @@ class ProductsPlatforms extends React.Component {
                   description
                   icon {
                     childImageSharp {
-                      fluid(maxWidth: 60, quality: 100) {
+                      fluid(maxWidth: 60) {
                         ...GatsbyImageSharpFluid
                       }
                     }

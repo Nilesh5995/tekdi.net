@@ -143,14 +143,14 @@ export const pageQuery = graphql`
         metadescription
         ogimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }
         }
         bgimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }
@@ -161,7 +161,7 @@ export const pageQuery = graphql`
         tags
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 120, quality: 100) {
+            fluid(maxWidth: 120) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -176,14 +176,14 @@ export const pageQuery = graphql`
         subTitle
         ogimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }
         }
         bgimage {
           childImageSharp {
-            fluid(quality: 100) {
+            fluid {
               ...GatsbyImageSharpFluid
             }
           }

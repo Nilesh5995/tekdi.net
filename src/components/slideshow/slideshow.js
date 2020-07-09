@@ -80,7 +80,7 @@ export default () => (
                   alt
                   img {
                     childImageSharp {
-                      fluid(quality: 100) {
+                      fluid {
                         ...GatsbyImageSharpFluid
                       }
                     }
@@ -96,7 +96,7 @@ export default () => (
               metadescription
               image {
                 childImageSharp {
-                  fluid(quality: 100) {
+                  fluid {
                     ...GatsbyImageSharpFluid
                   }
                 }
