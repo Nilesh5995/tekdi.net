@@ -12,8 +12,7 @@ module.exports = {
       options: {
         useMozJpeg: false,
         stripMetadata: true,
-        defaultQuality: 75
-        //quality: 80,
+        defaultQuality: 75,
       }
     },
     'gatsby-transformer-sharp',
@@ -34,7 +33,6 @@ module.exports = {
               // the content container as this plugin uses this as the
               // base for generating different widths of each image.
               maxWidth: 2048,
-              //quality	: 50,
             },
           },
           {
