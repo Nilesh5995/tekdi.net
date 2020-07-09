@@ -28,7 +28,7 @@ To keep warehouse management activities running optimally, the company had to im
 - Deciding the best crop rate based on weight measurement and lab results. 
 - Managing communication between resources within the logistic chain, so productivity can be maximized. 
 - Having the right procedures in place to fulfill orders and ship them out in time – so, situations such as overstock or out of stock can be eliminated. 
-- Accurately tracking produce, ensuring correct receipts and purchase orders, and rectifying errors as quickly as possible. 
+- Accurately tracking product, ensuring correct receipts and purchase orders, and rectifying errors as quickly as possible. 
 - Accelerating the order picking process to avoid manual, error-prone tasks, and optimizing warehouse management. 
 
 ## Problem Statement
@@ -55,7 +55,7 @@ We chose Joomla as the development framework and divided the system into 6 build
 - The Advances module enabled the client to receive advance payment against the grain; farmers can return the advance and sell grain when they get a better price. 
 
 ### Benefits - For Farmers
-One of the key benefits to farmers is that they receive daily rates via SMS. Using this, they can make a decision to sell the produce without needing to visit the warehouse. This has directly improved the rate at which farmers sell their produce.
+One of the key benefits to farmers is that they receive daily rates via SMS. Using this, they can make a decision to sell the product without needing to visit the warehouse. This has directly improved the rate at which farmers sell their product.
 Digital transformation also helped make crop loans simpler. Tracking of loans and repayment went online, allowing faster loans and tracking of repayment. 
 
 ### Benefits - For the Business
