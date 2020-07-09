@@ -55,7 +55,7 @@ We chose Joomla as the development framework and divided the system into 6 build
 - The Advances module enabled the client to receive advance payment against the grain; farmers can return the advance and sell grain when they get a better price. 
 
 ### Benefits - For Farmers
-One of the key benefits to farmers is that they receive daily rates via SMS. Using this, they can make a decision to sell the product without needing to visit the warehouse. This has directly improved the rate at which farmers sell their product.
+One of the key benefits to farmers is that they receive daily rates via SMS. Using this, they can make a decision to sell the produce without needing to visit the warehouse. This has directly improved the rate at which farmers sell their produce.
 Digital transformation also helped make crop loans simpler. Tracking of loans and repayment went online, allowing faster loans and tracking of repayment. 
 
 ### Benefits - For the Business
