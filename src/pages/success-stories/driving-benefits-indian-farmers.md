@@ -28,7 +28,7 @@ To keep warehouse management activities running optimally, the company had to im
 - Deciding the best crop rate based on weight measurement and lab results. 
 - Managing communication between resources within the logistic chain, so productivity can be maximized. 
 - Having the right procedures in place to fulfill orders and ship them out in time – so, situations such as overstock or out of stock can be eliminated. 
-- Accurately tracking product, ensuring correct receipts and purchase orders, and rectifying errors as quickly as possible. 
+- Accurately tracking produce, ensuring correct receipts and purchase orders, and rectifying errors as quickly as possible. 
 - Accelerating the order picking process to avoid manual, error-prone tasks, and optimizing warehouse management. 
 
 ## Problem Statement
