@@ -104,11 +104,6 @@ module.exports = {
           hostname: "www.tekdi.net",
       },
     },
-    // {
-    //   resolve: `gatsby-remark-images-medium-zoom`, // Important!
-    //   options: {}
-    // }
-   // `gatsby-remark-images-zoom`,
     `gatsby-plugin-client-side-redirect` // keep it in last in list
   ],
 }
