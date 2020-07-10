@@ -115,9 +115,7 @@ class CareersModal extends React.Component {
     .replace(/-+/g, "-") // collapse dashes
     .replace(/^-+/, "") // trim - from start of text
     .replace(/-+$/, ""); // trim - from end of text
-    console.log(applicationName+".pdf", 'applicationName+".pdf"')
-    let url = "https://eunghtsbs6.execute-api.ap-south-1.amazonaws.com/default/get-upload-url";
-
+    let url = process.env.GATSBY_AWS_API_GATEWAY_FILE_UPLOAD;
     const payloadDate = {
       FileName: applicationName+".pdf",
       methodType: "POST"
