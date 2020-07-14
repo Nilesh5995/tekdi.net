@@ -130,13 +130,9 @@ class CareersModal extends React.Component {
     const blob = this.b64toBlob(fileUrl, 'application/pdf', 512);
     this.setState({ awsFileKey: awsData.data.fields['key'] });
     let payloadDate = new FormData();
-    payloadDate.append('key', awsData.data.fields['key'])
-    payloadDate.append('x-amz-algorithm', awsData.data.fields['x-amz-algorithm'])
-    payloadDate.append('x-amz-credential', awsData.data.fields['x-amz-credential'])
-    payloadDate.append('x-amz-date', awsData.data.fields['x-amz-date'])
-    payloadDate.append('x-amz-security-token', awsData.data.fields['x-amz-security-token'])
-    payloadDate.append('policy', awsData.data.fields['policy'])
-    payloadDate.append('x-amz-signature', awsData.data.fields['x-amz-signature'])
+    for (const [key, value] of Object.entries(awsData.data.fields)) {
+      payloadDate.append(key,value)
+    }
     payloadDate.append('file', await blob, awsData.data.fields['key'])
     const headers = {
       'Content-Type': 'multipart/form-data'
@@ -298,7 +294,7 @@ class CareersModal extends React.Component {
                 <div className="col-md-12 col-xs-12 form-group"><span className="error">{this.state.errors["file"]}</span></div>
                 {/* </div> */}
               <div className="text-center my-3">
-                <button type="submit" disabled={this.state.buttonDisabled}  className="btn-submit p-0">Submit Now</button>
+                <button type="submit" className="btn-apply p-0" disabled={this.state.buttonDisabled} >Submit Now</button>
               </div>
             </form>
           </div>
