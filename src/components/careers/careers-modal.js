@@ -1,8 +1,6 @@
 
 import React from 'react'
 import Modal from 'react-modal';
-//import { loadReCaptcha } from 'react-recaptcha-v3';
-//import { ReCaptcha } from 'react-recaptcha-v3';
 const axios = require(`axios`);
 
 const customStyles = {
@@ -38,17 +36,9 @@ class CareersModal extends React.Component {
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.fileInput = React.createRef();
   }
-  // componentDidMount() {
-  //   loadReCaptcha(process.env.GATSBY_GOOGLE_RECAPTCHA_KEY);
-  // }
 
-  // verifyCallback = (recaptchaToken) => {
-  //   this.setState({ recaptchaToken: recaptchaToken });
-  // }
   handleOpenModal () {
-    //console.log(position)
     this.setState({ showModal: true, submitMessage:""  });
-
   }
 
   handleCloseModal () {
@@ -63,10 +53,10 @@ class CareersModal extends React.Component {
       "phone" : this.state.phone ,
       "resume" : this.fileInput.current.files[0],
       "awsFileKey": this.state.awsFileKey,
-
    }
     await axios.post(
-      process.env.GATSBY_AWS_API_GETEWAY_CAREERS,
+      "https://fjpgcj4rz6.execute-api.ap-south-1.amazonaws.com/default",
+      //process.env.GATSBY_AWS_API_GETEWAY_CAREERS,
       JSON.stringify (this.state.data),
       {
         headers: {
@@ -74,7 +64,7 @@ class CareersModal extends React.Component {
         },
     }).then((response) => {
           this.setState({ submitMessage: response });
-          this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", awsFileKey:"", position:"", buttonDisabled: false});
+          this.setState({name:"", email: "",phone:"",message:"",data:"",errors:"", awsFileKey:"", buttonDisabled: false});
          setTimeout(function(){
           this.setState({showModal:false});
           }.bind(this),3000);  // wait 5 seconds, then reset to false
@@ -88,28 +78,35 @@ class CareersModal extends React.Component {
     event.preventDefault();
     if(this.handleValidation())
      {
-              let  selectedFile = this.fileInput.current.files[0];
-              let _self = this;
-               if (selectedFile) {
-                let fileToLoad = selectedFile[0];
-                let fileReader = new FileReader();
-                // Onload of file read the file content
-                fileReader.onload = function(fileLoadedEvent)
-                 {
-                    var file = fileLoadedEvent.target.result;
-                    let base64String = file.split(',');
-                    _self.saveFile(base64String[1]);
-                };
-                fileReader.readAsDataURL(selectedFile);
-           }
+        let  selectedFile = this.fileInput.current.files[0];
+        let _self = this;
+          if (selectedFile) {
+          let fileToLoad = selectedFile[0];
+          let fileReader = new FileReader();
+          // Onload of file read the file content
+          fileReader.onload = function(fileLoadedEvent)
+            {
+              var file = fileLoadedEvent.target.result;
+              let base64String = file.split(',');
+              _self.saveFile(base64String[1]);
+          };
+          fileReader.readAsDataURL(selectedFile);
+      }
     }
   }
 
   async saveFile(fileUrl) {
-    let url = "https://eunghtsbs6.execute-api.ap-south-1.amazonaws.com/default/get-upload-url";
-
+    let applicationName = this.state.position + " " + this.state.name;
+    applicationName = applicationName.replace(/^\s+|\s+$/g, ""); // trim
+    applicationName = applicationName.toLowerCase();
+    applicationName = applicationName.replace(/[^a-z0-9 -]/g, "") // remove invalid chars
+      .replace(/\s+/g, "-") // collapse whitespace and replace by -
+      .replace(/-+/g, "-") // collapse dashes
+      .replace(/^-+/, "") // trim - from start of text
+      .replace(/-+$/, ""); // trim - from end of text
+    let url = process.env.GATSBY_AWS_API_GATEWAY_FILE_UPLOAD ;
     const payloadDate = {
-      FileName: "application.pdf",
+      FileName: applicationName+".pdf",
       methodType: "POST"
     }
 
@@ -121,7 +118,6 @@ class CareersModal extends React.Component {
       headers: headers
     }).then(
       (result) => {
-        console.log(JSON.stringify(result.data));
         this.postFile(fileUrl, result);
       },
       (error) => {
@@ -136,10 +132,12 @@ class CareersModal extends React.Component {
     this.setState({ awsFileKey: awsData.data.fields['key'] });
     let payloadDate = new FormData();
     payloadDate.append('key', awsData.data.fields['key'])
-    payloadDate.append('AWSAccessKeyId', awsData.data.fields['AWSAccessKeyId'])
+    payloadDate.append('x-amz-algorithm', awsData.data.fields['x-amz-algorithm'])
+    payloadDate.append('x-amz-credential', awsData.data.fields['x-amz-credential'])
+    payloadDate.append('x-amz-date', awsData.data.fields['x-amz-date'])
     payloadDate.append('x-amz-security-token', awsData.data.fields['x-amz-security-token'])
     payloadDate.append('policy', awsData.data.fields['policy'])
-    payloadDate.append('signature', awsData.data.fields['signature'])
+    payloadDate.append('x-amz-signature', awsData.data.fields['x-amz-signature'])
     payloadDate.append('file', await blob, awsData.data.fields['key'])
     const headers = {
       'Content-Type': 'multipart/form-data'
@@ -155,7 +153,6 @@ class CareersModal extends React.Component {
         console.log(error);
       });
   }
-
 
   async  b64toBlob(b64Data, contentType, sliceSize) {
     contentType = contentType || '';
@@ -260,11 +257,6 @@ class CareersModal extends React.Component {
    render () {
     return (
       <div>
-         {/* <ReCaptcha
-            sitekey = {process.env.GATSBY_GOOGLE_RECAPTCHA_KEY}
-            action='careers'
-            verifyCallback={this.verifyCallback}
-        /> */}
         <button className="btn-apply mb-4 p-0 font-weight-bold" onClick={this.handleOpenModal}>
           Apply Now
         </button>
@@ -307,7 +299,8 @@ class CareersModal extends React.Component {
                 <div className="col-md-12 col-xs-12 form-group"><span className="error">{this.state.errors["file"]}</span></div>
                 {/* </div> */}
               <div className="text-center my-3">
-                <button type="submit" disabled={this.state.buttonDisabled} className="btn-submit p-0">Submit Now</button>
+                <button type="submit"  className="btn-submit p-0">Submit Now</button>
+                {/* disabled={this.state.buttonDisabled} */}
               </div>
             </form>
           </div>
