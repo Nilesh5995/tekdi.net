@@ -55,8 +55,7 @@ class CareersModal extends React.Component {
       "awsFileKey": this.state.awsFileKey,
    }
     await axios.post(
-      "https://fjpgcj4rz6.execute-api.ap-south-1.amazonaws.com/default",
-      //process.env.GATSBY_AWS_API_GETEWAY_CAREERS,
+      process.env.GATSBY_AWS_API_GETEWAY_CAREERS,
       JSON.stringify (this.state.data),
       {
         headers: {
@@ -299,8 +298,7 @@ class CareersModal extends React.Component {
                 <div className="col-md-12 col-xs-12 form-group"><span className="error">{this.state.errors["file"]}</span></div>
                 {/* </div> */}
               <div className="text-center my-3">
-                <button type="submit"  className="btn-submit p-0">Submit Now</button>
-                {/* disabled={this.state.buttonDisabled} */}
+                <button type="submit" disabled={this.state.buttonDisabled}  className="btn-submit p-0">Submit Now</button>
               </div>
             </form>
           </div>
