@@ -104,14 +104,14 @@ export default () => (
                   description
                   icon {
                     childImageSharp {
-                      fluid(maxWidth: 60, quality: 100) {
+                      fluid(maxWidth: 60) {
                         ...GatsbyImageSharpFluid
                       }
                     }
                   }
                   hovericon {
                     childImageSharp {
-                      fluid(maxWidth: 60, quality: 100) {
+                      fluid(maxWidth: 60) {
                         ...GatsbyImageSharpFluid
                       }
                     }

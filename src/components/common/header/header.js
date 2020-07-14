@@ -2,9 +2,9 @@ import React from "react"
 import {useEffect} from 'react';
 import {Link} from "gatsby";
 import Navbar from "./navbar";
-// import "../../layout/common.css";
 import "./header.scss";
-import { withPrefix } from 'gatsby'
+import logoWhite from "./images/logo-white-txt-lg.png"
+import logoBlack from "./images/logo-black-txt-lg.png"
 
 const Header = () => {
     useEffect(() => {
@@ -25,14 +25,14 @@ const Header = () => {
                     <div className="col-xs-12 header-inner">
                         <div className="logo logo-lg float-left">
                             <Link to="/">
-                                <img className="logo-white-text" src={`${withPrefix('/')}img/logo/logo-white-txt-lg.png`} alt="logo" />
-                                <img className="logo-black-text" src={`${withPrefix('/')}img/logo/logo-black-txt-lg.png`} alt="logo" />
+                                <img className="logo-white-text" src={logoWhite} alt="Tekdi logo" />
+                                <img className="logo-black-text" src={logoBlack} alt="Tekdi logo" />
                             </Link>
                         </div>
                         <div className="logo logo-sm float-left">
                             <Link to="/">
-                                <img className="logo-white-text" src={`${withPrefix('/')}img/logo/logo-white-txt-lg.png`} alt="logo" />
-                                <img className="logo-black-text" src={`${withPrefix('/')}img/logo/logo-black-txt-lg.png`} alt="logo" />
+                                <img className="logo-white-text" src={logoWhite} alt="Tekdi logo" />
+                                <img className="logo-black-text" src={logoBlack} alt="Tekdi logo" />
                             </Link>
                         </div>
                         <Navbar />

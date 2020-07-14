@@ -67,7 +67,7 @@ export default () => (
                 linktext
                 img {
                   childImageSharp {
-                    fluid(quality: 100) {
+                    fluid {
                       ...GatsbyImageSharpFluid
                     }
                   }

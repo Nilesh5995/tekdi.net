@@ -1,6 +1,9 @@
+const activeEnv = process.env.GATSBY_ACTIVE_ENV || process.env.NODE_ENV || "development"
+console.log(`Using environment config: '${activeEnv}'`)
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`,
+  path: `.env.${activeEnv}`,
 })
+
 module.exports = {
     siteMetadata: {
       title: 'Tekdi Technologies pvt. ltd.',
@@ -99,9 +102,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: "tekdi.net",
+          bucketName: process.env.S3_BUCKET_NAME,
           protocol: "https",
-          hostname: "www.tekdi.net",
+          hostname: process.env.HOST_NAME,
       },
     },
     `gatsby-plugin-client-side-redirect` // keep it in last in list

@@ -66,7 +66,7 @@ export default () => (
                 subheading
                 img {
                   childImageSharp {
-                    fluid(maxWidth: 130, quality: 100) {
+                    fluid(maxWidth: 130) {
                       ...GatsbyImageSharpFluid
                     }
                   }

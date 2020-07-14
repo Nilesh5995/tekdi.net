@@ -112,7 +112,7 @@ export default () => (
                 index
                 image {
                   childImageSharp {
-                    fluid(maxWidth: 250, quality: 100) {
+                    fluid(maxWidth: 250) {
                       ...GatsbyImageSharpFluid
                     }
                   }

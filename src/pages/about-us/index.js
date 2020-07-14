@@ -86,7 +86,7 @@ export const pageQuery = graphql`
         companyInfo
         companyImg {
           childImageSharp {
-            fluid(maxWidth: 350, quality: 100) {
+            fluid(maxWidth: 350) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -109,7 +109,7 @@ export const pageQuery = graphql`
           description
           icon {
             childImageSharp {
-              fluid(maxWidth: 90, quality: 100) {
+              fluid(maxWidth: 90) {
                 ...GatsbyImageSharpFluid
               }
             }
@@ -118,7 +118,7 @@ export const pageQuery = graphql`
         lifeattekdiimg {
           img {
             childImageSharp {
-              fluid(maxHeight: 260, quality: 100) {
+              fluid(maxHeight: 260) {
                 ...GatsbyImageSharpFluid
               }
             }
