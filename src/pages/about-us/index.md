@@ -16,7 +16,7 @@ corePurposeImg: /img/company/core-purpose.jpg
 projectInfo:
     - title: 20+
       description: >
-        Open Source Produtcs created
+        Open Source Products created
     - title: 50+
       description: >
         Projects delivered
@@ -25,7 +25,7 @@ projectInfo:
         Years in service
     - title: 140+
       description: >
-        Open Source Produtcs created
+        Open Source Products created
     - title: 39+
       description: >
         Projects delivered

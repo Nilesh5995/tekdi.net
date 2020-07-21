@@ -104,7 +104,7 @@ class CareersModal extends React.Component {
       .replace(/^-+/, "") // trim - from start of text
       .replace(/-+$/, ""); // trim - from end of text
     let url = process.env.GATSBY_AWS_API_GATEWAY_FILE_UPLOAD ;
-    const payloadDate = {
+    const payloadData = {
       FileName: applicationName+".pdf",
       methodType: "POST"
     }
@@ -113,7 +113,7 @@ class CareersModal extends React.Component {
       'Content-Type': 'application/json'
     }
 
-    await axios.post(url, payloadDate, {
+    await axios.post(url, payloadData, {
       headers: headers
     }).then(
       (result) => {
@@ -129,16 +129,16 @@ class CareersModal extends React.Component {
     let url = awsData.data.url;
     const blob = this.b64toBlob(fileUrl, 'application/pdf', 512);
     this.setState({ awsFileKey: awsData.data.fields['key'] });
-    let payloadDate = new FormData();
+    let payloadData = new FormData();
     for (const [key, value] of Object.entries(awsData.data.fields)) {
-      payloadDate.append(key,value)
+      payloadData.append(key,value)
     }
-    payloadDate.append('file', await blob, awsData.data.fields['key'])
+    payloadData.append('file', await blob, awsData.data.fields['key'])
     const headers = {
       'Content-Type': 'multipart/form-data'
     }
 
-    await axios.post(url, payloadDate, {
+    await axios.post(url, payloadData, {
       headers: headers
     }).then(
       (result) => {
