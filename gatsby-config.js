@@ -8,6 +8,7 @@ module.exports = {
     siteMetadata: {
       title: 'Tekdi Technologies pvt. ltd.',
       description: 'Tekdi was founded in 2006 with an aim to use technology to make a positive impact to society. Since then, we have empowered 100+ organisations with the technology solutions across verticals',
+      defaultImage: '/img/tekdi-logo.png'
   },
   plugins: [
     {

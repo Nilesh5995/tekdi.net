@@ -4,7 +4,6 @@ import { StaticQuery, graphql, withPrefix } from 'gatsby';
 import favicon from '../../../static/img/favicon/favicon-32x32.png'
 import fontURL from "./fonts/overpass-extralight.woff"
 
-
 const SEO = props => (
   <StaticQuery
     query={detailsQuery}
@@ -15,6 +14,8 @@ const SEO = props => (
       var ogImage = props.ogimage
       if(ogImage) {
          ogImage = ogImage.childImageSharp.fluid.src;
+        } else {
+          ogImage = data.site.siteMetadata.defaultImage;
         }
       var url =  typeof window !== 'undefined' ? window.location.href : '';
       if(url) {
@@ -67,8 +68,8 @@ const SEO = props => (
         {metadescription ? <meta property="og:description" content={metadescription} /> :''}
         {url ? <meta property="og:url" content={url} /> : ''}
         <meta property="og:image" content={ogImageUrl+ogImage} />
-        <meta property="og:image:width" content="600" />
-        <meta property="og:image:height" content="600" />
+        <meta property="og:image:width" content="300" />
+        <meta property="og:image:height" content="300" />
         {ogImageUrl && ogImage ? <meta name="twitter:image" content={ogImageUrl+ogImage} /> : ''}
       </Helmet>
       );
@@ -90,6 +91,7 @@ const detailsQuery = graphql`
       siteMetadata {
         title 
         description
+        defaultImage
       }
     }
   }
