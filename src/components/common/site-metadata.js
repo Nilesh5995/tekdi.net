@@ -12,10 +12,16 @@ const SEO = props => (
       const title = props.title || data.site.siteMetadata.title;
       const metakeywords = props.metakeywords
       const metadescription = props.metadescription
-      const ogimage = props.ogimage
-
-      var url =  typeof window !== 'undefined' ? window.location.pathname : '';
-      
+      var ogImage = props.ogimage
+      if(ogImage) {
+         ogImage = ogImage.childImageSharp.fluid.src;
+        }
+      var url =  typeof window !== 'undefined' ? window.location.href : '';
+      if(url) {
+        var arr = url.split("/");
+        var ogImageUrl = arr[0] + "//" + arr[2]
+      }
+      //var ogImageUrl =  typeof window !== 'undefined' ? window.location.hostname : '';
       return (
         <Helmet
           htmlAttributes={{
@@ -50,17 +56,20 @@ const SEO = props => (
           href={`${withPrefix('/')}img/favicon/favicon-16x16.png`}
           sizes="16x16"
         />
-        <meta name="description" content={metadescription} />
-        <meta name="keywords" content={metakeywords} />
+       {metadescription ? <meta name="description" content={metadescription} /> : ''}
+        {metakeywords ? <meta name="keywords" content={metakeywords} /> : ''}
         <meta name="theme-color" content="#089add" />
-        <meta name="twitter:card" content="summary"/>
-        <meta name="twitter:site" content=""/>
-        <meta name="twitter:description" content={metadescription}/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:site" content="tekdi.net"/>
+        {metadescription ? <meta name="twitter:description" content={metadescription}/> : ''}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content={title} />
-        <meta property="og:description" content={metadescription} />
-        <meta property="og:url" content={url} />
-        <meta property="og:image" content={ogimage} />
+        {title ? <meta property="og:title" content={title} /> : ''}
+        {metadescription ? <meta property="og:description" content={metadescription} /> :''}
+        {url ? <meta property="og:url" content={url} /> : ''}
+        <meta property="og:image" content={ogImageUrl+ogImage} />
+        <meta property="og:image:width" content="600" />
+        <meta property="og:image:height" content="600" />
+        {ogImageUrl && ogImage ? <meta name="twitter:image" content={ogImageUrl+ogImage} /> : ''}
       </Helmet>
       );
     }}
