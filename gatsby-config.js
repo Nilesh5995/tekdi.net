@@ -11,6 +11,34 @@ module.exports = {
   },
   plugins: [
     {
+      // keep as first gatsby-source-filesystem plugin for gatsby image support
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/static/img`,
+        name: 'uploads',
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: `@nilesh_s_techjoomla/gatsby-source-joomla-articles`,
+      options: {
+        //URL of the Joomla project (Rest api to fetch the articles)
+      baseUrl: "http://localhost/joomla-tekdi-net/index.php?option=com_api&app=articles&resource=article&format=raw",
+      rowLimits:{
+        //Limit:How many articles you want to fetch.
+        limit:20,
+        step:100,
+        //Step : How many articles you want to fetch at one fetch request.
+        },
+      },
+    },
+    {
       resolve: 'gatsby-plugin-sharp',
       options: {
         useMozJpeg: false,
@@ -48,21 +76,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-sass',
-    {
-      // keep as first gatsby-source-filesystem plugin for gatsby image support
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/static/img`,
-        name: 'uploads',
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
-    },
     'gatsby-plugin-react-helmet',
     {
       resolve: 'gatsby-plugin-purgecss', // purges all unused/unreferenced css rules

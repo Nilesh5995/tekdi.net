@@ -9,6 +9,7 @@
     "url": "https://github.com/tekdi/tekdi.net"
   },
   "dependencies": {
+    "@nilesh_s_techjoomla/gatsby-source-joomla-articles": "^1.0.0",
     "@types/react-transition-group": "^4.2.4",
     "axios": "^0.19.1",
     "babel-plugin-styled-components": "^1.10.7",
