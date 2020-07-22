@@ -3,6 +3,7 @@ templateKey: capabilities
 index: 2
 title: Joomla
 subTitle: 
+unlisted: 1
 
 image: /img/capabilities/joomla.png
 bgimage: /img/capabilities/joomla-body.jpg

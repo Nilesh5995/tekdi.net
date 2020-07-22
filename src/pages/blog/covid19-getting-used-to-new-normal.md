@@ -3,7 +3,7 @@ templateKey: blog-post
 title: "COVID-19 : Getting used to the new normal!"
 metakeywords: ["covid", "covid 19", "work from home"]
 metadescription: Outbreak of Covid-19 has impacted all the sectors of businesses, read what we do to sustain, and be productive in this situation while working from home
-ogimage: /img/industries/agriculture-bg.jpg
+ogimage: /img/blog/covid-working-remotely.jpg
 
 date: 2020-07-21T12:00:00.000Z
 featuredpost: true

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
-import { StaticQuery, useStaticQuery, graphql, withPrefix } from 'gatsby';
+import { useStaticQuery, graphql, withPrefix } from 'gatsby';
 import favicon from '../../../static/img/favicon/favicon-32x32.png'
 import fontURL from "./fonts/overpass-extralight.woff"
 import { globalHistory } from '@reach/router'
-import PropTypes from "prop-types"
+
 
 const SEO = props  => {
       const pathname = globalHistory.location.pathname;
