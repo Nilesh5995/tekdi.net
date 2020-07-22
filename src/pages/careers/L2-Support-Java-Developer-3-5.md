@@ -1,7 +1,7 @@
 ---
 templateKey: positions
-title: L2 Support
-heading: L2 Support
+title: Java Developer for L2 Support
+heading: Java Developer for L2 Support
 type: Full Time
 location: Bangalore/ Pune
 vacancy: '1'
