@@ -45,6 +45,10 @@ Started in 2009 to give our Joomla based offerings a dedicated home, it has sinc
 <p></p>
 
 <div class="row">
+<div class="col-md-12" align="center">
+<h3 align="center">Some of our products</h3>
+<br />
+</div>
 <div class="col-md-3">
 
 #### Shika
@@ -73,7 +77,9 @@ Start  a crowdfunding campaign for a cause, or start a funding marketplace power
 Meet your needs and  the diverse needs of your customers using our ready connectors and power up your technology landscape. 
 
 </div>
-
+<div class="col-md-12" align="center">
+<a align="center" target=”_blank” href="https://techjoomla.com">View all at <span class="fa fa-external-link"></span></a>
+</div>
 </div>
 
 <p></p>
@@ -85,20 +91,20 @@ Meet your needs and  the diverse needs of your customers using our ready connect
 <div class="row">
 <div class="col-md-4">
 
-**Websites, Extension and Template Development**
+##### **Websites, Extension and Template Development**
 
 Our expert team of Joomla engineers can handle any size and complexity of Joomla projects. From a corporate website with a few pages, to a large application handling hundreds of requests per second we've done it all. We have built a government website that serves over [50 million hits a month](/success-stories/website-ui-design-india-unique-identity/).
 </div>
 <div class="col-md-4">
 
-**Enterprise Application Development Services**
+##### **Enterprise Application Development Services**
 
 Moving over CMS sites, we can help you build large applications with complex workflows, large scale databases and hierarchical user management. We have built SaaS platforms on top of Joomla, so you can trust us with this.
 
 </div>
 <div class="col-md-4">
 
-**Your Next Gen Joomla Management Team**
+##### **Your Next Gen Joomla Management Team**
 
 If you are already invested in Joomla, we can help you make the most of your investment. Along with expertise in building and managing Joomla, we bring in a host of modern techniques like DevOps, scaling, high availability and 3-tier architecture so that you can be rest assured your Joomla sites are in great hands. 
 
