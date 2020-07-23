@@ -2,7 +2,11 @@
 templateKey: platforms
 index: 5
 title: Leaderboards
-subTitle: 
+subTitle:
+
+metakeywords: ["digital transformation"]
+metadescription: THis is meta description
+ogimage: /img/tekdi-logo.png
 
 image: /img/your-next/platforms/leaderboards.png
 

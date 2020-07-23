@@ -5,6 +5,9 @@ heading: Java Developer for L2 Support
 type: Full Time
 location: Bangalore/ Pune
 vacancy: '1'
+metakeywords: ["Java Developer for L2 Support"]
+metadescription: Java Developer for L2 Support
+ogimage: /img/tekdi-logo.png
 ---
 
 Experience - **Min 3 years**

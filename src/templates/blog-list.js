@@ -21,15 +21,19 @@ import React, { Fragment } from 'react'
 
     return (
       <Layout>
-        <SEO 
-          title = "Blogs"
-        />
+
         <div className="blog-page">
           <Banner 
             bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
             image = {bannerData.bgimage}
           /> 
+          <SEO 
+            title = {bannerData.title}
+            metakeywords = {bannerData.metakeywords}
+            metadescription = {bannerData.metadescription}
+            ogimage = {bannerData.ogimage}
+          />
           <div className="container py-5">
             <div className="row">
                 <Fragment>

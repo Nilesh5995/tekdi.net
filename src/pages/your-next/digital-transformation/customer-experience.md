@@ -5,6 +5,10 @@ title: Customer Experience
 subTitle: 
 bgimage: 
 
+metakeywords: ["Customer-Experience"]
+metadescription:  In the digital economy,  customer experience has become the new competitive edge. Businesses that adopt a customer centric approach are more successful than their peers. Great CX requires a customer first approach, whether it is navigating your website, providing good customer services or product experience.
+ogimage: /img/your-next/customer-experience.png
+
 image: /img/your-next/customer-experience.png
 
 description: In the digital economy,  customer experience has become the new competitive edge. Businesses that adopt a customer centric approach are more successful than their peers. Great CX requires a customer first approach, whether it is navigating your website, providing good customer services or product experience. CX is a measure of every interaction a customer has with your business and is an inescapable criterion of digital transformation. At the crux of this transformation is the use of technology. 

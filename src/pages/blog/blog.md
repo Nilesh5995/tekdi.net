@@ -1,7 +1,7 @@
 ---
 templateKey: index-blog
-metakeywords: ["", ""]
-metadescription: 
+metakeywords: ["Blog", ""]
+metadescription: Latest Reads
 ogimage: /img/tekdi-logo.png
 title: Blogs
 subTitle: Latest Reads

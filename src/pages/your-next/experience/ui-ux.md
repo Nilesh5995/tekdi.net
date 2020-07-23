@@ -6,6 +6,10 @@ subTitle:
 image: /img/your-next/ui-ux.png
 bgimage:
 
+metakeywords: ["UI/UX"]
+metadescription:  Our UX/UI practice harnesses research and  technology to drive adoption. We continuously research new technologies and trends, practices to bring the best for our customers. This would mean using wireframes.
+ogimage: /img/your-next/ui-ux.png
+
 description: Our UX/UI practice harnesses research and  technology to drive adoption. We continuously research new technologies and trends, practices to bring the best for our customers. This would mean using wireframes,  illustrations, microinteractions, using 3D Graphics, testing layouts and storytelling to test case different scenarios, transitions and interfaces to see what works best with the auidence.
 ---
 
