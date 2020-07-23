@@ -78,7 +78,7 @@ Meet your needs and  the diverse needs of your customers using our ready connect
 
 </div>
 <div class="col-md-12" align="center">
-<a align="center" target=”_blank” href="https://techjoomla.com">View all at <span class="fa fa-external-link"></span></a>
+View all at <a align="center"  href="https://techjoomla.com">techjoomla.com <span class="fa fa-arrow-right"></span></a>
 </div>
 </div>
 
