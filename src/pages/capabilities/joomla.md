@@ -78,7 +78,7 @@ Meet your needs and  the diverse needs of your customers using our ready connect
 
 </div>
 <div class="col-md-12" align="center">
-View all at <a align="center"  href="https://techjoomla.com">techjoomla.com <span class="fa fa-arrow-right"></span></a>
+<a align="center" href="https://techjoomla.com" target="_blank">View all at techjoomla.com <span class="fa fa-arrow-right"></span></a>
 </div>
 </div>
 
@@ -91,20 +91,20 @@ View all at <a align="center"  href="https://techjoomla.com">techjoomla.com <spa
 <div class="row">
 <div class="col-md-4">
 
-##### **Websites, Extension and Template Development**
+##### Websites, Extension and Template Development
 
 Our expert team of Joomla engineers can handle any size and complexity of Joomla projects. From a corporate website with a few pages, to a large application handling hundreds of requests per second we've done it all. We have built a government website that serves over [50 million hits a month](/success-stories/website-ui-design-india-unique-identity/).
 </div>
 <div class="col-md-4">
 
-##### **Enterprise Application Development Services**
+##### Enterprise Application Development Services
 
 Moving over CMS sites, we can help you build large applications with complex workflows, large scale databases and hierarchical user management. We have built SaaS platforms on top of Joomla, so you can trust us with this.
 
 </div>
 <div class="col-md-4">
 
-##### **Your Next Gen Joomla Management Team**
+##### Your Next Gen Joomla Management Team
 
 If you are already invested in Joomla, we can help you make the most of your investment. Along with expertise in building and managing Joomla, we bring in a host of modern techniques like DevOps, scaling, high availability and 3-tier architecture so that you can be rest assured your Joomla sites are in great hands. 
 
