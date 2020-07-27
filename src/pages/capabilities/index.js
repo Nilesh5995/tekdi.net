@@ -43,7 +43,7 @@ export default CapabilitiesPage;
 
 export const pageQuery = graphql`
   query CapabilitiesPageTemplate {
-    list:allMarkdownRemark(filter: { frontmatter: { templateKey: { eq: "capabilities" } } }, sort: {fields: frontmatter___index}) {
+    list:allMarkdownRemark(filter: {frontmatter: {unlisted: {ne: 1}, templateKey: {eq: "capabilities"}}}, sort: {fields: frontmatter___index}) {
       edges {
         node {
           excerpt(pruneLength: 200)

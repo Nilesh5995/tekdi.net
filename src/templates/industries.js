@@ -16,7 +16,7 @@ export const HtmlContent = ({
   )
 }
 
-const AlyticsTemplate  =  ({data}) =>  {
+const IndustriesTemplate  =  ({data}) =>  {
   const pageData = data.pageData;
   const bannerData = data.bannerData.frontmatter
     return (
@@ -24,13 +24,13 @@ const AlyticsTemplate  =  ({data}) =>  {
         <Banner
             bannerTitle = {pageData.frontmatter.title}
             bannerSubTitle = {bannerData.title}
-            image = {bannerData.image}
+            image = {pageData.frontmatter.bgimage  ? pageData.frontmatter.bgimage : bannerData.bgimage }
           />
         <SEO 
-          title = {pageData.title}
-          metakeywords = {pageData.metakeywords}
-          metadescription = {pageData.metadescription}
-          ogimage = {pageData.ogimage}
+          title = {pageData.frontmatter.title}
+          metakeywords = {pageData.frontmatter.metakeywords}
+          metadescription = {pageData.frontmatter.metadescription}
+          ogimage = {pageData.frontmatter.ogimage}
         />
         <div className="container py-5">
           <div className="col-md-12">
@@ -47,10 +47,10 @@ const AlyticsTemplate  =  ({data}) =>  {
     )
   }
 
-export default AlyticsTemplate;
+export default IndustriesTemplate;
 
 export const pageQuery = graphql`
-  query AlyticsTemplate($id: String!) {
+  query IndustriesTemplate($id: String!) {
     pageData:markdownRemark(id: { eq: $id }) {
       html
           frontmatter {
@@ -59,6 +59,15 @@ export const pageQuery = graphql`
             subTitle
             description
             index
+            metakeywords
+            metadescription
+            ogimage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             image  {
               childImageSharp {
                 fluid(maxWidth: 100) {
@@ -66,19 +75,17 @@ export const pageQuery = graphql`
                 }
               }
             }
-              metakeywords
-              metadescription
-              ogimage {
-                childImageSharp {
-                  fluid {
-                    ...GatsbyImageSharpFluid
-                  }
+            bgimage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
                 }
               }
+            }
           }
         }
 
-    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-analytics" }}) {
+    bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-industries" }}) {
       frontmatter {
         title
         image {

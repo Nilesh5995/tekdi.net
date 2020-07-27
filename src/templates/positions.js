@@ -5,6 +5,7 @@ import Banner from '../components/common/banner/banner';
 import CareersModal from "../components/careers/careers-modal"
 import Content, { HTMLContent } from '../components/common/content';
 import '../pages/careers/careers.scss';
+import SEO from '../components/common/site-metadata';
 export const PositionDetails = ({
   content,
   contentComponent
@@ -24,6 +25,12 @@ const PositionPage  =  ({data}) =>  {
             bannerTitle= {position.title}
             bannerSubTitle = {bannerData.title}
             image = {bannerData.image}
+          />
+          <SEO
+            title = {position.title}
+            metakeywords = {position.metakeywords}
+            metadescription = {position.metadescription}
+            ogimage = {position.ogimage}
           />
     <Fragment>
     <div className="container py-5">
@@ -56,16 +63,25 @@ export default  PositionPage;
 export const pageQuery = graphql`
       query CurrentOpeningslistQuery($id: String!) {
         positionData:markdownRemark(id: { eq: $id }) {
-              html
-              id
-              fields {
-                slug
+          html
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            heading
+            type
+            location
+            metakeywords
+            metadescription
+            ogimage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
-              frontmatter {
-                title
-                heading
-                type
-                location
+            }
           }
         }
         bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-careers" }}) {

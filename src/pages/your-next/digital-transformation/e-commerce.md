@@ -7,6 +7,10 @@ subTitle:
 image: /img/your-next/ecommerce.png
 bgimage: 
 
+metakeywords: ["e-Commerce-Marketplaces"]
+metadescription:
+ogimage: /img/tekdi-logo.png
+
 description: Marketplaces are becoming increasingly vital when it comes to customer search. The biggest impact of Digital Transformation has been on Marketplaces & ecommerce. Digital has enabled the buyers and the sellers to meet on e-commerce platforms and Marketplaces giving both the buyers and the sellers plenty of options to interact with each other. Choice and Fulfillment are top drivers that are pushing these ecosystems to evolve more rapidly than ever.
 ---
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Banner from '../components/common/banner/banner';
 import Layout from '../components/layout/baselayout';
-//import SEO from '../components/common/site-metadata';
+import SEO from '../components/common/site-metadata';
 import ContactUs from '../components/common/contact/contact';
 import Content, { HTMLContent } from '../components/common/content';
 
@@ -26,12 +26,12 @@ const DigitalTransformationTemplate  =  ({data}) =>  {
             bannerSubTitle = {bannerData.title}
             image = {pageData.frontmatter.bgimage ? pageData.frontmatter.bgimage : bannerData.bgimage }
           />
-        {/* <SEO
-          title = {bannerData.title}
-          metakeywords = {bannerData.metakeywords}
-          metadescription = {bannerData.metadescription}
-          ogimage = {bannerData.ogimage}
-        /> */}
+        <SEO 
+          title = {pageData.frontmatter.title}
+          metakeywords = {pageData.frontmatter.metakeywords}
+          metadescription = {pageData.frontmatter.metadescription}
+          ogimage = {pageData.frontmatter.ogimage}
+        />
         <div className="container py-5">
           <div className="col-md-12">
           <div className="main-content">
@@ -73,22 +73,22 @@ export const pageQuery = graphql`
                 }
               }
             }
+            metakeywords
+            metadescription
+            ogimage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
         }
 
     bannerData:markdownRemark(frontmatter: { templateKey: { eq: "index-digital-transformation" }}) {
       frontmatter {
         title
-        metakeywords
-        metadescription
         ogimage {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-        bgimage {
           childImageSharp {
             fluid {
               ...GatsbyImageSharpFluid

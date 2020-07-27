@@ -7,6 +7,7 @@ import BlogTagList from '../components/blog/blog-tag-list';
 import Banner from "../components/common/banner/banner"
 import React, { Fragment } from 'react'
 import lodash from "lodash"
+import SEO from '../components/common/site-metadata';
 
 class BlogCategoryPage extends React.Component {
   render() {
@@ -21,6 +22,12 @@ class BlogCategoryPage extends React.Component {
             bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
             image = {bannerData.bgimage}
+          />
+           <SEO 
+            title = {bannerData.title}
+            metakeywords = {bannerData.metakeywords}
+            metadescription = {bannerData.metadescription}
+            ogimage = {bannerData.ogimage}
           />
         <div className="container py-5">
           <div className="row">

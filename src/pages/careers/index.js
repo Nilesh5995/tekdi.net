@@ -27,6 +27,8 @@ const CareersIndexPage =  ({data}) => {
           <div className="container py-5">
             <div className="col-lg-8 col-md-12 offset-lg-2 offset-md-1 col-xs-12">
               <h3 className="com-heading text-black text-center mb-5">{frontmatter.heading}</h3>
+              <div className="container pb-5">{frontmatter.description}</div>
+
               {posts &&
               posts.map(({ node: post }) => (
                 <div className="opening-list" key={post.id}>
@@ -106,6 +108,7 @@ export const pageQuery = graphql`
           }
         }
         subTitle
+        description
         heading
         bgimage {
           childImageSharp {
