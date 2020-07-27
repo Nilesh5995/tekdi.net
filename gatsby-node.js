@@ -59,18 +59,33 @@ exports.createPages = ({ actions, graphql }) => {
         }
       }
       pages:allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: { in: ["blog-post", "case-study", "how", "positions", "platforms", "solutions", "digital-transformation", "analytics", "experience", "capabilities", "industries"]}}}) {
-          edges {
-            node {
-              id
-              fields {
-                slug
-              }
-              frontmatter {
-                templateKey
-              }
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              templateKey
             }
           }
         }
+      }
+    joomlaPages: allJoomlaArticle(filter: {category: {alias: {in: ["digital-transformation", "platforms", "experience"]}}}) {
+      edges {
+        node {
+          id
+          alias
+          custom_fields {
+            name
+            value
+          }
+          category {
+            alias
+          }
+        }
+      }
+    }
   }
   `).then(result => {
     if (result.errors) {
@@ -165,14 +180,37 @@ exports.createPages = ({ actions, graphql }) => {
   })
 
   //for the all pages
-    const pages = result.data.pages.edges
-    pages.forEach(edge => {
+  //   const pages = result.data.pages.edges
+  //   pages.forEach(edge => {
+  //   const id = edge.node.id
+  //   createPage({
+  //     path: edge.node.fields.slug,
+  //     tags: edge.node.frontmatter.tags,
+  //     component: path.resolve(
+  //       `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+  //     ),
+  //     // additional data can be passed via context
+  //     context: {
+  //       id,
+  //     },
+  //   })
+  // })
+
+  //
+  console.log(result.data.joomlaPages.edges.custom_fields)
+  const joomlaPages = result.data.joomlaPages.edges
+  joomlaPages.forEach(edge => {
     const id = edge.node.id
+    let url;
+   // console.log(alias)
+   edge.node.custom_fields.map( (fields) => (
+      url = fields.value && fields.name ==='uri'  ? fields.value : null
+    ))
     createPage({
-      path: edge.node.fields.slug,
-      tags: edge.node.frontmatter.tags,
+      path: url,
+     // tags: edge.node.frontmatter.tags,
       component: path.resolve(
-        `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+        `src/templates/joomla-page.js`
       ),
       // additional data can be passed via context
       context: {
