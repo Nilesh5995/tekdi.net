@@ -5,6 +5,7 @@ heading: System Administrator
 type: Full Time
 location: Pune
 vacancy: '1'
+jobPortalLink: Front End Developer
 ---
 
 Experience - **At least 2 years of experience in managing Ubuntu Linux workstations and AWS Cloud**

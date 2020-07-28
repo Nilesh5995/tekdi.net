@@ -8,6 +8,7 @@ vacancy: '1'
 metakeywords: ["Java Developer for L2 Support"]
 metadescription: Java Developer for L2 Support
 ogimage: /img/tekdi-logo.png
+portal-link: 'https://www.google.com/'
 ---
 
 Experience - **Min 3 years**

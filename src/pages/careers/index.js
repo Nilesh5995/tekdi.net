@@ -10,6 +10,7 @@ import './careers.scss';
 const CareersIndexPage =  ({data}) => {
     const { frontmatter } = data.bannerData
     const { edges: posts } = data.openingList
+    console.log(posts, 'poposts')
     return (
       <Layout>
         <SEO 
@@ -50,7 +51,8 @@ const CareersIndexPage =  ({data}) => {
                       </div>
                       <div className="row">
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
-                      <CareersModal position = {post.frontmatter.heading} />
+                      {post.frontmatter.jobPortalLink ?
+                      <a href={post.frontmatter.jobPortalLink }>Visit W3Schools</a> :  <CareersModal position = {post.frontmatter.heading} />}
                       </div>
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
                       <Link className="open-position" to={post.fields.slug}>
@@ -91,6 +93,7 @@ export const pageQuery = graphql`
             type
             location
             vacancy
+            jobPortalLink
           }
         }
       }

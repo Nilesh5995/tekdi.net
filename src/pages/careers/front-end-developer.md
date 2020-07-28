@@ -5,6 +5,7 @@ heading: Front End Developer
 type: Full Time
 location: To be hired in Pune but should be ready to travel to Bangalore for long term assignment
 vacancy: '1'
+jobPortalLink: Front End Developer
 ---
 
 You'll be responsible to convert the UI / UX into performant JavaScript, HTML & CSS. 
