@@ -35,25 +35,24 @@ const CareersIndexPage =  ({data}) => {
                   <div className="row">
                     <div className="col-md-12 col-sm-12 col-xs-12 careers-box">
                       <h3 className="text-black post-title mb-3">
-                      <Link className="" to={post.fields.slug}> {post.frontmatter.heading}</Link>
+                      <Link className="" to={post.alias}> {post.title}</Link>
                       </h3>
                       <ul className="unstyled mb-3">
                         <li className="sub-title">
-                          {post.frontmatter.subTitle}
                         </li>
-                        <li className="mr-4">Type - <span className="text-black">{post.frontmatter.type}</span></li>
-                        <li className="mr-4">Location - <span className="text-black">{post.frontmatter.location}</span></li>
-                        {/* <li className="mr-4">Posts <span className="text-black">{post.frontmatter.vacancy}</span></li> */}
+                        {post.custom_fields.map( (fields) => (
+                             fields.value && fields.title === 'Type' || fields.title === 'Location' ||  fields.title === 'Experience' ||  fields.title === 'Qualification' ? <li className="mr-4">{fields.title} - <span className="text-black">{fields.value}</span></li> : null
+                          ))}
                       </ul>
                       <div className="main-content mb-3">
-                      {post.excerpt}
+                      <div dangerouslySetInnerHTML={{ __html: post.introtext }} />
                       </div>
                       <div className="row">
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
-                      <CareersModal position = {post.frontmatter.heading} />
+                      <CareersModal position = {post.alias} />
                       </div>
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
-                      <Link className="open-position" to={post.fields.slug}>
+                      <Link className="open-position" to={post.title}>
                       Know More
                         </Link>
                       </div>
@@ -74,23 +73,82 @@ export default CareersIndexPage;
 
 export const pageQuery = graphql`
   query CareersBanner {
-    openingList:allMarkdownRemark(
-      filter: { frontmatter: { templateKey: { eq: "positions" } } }
-    ) {
+    openingList:allJoomlaArticle (filter: {category: {alias: {eq: "careers"}}}){
       edges {
         node {
-          html
-          excerpt(pruneLength: 200)
           id
-          fields {
-            slug
+          title
+          state
+          fulltext
+          access
+          alias
+          introtext
+          language
+          images {
+            float_fulltext
+            float_intro
+            image_fulltext
+            image_fulltext_alt
+            image_fulltext_caption
+            image_intro
           }
-          frontmatter {
+          category {
+            access
+            alias
+            asset_id
             title
-            heading
+            slug
+            published
+            description
+            extension
+          }
+          categoryImage {
+            childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+          }
+          custom_fields {
+            access
+            author_name
+            access_level
+            checked_out
+            checked_out_time
+            context
+            created_time
+            created_user_id
+            default_value
+            description
+            group_id
+            id
+            label
+            language
+            name
+            note
+            ordering
+            rawvalue
+            required
+            state
+            title
             type
-            location
-            vacancy
+            value
+          }
+          tags {
+            itemTags {
+              access
+              alias
+              description
+              urls
+              title
+            }
+          }
+          imageIntro {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
         }
       }

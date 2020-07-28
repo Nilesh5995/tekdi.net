@@ -41,7 +41,6 @@ const renderList = ({ node }) => {
             <p>
                {/* {node.frontmatter.description} */}
                <div dangerouslySetInnerHTML={{ __html: node.introtext }} />
-               {console.log(node.custom_fields)}
                {node.custom_fields.map( (fields) => (
                   //url = fields.value && fields.name ==='html-contents'  ? fields.value : null
                   fields.value && fields.title === 'uri' ? <span><Link class="read-more" to={fields.value}>{"Keep Reading"}</Link></span> : null
