@@ -52,7 +52,7 @@ const CareersIndexPage =  ({data}) => {
                       <div className="row">
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
                       {post.frontmatter.jobPortalLink ?
-                      <a href={post.frontmatter.jobPortalLink }>Visit W3Schools</a> :  <CareersModal position = {post.frontmatter.heading} />}
+                      <a className="btn-apply mb-4 p-0 font-weight-bold" href={post.frontmatter.jobPortalLink }> Apply Now</a> :  <CareersModal position = {post.frontmatter.heading} />}
                       </div>
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
                       <Link className="open-position" to={post.fields.slug}>

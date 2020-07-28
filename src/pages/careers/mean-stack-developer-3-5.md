@@ -5,7 +5,7 @@ heading: Mean Stack Developers - JS (3-5 years)
 type: Full Time
 location: Bangalore
 vacancy: '1'
-jobPortalLink: Front End Developer
+jobPortalLink: https://cutshort.io/apply/5f0ec2f73550ed0b5899ddb4
 ---
 
 Experience - **3 - 5 years**

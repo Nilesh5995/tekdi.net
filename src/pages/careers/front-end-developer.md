@@ -5,7 +5,7 @@ heading: Front End Developer
 type: Full Time
 location: To be hired in Pune but should be ready to travel to Bangalore for long term assignment
 vacancy: '1'
-jobPortalLink: Front End Developer
+jobPortalLink: https://cutshort.io/apply/5f0ef3e27573bd0b68f569a6
 ---
 
 You'll be responsible to convert the UI / UX into performant JavaScript, HTML & CSS. 
