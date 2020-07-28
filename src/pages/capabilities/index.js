@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Banner from '../../components/common/banner/banner';
 import Layout from '.././../components/layout/baselayout';
-import renderList from '../../components/list-view/list-view';
+import renderList from '../../components/list-view-joomla/list-view';
 import SEO from '../../components/common/site-metadata';
 import ContactUs from '../../components/common/contact/contact';
 
@@ -43,26 +43,72 @@ export default CapabilitiesPage;
 
 export const pageQuery = graphql`
   query CapabilitiesPageTemplate {
-    list:allMarkdownRemark(filter: {frontmatter: {unlisted: {ne: 1}, templateKey: {eq: "capabilities"}}}, sort: {fields: frontmatter___index}) {
+    list:allJoomlaArticle (filter: {category: {alias: {eq: "capabilities"}}}){
       edges {
         node {
-          excerpt(pruneLength: 200)
           id
-          html
-          fields {
-            slug
+          title
+          state
+          fulltext
+          access
+          alias
+          introtext
+          language
+          images {
+            float_fulltext
+            float_intro
+            image_fulltext
+            image_fulltext_alt
+            image_fulltext_caption
+            image_intro
           }
-          frontmatter {
+          category {
+            access
+            alias
+            asset_id
             title
-            templateKey
-            subTitle
+            slug
+            published
             description
-            index
-            image  {
-              childImageSharp {
-                fluid(maxWidth: 200) {
+            extension
+          }
+          categoryImage {
+            childImageSharp {
+                fluid {
                   ...GatsbyImageSharpFluid
                 }
+              }
+          }
+          custom_fields {
+            access
+            author_name
+            access_level
+            checked_out
+            checked_out_time
+            context
+            created_time
+            created_user_id
+            default_value
+            description
+            group_id
+            id
+            label
+            language
+            name
+            note
+            ordering
+            rawvalue
+            required
+            state
+            title
+            type
+            value
+          }
+
+          imageIntro {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }
