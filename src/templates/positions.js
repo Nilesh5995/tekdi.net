@@ -50,7 +50,8 @@ const PositionPage  =  ({data}) =>  {
               contentComponent = {HTMLContent}
             />
           </div>
-          <CareersModal position = {position.title} />
+         {position.jobPortalLink ?
+            <div className="mb-4 p-0"> <a className="btn-apply font-weight-bold" target="_blank" href={position.jobPortalLink }> Apply Now</a> </div>:   <CareersModal position = {position.title} />}
           </div>
           </div>
        </div>
@@ -74,6 +75,7 @@ export const pageQuery = graphql`
             type
             location
             metakeywords
+            jobPortalLink
             metadescription
             ogimage {
               childImageSharp {

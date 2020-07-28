@@ -10,7 +10,6 @@ import './careers.scss';
 const CareersIndexPage =  ({data}) => {
     const { frontmatter } = data.bannerData
     const { edges: posts } = data.openingList
-    console.log(posts, 'poposts')
     return (
       <Layout>
         <SEO 
@@ -51,8 +50,9 @@ const CareersIndexPage =  ({data}) => {
                       </div>
                       <div className="row">
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
+                      {/* <CareersModal position = {post.frontmatter.heading}/> */}
                       {post.frontmatter.jobPortalLink ?
-                      <a className="btn-apply mb-4 p-0 font-weight-bold" href={post.frontmatter.jobPortalLink }> Apply Now</a> :  <CareersModal position = {post.frontmatter.heading} />}
+                     <div className="mb-4 p-0"> <a className="btn-apply font-weight-bold" target="_blank" href={post.frontmatter.jobPortalLink }> Apply Now</a> </div>:  <CareersModal position = {post.frontmatter.heading} />}
                       </div>
                       <div className="col-md-6 col-sm-12 col-xs-12 ">
                       <Link className="open-position" to={post.fields.slug}>
