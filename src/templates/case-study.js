@@ -6,11 +6,15 @@ import Banner from "../components/common/banner/banner";
 import CaseStudyInfo from '../components/common/case-studies/case-study-info';
 import { HTMLContent } from '../components/common/content';
 import ContactUs from '../components/common/contact/contact';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 class CaseStudyTemplate extends React.Component {
     render()
     {
     const { caseStudyData: post } = this.props.data
     const bannerData = this.props.data.bannerData
+    const {
+      breadcrumb: { crumbs },
+    } = this.props.pageContext
       return (
         <Layout>
           <SEO
@@ -23,6 +27,11 @@ class CaseStudyTemplate extends React.Component {
               bannerTitle = {post.frontmatter.title}
               bannerSubTitle = {bannerData.frontmatter.title }
               image =  {post.frontmatter.bgimage  ? post.frontmatter.bgimage : bannerData.frontmatter.bgimage}
+          />
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=">"
+            crumbLabel={post.frontmatter.title}
           />
           <CaseStudyInfo
             heading = {post.frontmatter.title}

@@ -6,6 +6,7 @@ import CareersModal from "../components/careers/careers-modal"
 import Content, { HTMLContent } from '../components/common/content';
 import '../pages/careers/careers.scss';
 import SEO from '../components/common/site-metadata';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 export const PositionDetails = ({
   content,
   contentComponent
@@ -16,9 +17,12 @@ export const PositionDetails = ({
     <PostContent content={content} />
   )
 }
-const PositionPage  =  ({data}) =>  {
+const PositionPage  =  ({pageContext, data}) =>  {
     const position = data.positionData.frontmatter
     const bannerData = data.bannerData.frontmatter
+    const {
+      breadcrumb: { crumbs },
+    } = pageContext;
     return (
       <Layout>
         <Banner
@@ -31,6 +35,11 @@ const PositionPage  =  ({data}) =>  {
             metakeywords = {position.metakeywords}
             metadescription = {position.metadescription}
             ogimage = {position.ogimage}
+          />
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=">"
+            crumbLabel={position.title}
           />
     <Fragment>
     <div className="container py-5">

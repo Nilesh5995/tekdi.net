@@ -8,12 +8,16 @@ import Banner from "../components/common/banner/banner"
 import React, { Fragment } from 'react'
 import lodash from "lodash"
 import SEO from '../components/common/site-metadata';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
  class BlogTagPage extends React.Component {
   render() {
-    const posts = this.props.data.blogList.edges
-    const bannerData  = this.props.data.bannerData.frontmatter
-    const { currentPage, numPages, tag} = this.props.pageContext
+    const posts = this.props.data.blogList.edges;
+    const bannerData  = this.props.data.bannerData.frontmatter;
+    const { currentPage, numPages, tag} = this.props.pageContext;
+    const {
+      breadcrumb: { crumbs },
+    } = this.props.pageContext;
     return (
       <Layout>
         <div className="blog-page">
@@ -28,6 +32,11 @@ import SEO from '../components/common/site-metadata';
             metadescription = {bannerData.metadescription}
             ogimage = {bannerData.ogimage}
           />
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=">"
+          crumbLabel={tag}
+        />
         <div className="container py-5">
           <div className="row">
             <Fragment>

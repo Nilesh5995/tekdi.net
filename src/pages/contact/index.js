@@ -5,10 +5,14 @@ import SEO from '../../components/common/site-metadata';
 import Layout from '../../components/layout/baselayout';
 import ContactUs from '../../components/contact/contact';
 import Banner from '../../components/common/banner/banner';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
 
-const ContactPage = ({ data }) => {
-  const { frontmatter } = data.markdownRemark
+const ContactPage = ({pageContext,  data }) => {
+  const { frontmatter } = data.markdownRemark;
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
   return (
     <Layout>
       <SEO 
@@ -22,6 +26,11 @@ const ContactPage = ({ data }) => {
           bannerTitle= {frontmatter.title} 
           bannerSubTitle = { frontmatter.subTitle}
           image = { frontmatter.image}
+        />
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=">"
+          crumbLabel={frontmatter.title}
         />
         <div className="container py-5 contact-us">
           <div className="row">

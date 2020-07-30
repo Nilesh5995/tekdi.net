@@ -5,16 +5,25 @@ import Layout from '../.././../components/layout/baselayout';
 import renderList from '../../../components/list-view/list-view';
 import SEO from '../../../components/common/site-metadata';
 import ContactUs from '../../../components/common/contact/contact';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 
-const PlatformsPage  =  ({data}) =>  {
+const PlatformsPage  =  ({pageContext, data}) =>  {
   const lists = data.list.edges;
   const bannerData = data.bannerData.frontmatter
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
       return (
         <Layout>
           <Banner
             bannerTitle= {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
             image = {bannerData.bgimage}
+          />
+          <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=">"
+            crumbLabel={bannerData.title}
           />
           <SEO
           title={bannerData.title}

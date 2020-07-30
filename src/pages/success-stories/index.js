@@ -5,10 +5,13 @@ import Layout from '.././../components/layout/baselayout';
 import SEO from '../../components/common/site-metadata';
 import PreviewCompatibleImage from '../../components/common/preview-compatible-image'
 import ContactUs from '../../components/common/contact/contact';
-
-const CaseStudyPage  =  ({data}) =>  {
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
+const CaseStudyPage  =  ({pageContext, data}) =>  {
   const lists = data.list.edges;
-  const bannerData = data.bannerData.frontmatter
+  const bannerData = data.bannerData.frontmatter;
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
     return (
       <Layout>
         <Banner
@@ -22,6 +25,11 @@ const CaseStudyPage  =  ({data}) =>  {
           metadescription={bannerData.metadescription}
           ogimage={bannerData.ogimage}
         />
+         <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=">"
+            crumbLabel={bannerData.title}
+          />
        {data.bannerData.html && data.bannerData.html !== "" ?
         <div className="container py-5">
           <div className="col-md-12">

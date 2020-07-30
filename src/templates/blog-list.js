@@ -11,13 +11,17 @@ import BlogTagList from '../components/blog/blog-tag-list';
 import Banner from "../components/common/banner/banner"
 import ContactUs from '../components/common/contact/contact';
 import React, { Fragment } from 'react'
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
  class BlogIndexPage extends React.Component {
   render() {
     const { data } = this.props
     const posts = this.props.data.blogList.edges;
     const bannerData  = data.bannerData.frontmatter
-    const { currentPage, numPages } = this.props.pageContext
+    const { currentPage, numPages } = this.props.pageContext;
+    const {
+      breadcrumb: { crumbs },
+    } = this.props.pageContext;
 
     return (
       <Layout>
@@ -34,6 +38,11 @@ import React, { Fragment } from 'react'
             metadescription = {bannerData.metadescription}
             ogimage = {bannerData.ogimage}
           />
+          <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=">"
+          crumbLabel={bannerData.title}
+         />
           <div className="container py-5">
             <div className="row">
                 <Fragment>

@@ -6,10 +6,14 @@ import ContactUs from '../../components/common/contact/contact';
 import CareersModal from "../../components/careers/careers-modal"
 import { graphql, Link} from 'gatsby'
 import './careers.scss';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const CareersIndexPage =  ({data}) => {
-    const { frontmatter } = data.bannerData
-    const { edges: posts } = data.openingList
+const CareersIndexPage =  ({pageContext, data}) => {
+    const { frontmatter } = data.bannerData;
+    const { edges: posts } = data.openingList;
+    const {
+      breadcrumb: { crumbs },
+    } = pageContext
     return (
       <Layout>
         <SEO 
@@ -24,6 +28,11 @@ const CareersIndexPage =  ({data}) => {
             bannerSubTitle = {frontmatter.subTitle}
             image = {frontmatter.bgimage}
           />
+        <Breadcrumb
+          crumbs={crumbs}
+          crumbSeparator=">"
+          crumbLabel={"Careers"}
+        />
           <div className="container py-5">
             <div className="col-lg-8 col-md-12 offset-lg-2 offset-md-1 col-xs-12">
               <h3 className="com-heading text-black text-center mb-5">{frontmatter.heading}</h3>

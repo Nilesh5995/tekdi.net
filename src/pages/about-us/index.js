@@ -9,10 +9,13 @@ import CorePurpose from '../../components/company/core-purpose';
 import CoreValuesCarousel from '../../components/company/core-values-carousel';
 import CompanyJourney from '../../components/company/company-journey';
 import LifeAtTekdiInfo from '../../components/company/life-at-tekdi';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
-const AboutUsTemplate = ({ data }) => {
+const AboutUsTemplate = ({pageContext, data }) => {
   const { markdownRemark: post } = data
-
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
   return (
     <Layout>
       <SEO 
@@ -25,6 +28,11 @@ const AboutUsTemplate = ({ data }) => {
           bannerTitle = {post.frontmatter.title} 
           image = {post.frontmatter.bgimage}
       />
+       <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=">"
+            crumbLabel={post.frontmatter.title}
+          />
       <CompanyInfo 
         companyInfo={post.frontmatter.companyInfo}
         companyImg={post.frontmatter.companyImg}

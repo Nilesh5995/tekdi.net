@@ -9,6 +9,7 @@ import Content, { HTMLContent } from '../components/common/content';
 import BlogCatList from '../components/blog/blog-cat-list';
 import ContactUs from '../components/common/contact/contact';
 import './blog.scss';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 // import PreviewCompatibleImage from '../components/PreviewCompatibleImage'
 
 export const BlogPostTemplate = ({
@@ -24,7 +25,6 @@ export const BlogPostTemplate = ({
   catslug
 }) => {
   const PostContent = contentComponent || Content
-
   return (
     <section className="section">
       <div className="container">
@@ -73,12 +73,14 @@ BlogPostTemplate.propTypes = {
   // helmet: PropTypes.object,
 }
 
-const BlogPost = ({ data }) => {
+const BlogPost = ({ pageContext, data }) => {
   const { postData : post } = data
-  const bannerData  = data.bannerData.frontmatter
+  const bannerData  = data.bannerData.frontmatter;
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext;
 
   return (
-    
     <Layout>
       <SEO 
          title = {post.frontmatter.title}
@@ -87,11 +89,16 @@ const BlogPost = ({ data }) => {
          ogimage = {post.frontmatter.ogimage}
       />
       <div className="blog-page">
-      <Banner 
+      <Banner
             bannerTitle = {bannerData.title}
             bannerSubTitle = {bannerData.subTitle}
             image = {post.frontmatter.bgimage  ? post.frontmatter.bgimage : bannerData.bgimage}
-          /> 
+      />
+      <Breadcrumb
+      crumbs={crumbs}
+      crumbSeparator=">"
+      crumbLabel={post.frontmatter.title}
+      />
        <div className="container py-5">
         <div className="row">
           <div className="col-md-9">

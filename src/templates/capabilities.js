@@ -5,6 +5,7 @@ import Layout from '../components/layout/baselayout';
 import SEO from '../components/common/site-metadata';
 import ContactUs from '../components/common/contact/contact';
 import Content, { HTMLContent } from '../components/common/content';
+import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
 
 export const HtmlContents = ({
   content,
@@ -16,9 +17,12 @@ export const HtmlContents = ({
   )
 }
 
-const CapabilitiesTemplate  =  ({data}) =>  {
+const CapabilitiesTemplate  =  ({pageContext, data}) =>  {
   const pageData = data.pageData;
-  const bannerData = data.bannerData.frontmatter
+  const bannerData = data.bannerData.frontmatter;
+  const {
+    breadcrumb: { crumbs },
+  } = pageContext
     return (
       <Layout>
         <Banner
@@ -32,6 +36,11 @@ const CapabilitiesTemplate  =  ({data}) =>  {
           metadescription = {pageData.frontmatter.metadescription}
           ogimage = {pageData.frontmatter.ogimage}
         />
+         <Breadcrumb
+            crumbs={crumbs}
+            crumbSeparator=">"
+            crumbLabel={pageData.frontmatter.title}
+          />
         <div className="container py-5">
           <div className="col-md-12">
           <div className="main-content">
