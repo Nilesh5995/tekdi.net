@@ -10,6 +10,7 @@ import { Breadcrumb } from 'gatsby-plugin-breadcrumb'
 const DigitalTransFormationPage  =  ({pageContext, data}) =>  {
   const lists = data.list.edges;
   const bannerData = data.bannerData.frontmatter;
+  const disableLinks = ['/your-next'];
   const {
     breadcrumb: { crumbs },
   } = pageContext
@@ -24,7 +25,8 @@ const DigitalTransFormationPage  =  ({pageContext, data}) =>  {
             crumbs={crumbs}
             crumbSeparator=">"
             crumbLabel={bannerData.title}
-          />
+            disableLinks ={disableLinks}
+           />
           <SEO
           title={bannerData.title}
           metakeywords= {bannerData.metakeywords}

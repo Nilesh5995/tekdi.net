@@ -19,6 +19,7 @@ export const HtmlContent = ({
 const ExperienceTemplate  =  ({pageContext, data}) =>  {
   const pageData = data.pageData;
   const bannerData = data.bannerData.frontmatter;
+  const disableLinks = ['/your-next'];
   const {
     breadcrumb: { crumbs },
   } = pageContext;
@@ -39,6 +40,7 @@ const ExperienceTemplate  =  ({pageContext, data}) =>  {
             crumbs={crumbs}
             crumbSeparator=">"
             crumbLabel={pageData.frontmatter.title}
+            disableLinks ={disableLinks}
           />
         <div className="container py-5">
           <div className="col-md-12">

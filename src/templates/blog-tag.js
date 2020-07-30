@@ -18,6 +18,7 @@ import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
     const {
       breadcrumb: { crumbs },
     } = this.props.pageContext;
+    const disableLinks = ['/blog/tags'];
     return (
       <Layout>
         <div className="blog-page">
@@ -36,6 +37,7 @@ import { Breadcrumb } from 'gatsby-plugin-breadcrumb';
           crumbs={crumbs}
           crumbSeparator=">"
           crumbLabel={tag}
+          disableLinks ={disableLinks}
         />
         <div className="container py-5">
           <div className="row">

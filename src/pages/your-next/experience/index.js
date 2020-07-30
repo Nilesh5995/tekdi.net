@@ -12,7 +12,8 @@ const ExperiencePage  =  ({pageContext, data}) =>  {
   const bannerData = data.bannerData.frontmatter
   const {
     breadcrumb: { crumbs },
-  } = pageContext
+  } = pageContext;
+  const disableLinks = ['/your-next'];
     return (
       <Layout>
         <Banner
@@ -24,6 +25,7 @@ const ExperiencePage  =  ({pageContext, data}) =>  {
             crumbs={crumbs}
             crumbSeparator=">"
             crumbLabel={bannerData.title}
+            disableLinks ={disableLinks}
           />
         <SEO 
           title={bannerData.title}

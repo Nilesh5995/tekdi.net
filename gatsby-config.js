@@ -128,12 +128,28 @@ module.exports = {
         crumbLabelUpdates: [
           {
             pathname: '/your-next',
-            crumbLabel: ''
+            crumbLabel: 'Your Next'
           },
           {
             pathname: '/blog/tags',
-            crumbLabel: ''
+            crumbLabel: 'Tags'
           },
+          {
+            pathname: '/your-next/experience',
+            crumbLabel: 'Experience'
+          },
+          {
+            pathname: '/your-next/digital-transformation',
+            crumbLabel: 'Digital Transformation'
+          },
+          {
+            pathname: '/success-stories',
+            crumbLabel: 'Success Stories'
+          },
+          {
+            pathname: '/blog',
+            crumbLabel: 'Blog'
+          }
         ],
         // trailingSlashes: optional, will add trailing slashes to the end
         // of crumb pathnames. default is false
