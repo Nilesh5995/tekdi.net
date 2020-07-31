@@ -32,7 +32,7 @@ The platform is built using a microservices architecture, and by itself does not
 ## Solution
 The microservice platform had several components - the learning service, language service, search service, analytics service to name a few. The Community Portal was the face of the platform, enabling content creation, communities and a partner ecosystem to use the portal for achieving Ekstep's goal of improving access to education for 200 million children. A summary of each of these sections follows
 
-### UX & UI Design
+### UI & UX Design
 Working with the product managers at Ekstep, the team conducted user research to understand the users of the platform. The product managers' thoughts about the user experience, combined with interviews with potential users of the platform allowed us to create an effortless user experience for the various types of users of the portal. 
 
 ### Content creation, collaboration and review
