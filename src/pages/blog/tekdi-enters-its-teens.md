@@ -15,7 +15,7 @@ category:
 
 tags:
   - website
-description: test
+description:
 ---
 
 ![default](/img/blog/tekdi-enters-its-teens.png)
