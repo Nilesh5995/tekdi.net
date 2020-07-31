@@ -21,7 +21,7 @@ While the core of user experience will be the actual experience of usage, this d
 
 UI design focuses on the user's visual experience. The goal of User Interface is to anticipate what users might need to do and ensures that the interface has those elements.  User interface design can dramatically affect the usability and user experience of an application. If the design is too complex or not adapted to targeted users, the user may not be able to find the information or service they are looking for. User interface design should be optimized so that the user can execute the desired action as easily as possible. Intuitive user interface design drives navigation and adoption. 
 
-Our UX/UI practice harnesses research and  technology to drive adoption. We continuously research new technologies and trends, practices to bring the best for our customers. This would mean using wireframes,  illustrations, microinteractions, using 3D Graphics, testing layouts and storytelling to test case different scenarios, transitions and interfaces to see what works best with the audience.
+Our UI/UX practice harnesses research and  technology to drive adoption. We continuously research new technologies and trends, practices to bring the best for our customers. This would mean using wireframes,  illustrations, microinteractions, using 3D Graphics, testing layouts and storytelling to test case different scenarios, transitions and interfaces to see what works best with the audience.
 
 On the UX side we work on prototypes and modeling to determine interactions, experience and usability. We run several iterations to separate confusing experiences to logical and efficient ones. 
 
