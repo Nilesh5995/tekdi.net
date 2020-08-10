@@ -89,12 +89,12 @@ export class contactUs extends React.Component {
       errors["phone"] = "Enter an Phone";
     }
 
-  //   if (this.state.phone!== ""){
-  //     if(!this.state.phone.match(/^[0]?[789]\d{9}$/)){
-  //       formIsValid = false;
-  //       errors["phone"] = "Phone number is not valid";
-  //   }
-  // }
+    if (this.state.phone!== ""){
+      if(!this.state.phone.match(/^[0-9\b]+$/)){
+        formIsValid = false;
+        errors["phone"] = "Phone number is not valid";
+    }
+  }
 
    this.setState({errors: errors});
    return formIsValid;

@@ -90,6 +90,13 @@ export class ContactUs extends React.Component {
       errors["message"] = "Enter an Message";
     }
 
+    if (this.state.phone!== ""){
+      if(!this.state.phone.match(/^[0-9\b]+$/)){
+        formIsValid = false;
+        errors["phone"] = "Phone number is not valid";
+    }
+  }
+
    this.setState({errors: errors});
    return formIsValid;
 }
