@@ -47,8 +47,7 @@ export class ContactUs extends React.Component {
         "message" : this.state.message,
         "pageUrl" : this.pageUrl,
       }
-      console.log(this.state.data, 'After');
-     //this.response();
+     this.response();
     }
   }
 
