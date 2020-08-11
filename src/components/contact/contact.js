@@ -1,5 +1,7 @@
 import React from "react"
 import './contact.scss'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 const axios = require(`axios`);
 export class contactUs extends React.Component {
   constructor(props) {
@@ -89,13 +91,6 @@ export class contactUs extends React.Component {
       errors["phone"] = "Enter an Phone";
     }
 
-    if (this.state.phone!== ""){
-      if(!this.state.phone.match(/^[0-9\b]+$/)){
-        formIsValid = false;
-        errors["phone"] = "Phone number is not valid";
-    }
-  }
-
    this.setState({errors: errors});
    return formIsValid;
   }
@@ -134,11 +129,30 @@ export class contactUs extends React.Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-lg-6 col-md-12 col-sm-6 col-xs-12 form-group">
-                 <input type="text" name="phone" id="phone" value={this.state.phone} onChange={this.handleInputChange} className="form-control" placeholder="Phone"  />
+            <div className="col-lg-7 col-md-12 col-sm-6 col-xs-12 form-group">
+                 {/* <input type="text" name="phone" id="phone" value={this.state.phone} onChange={this.handleInputChange} className="form-control" placeholder="Phone"  /> */}
+                 <PhoneInput
+                  country={'in'}
+                  name="phone"
+                  id="phone"
+                  value={this.state.phone}
+                  onChange={phone => this.setState({ phone })}
+                  placeholder="Phone"
+                  enableSearch = {true}
+                  inputStyle={ { "paddingLeft" :"48px",
+                  "color":"#65737f"
+                  }}
+                  inputClass="phone-input"
+                  inputProps={{
+                    name: 'phone',
+                    required: true,
+                    autoFocus: true
+                  }}
+                  dropdownStyle= {{"color":"#65737f"  }}
+                />
                  <span className="error">{this.state.errors["phone"]}</span>
               </div>
-              <div className="col-lg-6 col-md-12 col-sm-6 col-xs-12 form-group">
+              <div className="col-lg-5 col-md-12 col-sm-6 col-xs-12 form-group">
                  <input type="email" name="email" id="email" value={this.state.email} onChange={this.handleInputChange} className="form-control" placeholder="Email"  />
                  <span className="error">{this.state.errors["email"]}</span>
               </div>
