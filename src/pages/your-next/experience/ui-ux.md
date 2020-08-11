@@ -25,4 +25,4 @@ Our UI/UX practice harnesses research and  technology to drive adoption. We cont
 
 On the UX side we work on prototypes and modeling to determine interactions, experience and usability. We run several iterations to separate confusing experiences to logical and efficient ones. 
 
-We strongly feel that the best way to achieve this is by tasking UI designers with the interface and UX designers are tasked to determine how the interface operates. Good  UX/ UI design is a very collaborative process and we take great pride and  effort to make sure these teams work cohesively to achieve the goals of creating a personalized experience for our customers. 
+We strongly feel that the best way to achieve this is by tasking UI designers with the interface and UX designers are tasked to determine how the interface operates. Good  UI/UX design is a very collaborative process and we take great pride and  effort to make sure these teams work cohesively to achieve the goals of creating a personalized experience for our customers. 
