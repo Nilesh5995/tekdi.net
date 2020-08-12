@@ -96,6 +96,7 @@ export class ContactUs extends React.Component {
         var regionCode = PhoneNumber('+'+this.state.phone).getRegionCode( );
         var pn = new PhoneNumber( this.state.phone, regionCode );
         if(!pn.isValid( )) {
+          formIsValid = false;
           errors["phone"] = "Phone number is not valid";
         }
     }
