@@ -3,6 +3,7 @@ import './contact.scss'
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 const axios = require(`axios`);
+var PhoneNumber = require( 'awesome-phonenumber' );
 export class contactUs extends React.Component {
   constructor(props) {
     super(props)
@@ -91,6 +92,14 @@ export class contactUs extends React.Component {
       errors["phone"] = "Enter an Phone";
     }
 
+    if (this.state.phone !== "") {
+      var regionCode = PhoneNumber('+'+this.state.phone).getRegionCode( );
+      var pn = new PhoneNumber( this.state.phone, regionCode );
+      if(!pn.isValid( )) {
+        errors["phone"] = "Phone number is not valid";
+      }
+    }
+
    this.setState({errors: errors});
    return formIsValid;
   }
@@ -145,7 +154,6 @@ export class contactUs extends React.Component {
                   inputClass="phone-input"
                   inputProps={{
                     name: 'phone',
-                    required: true,
                     autoFocus: true
                   }}
                   dropdownStyle= {{"color":"#65737f"  }}

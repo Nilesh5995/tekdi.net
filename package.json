@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@types/react-transition-group": "^4.2.4",
+    "awesome-phonenumber": "^2.36.0",
     "axios": "^0.19.1",
     "babel-plugin-styled-components": "^1.10.7",
     "bootstrap": "^4.4.1",
