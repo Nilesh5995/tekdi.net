@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-title: "Tekdi Tech Talks - Our Virtual World Of Knowledge Sharing "
+title: "Tekdi Tech Talks - The First Edition"
 metakeywords: ["Tekdi Tech Talks","Knowledge Sharing"]
 metadescription: At Tekdi, we believe that the best innovations can be made on a strong foundation of sharing. Be it sharing code or sharing knowledge, we are always at the forefront of contributing back all we can.
 ogimage: /img/blog/T3-TEKDI-TECH-TALKS.png
@@ -28,6 +28,7 @@ At Tekdi, we believe that the best innovations can be made on a strong foundatio
 A lot has changed since we entered into “Work from Home” mode back in March and our innovative ‘hackathon team’ has adapted superbly & have been churning out some awesome ‘Remote events’ for our ecosystem.
 
 On the 1st of August, Tekdian’s got together for the first edition of “T3 - Tekdi Tech Talks” a full day focussing on talks on topics ranging from communication to coding.  Some talks specifically focussed on the ‘new normal’ of working (from home) and speakers shared insights on how to make it fun, interesting & effective.
+
 We had 8 in-house speakers talking about various facets like - ways to Improve Communication Skills, how to do Work From Home Effectively, Email Security and Privacy, Effective Time Management Skills, and technical strands like Django - Python, JS form Library & What's new @ EkStep. We also had Philip Walton from the Joomla Release team briefing us about the upcoming ‘WFH Pizza and Bugs Event.
 
 Here’s a quick look at the talks :
