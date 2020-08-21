@@ -155,7 +155,6 @@ export class contactUs extends React.Component {
                   inputClass="phone-input"
                   inputProps={{
                     name: 'phone',
-                    autoFocus: true
                   }}
                   dropdownStyle= {{"color":"#65737f"  }}
                 />
