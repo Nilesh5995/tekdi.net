@@ -23,7 +23,7 @@ description:
 
 At Tekdi, we believe that the best innovations can be made on a strong foundation of sharing. Be it sharing code or sharing knowledge, we are always at the forefront of contributing back all we can. On the first Saturday of every month, everyone at Tekdi gets together for a “Fun2learn Saturday” which is a day filled with Hackathons, Opensource contribution events & tech talks.
 
-![Session On JS form library](T3-TEKDI-TECH-TALKS.png "Session On JS form library")
+![Tekdi Tech Talks](T3-TEKDI-TECH-TALKS.png "Tekdi Tech Talks")
 
 A lot has changed since we entered into “Work from Home” mode back in March and our innovative ‘hackathon team’ has adapted superbly & have been churning out some awesome ‘Remote events’ for our ecosystem.
 
