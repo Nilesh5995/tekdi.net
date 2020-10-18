@@ -3,7 +3,6 @@ import SEO from '../../components/common/site-metadata';
 import Layout from '../../components/layout/baselayout';
 import Banner from '../../components/common/banner/banner';
 import ContactUs from '../../components/common/contact/contact';
-import CareersModal from "../../components/careers/careers-modal"
 import { graphql, Link} from 'gatsby'
 import './content-password.scss';
 
