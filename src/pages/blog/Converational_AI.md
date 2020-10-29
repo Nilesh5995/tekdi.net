@@ -4,13 +4,13 @@ title: "How Conversational AI Is Disrupting Education and Shaping The Future of 
 metakeywords: ["Conversational AI in education", "AI In Education", "Role of artificial intelligence in education", "Future of AI in education
 ", "Impact of Conversational AI on education"]
 metadescription: Artificial intelligence constantly fills the gaps in learning and teaching and aids personalized and streamlined education. Read more to know the impacts of AI on education.
-ogimage: /img/blog/covid-working-remotely.jpg
+ogimage: /img/blog/image1.jpg
 
 date: 2020-10-29T12:00:00.000Z
 featuredpost: true
 author: Shubham Kulkarni
 featuredimage: /img/blog/image2.png
-bgimage: /img/blog/tekdi-covid-from-home2.jpg
+bgimage: 
 
 category: 
   - Education
