@@ -39,10 +39,24 @@ const tags = []
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   const {createRedirect} = actions
-   createRedirect({ 
-     fromPath: '/profile-common', toPath: 'https://app.box.com/s/f5cvqjng6mm1ubl0abvhkn62nkcp5n5z', isPermanent: true,
-     fromPath: '/edtech-profile', toPath: 'https://app.box.com/s/w2g0zruqylc5tql5kq5bn57q7wx4x23m', isPermanent: true,
-  });
+  const redirectArray = [
+    {
+      fromPath: '/profile-common', toPath: 'https://app.box.com/s/f5cvqjng6mm1ubl0abvhkn62nkcp5n5z', isPermanent: true,
+    },
+    {
+      fromPath: '/edtech-profile', toPath: 'https://app.box.com/s/w2g0zruqylc5tql5kq5bn57q7wx4x23m', isPermanent: true,
+    }
+  ]
+  if (redirectArray) {
+    redirectArray.forEach( urls => {
+      if (urls) {
+        createRedirect({ fromPath: urls.fromPath, toPath: urls.toPath, isPermanent: true })
+      }
+    })
+  }
+  //  createRedirect({ 
+
+  // });
   return graphql(`
   query {
       blog:allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: { in: ["blog-post"]}}}) {
