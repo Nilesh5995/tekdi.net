@@ -54,9 +54,6 @@ exports.createPages = ({ actions, graphql }) => {
       }
     })
   }
-  //  createRedirect({ 
-
-  // });
   return graphql(`
   query {
       blog:allMarkdownRemark(limit: 1000, filter: {frontmatter: {templateKey: { in: ["blog-post"]}}}) {
