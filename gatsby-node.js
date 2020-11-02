@@ -41,10 +41,10 @@ exports.createPages = ({ actions, graphql }) => {
   const {createRedirect} = actions
   const redirectArray = [
     {
-      fromPath: '/profile-common', toPath: 'https://app.box.com/s/f5cvqjng6mm1ubl0abvhkn62nkcp5n5z', isPermanent: true,
+      fromPath: '/profile-common', toPath: 'https://app.box.com/s/f5cvqjng6mm1ubl0abvhkn62nkcp5n5z'
     },
     {
-      fromPath: '/edtech-profile', toPath: 'https://app.box.com/s/w2g0zruqylc5tql5kq5bn57q7wx4x23m', isPermanent: true,
+      fromPath: '/edtech-profile', toPath: 'https://app.box.com/s/w2g0zruqylc5tql5kq5bn57q7wx4x23m'
     }
   ]
   if (redirectArray) {
